@@ -55,12 +55,8 @@ global duracion muestras f Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10 Af1 Af2
 global  Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10
 global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3 Afp4 Afp5 
 global Afp6 Afp7 Afp8 Afp9 Afp10
-global Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10
-global Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10
 Aap1=0; Aap2=0; Aap3=0; Aap4=0; Aap5=0; Aap6=0; Aap7=0; Aap8=0; Aap9=0; Aap10=0;
 Afp1=0; Afp2=0; Afp3=0; Afp4=0; Afp5=0; Afp6=0; Afp7=0; Afp8=0; Afp9=0; Afp10=0;
-Aat1=0; Aat2=0; Aat3=0; Aat4=0; Aat5=0; Aat6=0; Aat7=0; Aat8=0; Aat9=0; Aat10=0;
-Aft1=0; Aft2=0; Aft3=0; Aft4=0; Aft5=0; Aft6=0; Aft7=0; Aft8=0; Aft9=0; Aft10=0;
 Aa1=0; Aa2=0; Aa3=0; Aa4=0; Aa5=0; Aa6=0; Aa7=0; Aa8=0; Aa9=0; Aa10=0;
 Af1=0; Af2=0; Af3=0; Af4=0; Af5=0; Af6=0; Af7=0; Af8=0; Af9=0; Af10=0;
 duracion=str2double(get(handles.editDuracion,'string'));
@@ -176,8 +172,6 @@ global Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10 Af1 Af2 Af3 Af4 Af5 Af6 Af7
 global Af8 Af9 Af10 f duracion muestras y
 global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3
 global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
-global Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10
-global Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10 tab2
 duracion=get(hObject,'value');
 set(handles.editDuracion,'string',duracion);
 Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
@@ -191,14 +185,6 @@ for i=1:10
     t=linspace(0,duracion/1000,muestras);
     y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*t+Af(i));
     plot(t,y);
-end
-if tab2==1
-        Aat=[Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10];
-        Aft=[Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10];
-        for i=1:10
-            t=linspace(0,duracion/1000,muestras);
-            y=y+Aat(i)*sqrt(2)*sin(2*pi*(i+10)*f*t+Aft(i));
-        end
 end
 plot(t,y);
 grid on;
@@ -227,8 +213,6 @@ global Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10 Af1 Af2 Af3 Af4 Af5 Af6 Af7
 global Af8 Af9 Af10 f duracion muestras y
 global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3
 global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
-global Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10
-global Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10 tab2
 f=get(hObject,'value');
 set(handles.editFrecuencia,'string',f);
 Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
@@ -242,14 +226,14 @@ for i=1:10
     t=linspace(0,duracion/1000,muestras);
     y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*t+Af(i));
 end
-if tab2==1
-        Aat=[Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10];
-        Aft=[Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10];
-        for i=1:10
-            t=linspace(0,duracion/1000,muestras);
-            y=y+Aat(i)*sqrt(2)*sin(2*pi*(i+10)*f*t+Aft(i));
-        end
-end
+% if tab2==1
+%         Aat=[Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10];
+%         Aft=[Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10];
+%         for i=1:10
+%             t=linspace(0,duracion/1000,muestras);
+%             y=y+Aat(i)*sqrt(2)*sin(2*pi*(i+10)*f*t+Aft(i));
+%         end
+% end
 plot(t,y);
 grid on;
 xlabel('Tiempo');
@@ -275,8 +259,6 @@ global Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10 Af1 Af2 Af3 Af4 Af5 Af6 Af7
 global Af8 Af9 Af10 duracion f muestras y
 global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3
 global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
-global Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10
-global Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10 tab2
 muestras=get(hObject,'value');
 set(handles.editMuestras,'string',muestras);
 Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
@@ -290,14 +272,14 @@ for i=1:10
     t=linspace(0,duracion/1000,muestras);
     y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*t+Af(i));
 end
-if tab2==1
-        Aat=[Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10];
-        Aft=[Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10];
-        for i=1:10
-            t=linspace(0,duracion/1000,muestras);
-            y=y+Aat(i)*sqrt(2)*sin(2*pi*(i+10)*f*t+Aft(i));
-        end
-end
+% if tab2==1
+%         Aat=[Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10];
+%         Aft=[Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10];
+%         for i=1:10
+%             t=linspace(0,duracion/1000,muestras);
+%             y=y+Aat(i)*sqrt(2)*sin(2*pi*(i+10)*f*t+Aft(i));
+%         end
+% end
 plot(t,y);
 grid on;
 xlabel('Tiempo');
@@ -323,8 +305,6 @@ global duracion y Aa1 f muestras Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10 Af1 Af2
 global Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10
 global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3
 global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
-global Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10
-global Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10 tab2
 duracion=str2double(get(hObject,'string'));
 set(handles.sliderDuracion,'value',duracion);
 Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
@@ -338,14 +318,14 @@ for i=1:10
     t=linspace(0,duracion/1000,muestras);
     y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*t+Af(i));
 end
-if tab2==1
-        Aat=[Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10];
-        Aft=[Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10];
-        for i=1:10
-            t=linspace(0,duracion/1000,muestras);
-            y=y+Aat(i)*sqrt(2)*sin(2*pi*(i+10)*f*t+Aft(i));
-        end
-end
+% if tab2==1
+%         Aat=[Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10];
+%         Aft=[Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10];
+%         for i=1:10
+%             t=linspace(0,duracion/1000,muestras);
+%             y=y+Aat(i)*sqrt(2)*sin(2*pi*(i+10)*f*t+Aft(i));
+%         end
+% end
 plot(t,y);
 grid on;
 xlabel('Tiempo');
@@ -374,8 +354,6 @@ global Aa1 y f muestras duracion Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10 Af1 Af2
 global Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10
 global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3
 global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
-global Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10
-global Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10 tab2
 f=str2double(get(hObject,'string'));
 set(handles.sliderFrecuencia,'value',f);
 Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
@@ -389,14 +367,14 @@ for i=1:10
     t=linspace(0,duracion/1000,muestras);
     y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*t+Af(i));
 end
-if tab2==1
-        Aat=[Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10];
-        Aft=[Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10];
-        for i=1:10
-            t=linspace(0,duracion/1000,muestras);
-            y=y+Aat(i)*sqrt(2)*sin(2*pi*(i+10)*f*t+Aft(i));
-        end
-end
+% if tab2==1
+%         Aat=[Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10];
+%         Aft=[Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10];
+%         for i=1:10
+%             t=linspace(0,duracion/1000,muestras);
+%             y=y+Aat(i)*sqrt(2)*sin(2*pi*(i+10)*f*t+Aft(i));
+%         end
+% end
 plot(t,y);
 grid on;
 xlabel('Tiempo');
@@ -420,9 +398,7 @@ function editMuestras_Callback(hObject, eventdata, handles)
 global Aa1 y f muestras duracion Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10 Af1 Af2
 global Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10
 global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3
-global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10 tab2
-global Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10
-global Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10
+global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
 muestras=str2double(get(hObject,'string'));
 set(handles.sliderMuestras,'value',muestras);
 Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
@@ -436,14 +412,14 @@ for i=1:10
     t=linspace(0,duracion/1000,muestras);
     y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*t+Af(i));
 end
-if tab2==1
-        Aat=[Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10];
-        Aft=[Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10];
-        for i=1:10
-            t=linspace(0,duracion/1000,muestras);
-            y=y+Aat(i)*sqrt(2)*sin(2*pi*(i+10)*f*t+Aft(i));
-        end
-end   
+% if tab2==1
+%         Aat=[Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10];
+%         Aft=[Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10];
+%         for i=1:10
+%             t=linspace(0,duracion/1000,muestras);
+%             y=y+Aat(i)*sqrt(2)*sin(2*pi*(i+10)*f*t+Aft(i));
+%         end
+% end   
 plot(t,y);    
 grid on;
 xlabel('Tiempo');
@@ -471,9 +447,7 @@ function armonicos_Callback(hObject, eventdata, handles)
 global y Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10 Af1 Af2 Af3 Af4 Af5 
 global Af6 Af7 Af8 Af9 Af10 acep1 canc1 f duracion muestras Aap1 Aap2 Aap3
 global Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3 Afp4 Afp5 Afp6
-global Afp7 Afp8 Afp9 Afp10 tab2
-global Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10
-global Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10
+global Afp7 Afp8 Afp9 Afp10
 InterfazEdArm;
 uiwait;
 duracion=str2double(get(handles.editDuracion,'string'));
@@ -499,14 +473,14 @@ if acep1==1
         t=linspace(0,duracion/1000,muestras);
         y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*t+Af(i));
     end
-    if tab2==1
-        Aat=[Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10];
-        Aft=[Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10];
-        for i=1:10
-            t=linspace(0,duracion/1000,muestras);
-            y=y+Aat(i)*sqrt(2)*sin(2*pi*(i+10)*f*t+Aft(i));
-        end
-    end
+%     if tab2==1
+%         Aat=[Aat1 Aat2 Aat3 Aat4 Aat5 Aat6 Aat7 Aat8 Aat9 Aat10];
+%         Aft=[Aft1 Aft2 Aft3 Aft4 Aft5 Aft6 Aft7 Aft8 Aft9 Aft10];
+%         for i=1:10
+%             t=linspace(0,duracion/1000,muestras);
+%             y=y+Aat(i)*sqrt(2)*sin(2*pi*(i+10)*f*t+Aft(i));
+%         end
+%     end
     plot(t,y);
 end
 xlabel('Tiempo');
