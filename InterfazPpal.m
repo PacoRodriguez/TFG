@@ -113,31 +113,31 @@ InterfazTran;
 function ruido_Callback(hObject, eventdata, handles)
 InterfazRuido;
 uiwait;
-global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3 Afp4 Afp5 
-global Afp6 Afp7 Afp8 Afp9 Afp10
+global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3 
+global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
 global f acep6 duracion canc6 Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10
-global Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10 muestras db
+global Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10 muestras db y
 duracion=str2double(get(handles.editDuracion,'string'));
 muestras=str2double(get(handles.editMuestras,'string'));
-if canc6==1
-    x=linspace(0,duracion/1000,muestras);
-    plot(x,0);
-    canc6=0;
-else acep6==1
-    Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
-    Afp=[Afp1 Afp2 Afp3 Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10];
-    Aa=[Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10];
-    Af=[Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10];
-    Aa=Aap;
-    Af=Afp;
-    y=0;
-    for i=1:10
-        t=linspace(0,duracion/1000,muestras);
-        y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*t+Af(i));
-        plot(t,y);
-    end
+% if canc6==1
+%     x=linspace(0,duracion/1000,muestras);
+%     plot(x,0);
+%     canc6=0;
+if acep6==1
+%     Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
+%     Afp=[Afp1 Afp2 Afp3 Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10];
+%     Aa=[Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10];
+%     Af=[Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10];
+%     Aa=Aap;
+%     Af=Afp;
+%     y=0;
+%     for i=1:10
+%         t=linspace(0,duracion/1000,muestras);
+%         y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*t+Af(i));
+%         plot(t,y);
+%     end
     t=linspace(0,duracion/1000,muestras);
-    y=awgn(y,db,0);
+    y=awgn(y,db,'measured');
     plot(t,y);
 end
 xlabel('Tiempo');
