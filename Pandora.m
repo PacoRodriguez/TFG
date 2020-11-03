@@ -41,19 +41,45 @@ grid on;
 function varargout = Pandora_OutputFcn(hObject, eventdata, handles) 
 varargout{1} = handles.output;
 
-function desviacionFrecuencia_Callback(hObject, eventdata, handles)
+function DesviacionFrecuencia_Callback(hObject, eventdata, handles)
 InterfazDesFre;
 
-function huecosSobretension_Callback(hObject, eventdata, handles)
+function HuecosSobretension_Callback(hObject, eventdata, handles)
 InterfazHueSob;
 
-function flicker_Callback(hObject, eventdata, handles)
+function Flicker_Callback(hObject, eventdata, handles)
 Flicker;
+uiwait;
+global inicioFlicker duracionFlicker amplitudFlicker frecuenciaFlicker
+global faseFlicker duracion muestras aceptarFlicker
+global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3 
+global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
+global f Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10
+global Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10 y
+duracion=str2double(get(handles.editDuracion,'string'));
+muestras=str2double(get(handles.editMuestras,'string'));
+if aceptarFlicker==1
+    Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
+    Afp=[Afp1 Afp2 Afp3 Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10];
+    Aa=[Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10];
+    Af=[Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10];
+    Aa=Aap;
+    Af=Afp;
+    y=0;
+    for i=1:10
+        t=linspace(0,duracion/1000,muestras);
+        y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*t+Af(i));
+    end
+    plot(t,y);
+end
+xlabel('Tiempo');
+ylabel('Amplitud');
+grid on;
 
-function transitorios_Callback(hObject, eventdata, handles)
+function Transitorios_Callback(hObject, eventdata, handles)
 Transitorios;
 
-function ruido_Callback(hObject, eventdata, handles)
+function Ruido_Callback(hObject, eventdata, handles)
 Ruido;
 uiwait;
 global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3 
@@ -275,7 +301,7 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
     set(hObject,'BackgroundColor','white');
 end
 
-function armonicos_Callback(hObject, eventdata, handles)
+function Armonicos_Callback(hObject, eventdata, handles)
 global y Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10 Af1 Af2 Af3 Af4 Af5 
 global Af6 Af7 Af8 Af9 Af10 acep1 canc1 f duracion muestras Aap1 Aap2 Aap3
 global Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3 Afp4 Afp5 Afp6

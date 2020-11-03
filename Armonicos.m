@@ -436,7 +436,7 @@ end
 
 function aceptarArmonico_Callback(hObject, eventdata, handles)
 global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3 
-global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10 acep1 tab2
+global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10 aceptarArmonico
 Aap1=str2double(get(handles.edit4,'string'));
 Aap2=str2double(get(handles.edit5,'string'));
 Aap3=str2double(get(handles.edit6,'string'));
@@ -458,7 +458,7 @@ Afp8=str2double(get(handles.edit21,'string'));
 Afp9=str2double(get(handles.edit22,'string'));
 Afp10=str2double(get(handles.edit23,'string'));
 
-acep1=1;
+aceptarArmonico=1;
 close Armonicos;
 
 function cancelarArmonico_Callback(hObject, eventdata, handles)
