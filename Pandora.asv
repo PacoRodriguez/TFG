@@ -73,7 +73,7 @@ if aceptarFlicker==1
     for i=1:10
         x=linspace(0,duracion/1000,muestras);
         y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*x+Af(i));
-        z=z+((Aa(i)*sqrt(2))*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*sin(2*pi*f*x+Af(i));
+        z=z+(Aa(i)*sqrt(2)*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*sin(2*pi*f*x+Af(i));
     end
     y=(x<inicioFlicker/1000).*(y)+((inicioFlicker/1000<=x)&(x<(inicioFlicker+duracionFlicker)/1000)).*(z)+((inicioFlicker+duracionFlicker)/1000<x).*(y);
     plot(x,y);

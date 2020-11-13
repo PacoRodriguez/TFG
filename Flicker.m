@@ -51,6 +51,48 @@ function Flicker_OpeningFcn(hObject, eventdata, handles, varargin)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 % varargin   command line arguments to Flicker (see VARARGIN)
+global inicioFlicker duracionFlicker amplitudFlicker frecuenciaFlicker 
+global faseFlicker
+set(handles.InicioFlicker,'string',num2str(inicioFlicker));
+% set(handles.slider4,'value',Aap1);
+set(handles.DuracionFlicker,'string',num2str(duracionFlicker));
+% set(handles.slider5,'value',Aap2);
+set(handles.AmplitudFlicker,'string',num2str(amplitudFlicker));
+% set(handles.slider6,'value',Aap3);
+set(handles.FrecuenciaFlicker,'string',num2str(frecuenciaFlicker));
+% set(handles.slider7,'value',Aap4);
+set(handles.FaseFlicker,'string',num2str(faseFlicker));
+% set(handles.slider8,'value',Aap5);
+% set(handles.edit9,'string',num2str(Aap6));
+% set(handles.slider9,'value',Aap6);
+% set(handles.edit10,'string',num2str(Aap7));
+% set(handles.slider10,'value',Aap7);
+% set(handles.edit11,'string',num2str(Aap8));
+% set(handles.slider11,'value',Aap8);
+% set(handles.edit12,'string',num2str(Aap9));
+% set(handles.slider12,'value',Aap9);
+% set(handles.edit13,'string',num2str(Aap10));
+% set(handles.slider13,'value',Aap10);
+% set(handles.edit14,'string',num2str(Afp1));
+% set(handles.slider14,'value',Afp1);
+% set(handles.edit15,'string',num2str(Afp2));
+% set(handles.slider15,'value',Afp2);
+% set(handles.edit16,'string',num2str(Afp3));
+% set(handles.slider16,'value',Afp3);
+% set(handles.edit17,'string',num2str(Afp4));
+% set(handles.slider17,'value',Afp4);
+% set(handles.edit18,'string',num2str(Afp5));
+% set(handles.slider18,'value',Afp5);
+% set(handles.edit19,'string',num2str(Afp6));
+% set(handles.slider19,'value',Afp6);
+% set(handles.edit20,'string',num2str(Afp7));
+% set(handles.slider20,'value',Afp7);
+% set(handles.edit21,'string',num2str(Afp8));
+% set(handles.slider21,'value',Afp8);
+% set(handles.edit22,'string',num2str(Afp9));
+% set(handles.slider22,'value',Afp9);
+% set(handles.edit23,'string',num2str(Afp10));
+% set(handles.slider23,'value',Afp10);
 
 % Choose default command line output for Flicker
 handles.output = hObject;
