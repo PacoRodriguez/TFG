@@ -22,7 +22,7 @@ function varargout = InterfazHueSob(varargin)
 
 % Edit the above text to modify the response to help InterfazHueSob
 
-% Last Modified by GUIDE v2.5 08-Jul-2019 20:30:23
+% Last Modified by GUIDE v2.5 13-Nov-2020 21:07:54
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -51,6 +51,7 @@ function InterfazHueSob_OpeningFcn(hObject, eventdata, handles, varargin)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 % varargin   command line arguments to InterfazHueSob (see VARARGIN)
+global y
 
 % Choose default command line output for InterfazHueSob
 handles.output = hObject;
@@ -75,12 +76,14 @@ varargout{1} = handles.output;
 
 % --- Executes on selection change in popupmenu1.
 function popupmenu1_Callback(hObject, eventdata, handles)
-% hObject    handle to popupmenu1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: contents = cellstr(get(hObject,'String')) returns popupmenu1 contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from popupmenu1
+global y
+seleccion=get(handles.popupmenu1,'Value');
+switch seleccion
+    case 2
+        hueco1=y;
+    case 3
+        
+end
 
 
 % --- Executes during object creation, after setting all properties.
@@ -304,18 +307,18 @@ end
 
 
 
-function edit1_Callback(hObject, eventdata, handles)
-% hObject    handle to edit1 (see GCBO)
+function AmplitudPerturbacion1_Callback(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit1 as text
-%        str2double(get(hObject,'String')) returns contents of edit1 as a double
+% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion1 as text
+%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion1 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit1_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit1 (see GCBO)
+function AmplitudPerturbacion1_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -327,18 +330,18 @@ end
 
 
 
-function edit2_Callback(hObject, eventdata, handles)
-% hObject    handle to edit2 (see GCBO)
+function InicioPerturbacion1_Callback(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit2 as text
-%        str2double(get(hObject,'String')) returns contents of edit2 as a double
+% Hints: get(hObject,'String') returns contents of InicioPerturbacion1 as text
+%        str2double(get(hObject,'String')) returns contents of InicioPerturbacion1 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit2_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit2 (see GCBO)
+function InicioPerturbacion1_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -350,18 +353,18 @@ end
 
 
 
-function edit3_Callback(hObject, eventdata, handles)
-% hObject    handle to edit3 (see GCBO)
+function DuracionPerturbacion1_Callback(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit3 as text
-%        str2double(get(hObject,'String')) returns contents of edit3 as a double
+% Hints: get(hObject,'String') returns contents of DuracionPerturbacion1 as text
+%        str2double(get(hObject,'String')) returns contents of DuracionPerturbacion1 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit3_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit3 (see GCBO)
+function DuracionPerturbacion1_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -373,18 +376,18 @@ end
 
 
 
-function edit4_Callback(hObject, eventdata, handles)
-% hObject    handle to edit4 (see GCBO)
+function PendienteInicioPerturbacion1_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit4 as text
-%        str2double(get(hObject,'String')) returns contents of edit4 as a double
+% Hints: get(hObject,'String') returns contents of PendienteInicioPerturbacion1 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteInicioPerturbacion1 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit4_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit4 (see GCBO)
+function PendienteInicioPerturbacion1_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -396,18 +399,18 @@ end
 
 
 
-function edit5_Callback(hObject, eventdata, handles)
-% hObject    handle to edit5 (see GCBO)
+function PendienteFinalPerturbacion1_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit5 as text
-%        str2double(get(hObject,'String')) returns contents of edit5 as a double
+% Hints: get(hObject,'String') returns contents of PendienteFinalPerturbacion1 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteFinalPerturbacion1 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit5_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit5 (see GCBO)
+function PendienteFinalPerturbacion1_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -419,18 +422,18 @@ end
 
 
 
-function edit6_Callback(hObject, eventdata, handles)
-% hObject    handle to edit6 (see GCBO)
+function AmplitudPerturbacion2_Callback(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit6 as text
-%        str2double(get(hObject,'String')) returns contents of edit6 as a double
+% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion2 as text
+%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion2 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit6_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit6 (see GCBO)
+function AmplitudPerturbacion2_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -442,18 +445,18 @@ end
 
 
 
-function edit7_Callback(hObject, eventdata, handles)
-% hObject    handle to edit7 (see GCBO)
+function InicioPerturbacion2_Callback(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit7 as text
-%        str2double(get(hObject,'String')) returns contents of edit7 as a double
+% Hints: get(hObject,'String') returns contents of InicioPerturbacion2 as text
+%        str2double(get(hObject,'String')) returns contents of InicioPerturbacion2 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit7_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit7 (see GCBO)
+function InicioPerturbacion2_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -465,18 +468,18 @@ end
 
 
 
-function edit8_Callback(hObject, eventdata, handles)
-% hObject    handle to edit8 (see GCBO)
+function DuracionPerturbacion2_Callback(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit8 as text
-%        str2double(get(hObject,'String')) returns contents of edit8 as a double
+% Hints: get(hObject,'String') returns contents of DuracionPerturbacion2 as text
+%        str2double(get(hObject,'String')) returns contents of DuracionPerturbacion2 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit8_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit8 (see GCBO)
+function DuracionPerturbacion2_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -488,18 +491,18 @@ end
 
 
 
-function edit9_Callback(hObject, eventdata, handles)
-% hObject    handle to edit9 (see GCBO)
+function PendienteInicioPerturbacion2_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit9 as text
-%        str2double(get(hObject,'String')) returns contents of edit9 as a double
+% Hints: get(hObject,'String') returns contents of PendienteInicioPerturbacion2 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteInicioPerturbacion2 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit9_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit9 (see GCBO)
+function PendienteInicioPerturbacion2_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -511,18 +514,18 @@ end
 
 
 
-function edit10_Callback(hObject, eventdata, handles)
-% hObject    handle to edit10 (see GCBO)
+function PendienteFinalPerturbacion2_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit10 as text
-%        str2double(get(hObject,'String')) returns contents of edit10 as a double
+% Hints: get(hObject,'String') returns contents of PendienteFinalPerturbacion2 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteFinalPerturbacion2 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit10_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit10 (see GCBO)
+function PendienteFinalPerturbacion2_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -534,18 +537,18 @@ end
 
 
 
-function edit11_Callback(hObject, eventdata, handles)
-% hObject    handle to edit11 (see GCBO)
+function AmplitudPerturbacion3_Callback(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit11 as text
-%        str2double(get(hObject,'String')) returns contents of edit11 as a double
+% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion3 as text
+%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion3 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit11_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit11 (see GCBO)
+function AmplitudPerturbacion3_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -557,18 +560,18 @@ end
 
 
 
-function edit12_Callback(hObject, eventdata, handles)
-% hObject    handle to edit12 (see GCBO)
+function InicioPerturbacion3_Callback(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit12 as text
-%        str2double(get(hObject,'String')) returns contents of edit12 as a double
+% Hints: get(hObject,'String') returns contents of InicioPerturbacion3 as text
+%        str2double(get(hObject,'String')) returns contents of InicioPerturbacion3 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit12_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit12 (see GCBO)
+function InicioPerturbacion3_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -580,18 +583,18 @@ end
 
 
 
-function edit13_Callback(hObject, eventdata, handles)
-% hObject    handle to edit13 (see GCBO)
+function DuracionPerturbacion3_Callback(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit13 as text
-%        str2double(get(hObject,'String')) returns contents of edit13 as a double
+% Hints: get(hObject,'String') returns contents of DuracionPerturbacion3 as text
+%        str2double(get(hObject,'String')) returns contents of DuracionPerturbacion3 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit13_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit13 (see GCBO)
+function DuracionPerturbacion3_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -603,18 +606,18 @@ end
 
 
 
-function edit14_Callback(hObject, eventdata, handles)
-% hObject    handle to edit14 (see GCBO)
+function PendienteInicioPerturbacion3_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit14 as text
-%        str2double(get(hObject,'String')) returns contents of edit14 as a double
+% Hints: get(hObject,'String') returns contents of PendienteInicioPerturbacion3 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteInicioPerturbacion3 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit14_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit14 (see GCBO)
+function PendienteInicioPerturbacion3_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -626,18 +629,18 @@ end
 
 
 
-function edit15_Callback(hObject, eventdata, handles)
-% hObject    handle to edit15 (see GCBO)
+function PendienteFinalPerturbacion3_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit15 as text
-%        str2double(get(hObject,'String')) returns contents of edit15 as a double
+% Hints: get(hObject,'String') returns contents of PendienteFinalPerturbacion3 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteFinalPerturbacion3 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit15_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit15 (see GCBO)
+function PendienteFinalPerturbacion3_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -649,18 +652,18 @@ end
 
 
 
-function edit16_Callback(hObject, eventdata, handles)
-% hObject    handle to edit16 (see GCBO)
+function AmplitudPerturbacion4_Callback(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit16 as text
-%        str2double(get(hObject,'String')) returns contents of edit16 as a double
+% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion4 as text
+%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion4 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit16_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit16 (see GCBO)
+function AmplitudPerturbacion4_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -672,18 +675,18 @@ end
 
 
 
-function edit17_Callback(hObject, eventdata, handles)
-% hObject    handle to edit17 (see GCBO)
+function InicioPerturbacion4_Callback(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit17 as text
-%        str2double(get(hObject,'String')) returns contents of edit17 as a double
+% Hints: get(hObject,'String') returns contents of InicioPerturbacion4 as text
+%        str2double(get(hObject,'String')) returns contents of InicioPerturbacion4 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit17_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit17 (see GCBO)
+function InicioPerturbacion4_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -695,18 +698,18 @@ end
 
 
 
-function edit18_Callback(hObject, eventdata, handles)
-% hObject    handle to edit18 (see GCBO)
+function DuracionPerturbacion4_Callback(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit18 as text
-%        str2double(get(hObject,'String')) returns contents of edit18 as a double
+% Hints: get(hObject,'String') returns contents of DuracionPerturbacion4 as text
+%        str2double(get(hObject,'String')) returns contents of DuracionPerturbacion4 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit18_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit18 (see GCBO)
+function DuracionPerturbacion4_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -718,18 +721,18 @@ end
 
 
 
-function edit19_Callback(hObject, eventdata, handles)
-% hObject    handle to edit19 (see GCBO)
+function PendienteInicioPerturbacion4_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit19 as text
-%        str2double(get(hObject,'String')) returns contents of edit19 as a double
+% Hints: get(hObject,'String') returns contents of PendienteInicioPerturbacion4 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteInicioPerturbacion4 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit19_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit19 (see GCBO)
+function PendienteInicioPerturbacion4_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -741,18 +744,18 @@ end
 
 
 
-function edit20_Callback(hObject, eventdata, handles)
-% hObject    handle to edit20 (see GCBO)
+function PendienteFinalPerturbacion4_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit20 as text
-%        str2double(get(hObject,'String')) returns contents of edit20 as a double
+% Hints: get(hObject,'String') returns contents of PendienteFinalPerturbacion4 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteFinalPerturbacion4 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit20_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit20 (see GCBO)
+function PendienteFinalPerturbacion4_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -764,18 +767,18 @@ end
 
 
 
-function edit21_Callback(hObject, eventdata, handles)
-% hObject    handle to edit21 (see GCBO)
+function AmplitudPerturbacion5_Callback(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit21 as text
-%        str2double(get(hObject,'String')) returns contents of edit21 as a double
+% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion5 as text
+%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion5 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit21_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit21 (see GCBO)
+function AmplitudPerturbacion5_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -787,18 +790,18 @@ end
 
 
 
-function edit22_Callback(hObject, eventdata, handles)
-% hObject    handle to edit22 (see GCBO)
+function InicioPerturbacion5_Callback(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit22 as text
-%        str2double(get(hObject,'String')) returns contents of edit22 as a double
+% Hints: get(hObject,'String') returns contents of InicioPerturbacion5 as text
+%        str2double(get(hObject,'String')) returns contents of InicioPerturbacion5 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit22_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit22 (see GCBO)
+function InicioPerturbacion5_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -810,18 +813,18 @@ end
 
 
 
-function edit23_Callback(hObject, eventdata, handles)
-% hObject    handle to edit23 (see GCBO)
+function DuracionPerturbacion5_Callback(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit23 as text
-%        str2double(get(hObject,'String')) returns contents of edit23 as a double
+% Hints: get(hObject,'String') returns contents of DuracionPerturbacion5 as text
+%        str2double(get(hObject,'String')) returns contents of DuracionPerturbacion5 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit23_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit23 (see GCBO)
+function DuracionPerturbacion5_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -833,18 +836,18 @@ end
 
 
 
-function edit24_Callback(hObject, eventdata, handles)
-% hObject    handle to edit24 (see GCBO)
+function PendienteInicioPerturbacion5_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit24 as text
-%        str2double(get(hObject,'String')) returns contents of edit24 as a double
+% Hints: get(hObject,'String') returns contents of PendienteInicioPerturbacion5 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteInicioPerturbacion5 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit24_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit24 (see GCBO)
+function PendienteInicioPerturbacion5_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -856,18 +859,18 @@ end
 
 
 
-function edit25_Callback(hObject, eventdata, handles)
-% hObject    handle to edit25 (see GCBO)
+function PendienteFinalPerturbacion5_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit25 as text
-%        str2double(get(hObject,'String')) returns contents of edit25 as a double
+% Hints: get(hObject,'String') returns contents of PendienteFinalPerturbacion5 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteFinalPerturbacion5 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit25_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit25 (see GCBO)
+function PendienteFinalPerturbacion5_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -879,18 +882,18 @@ end
 
 
 
-function edit26_Callback(hObject, eventdata, handles)
-% hObject    handle to edit26 (see GCBO)
+function AmplitudPerturbacion6_Callback(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit26 as text
-%        str2double(get(hObject,'String')) returns contents of edit26 as a double
+% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion6 as text
+%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion6 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit26_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit26 (see GCBO)
+function AmplitudPerturbacion6_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -902,18 +905,18 @@ end
 
 
 
-function edit27_Callback(hObject, eventdata, handles)
-% hObject    handle to edit27 (see GCBO)
+function InicioPerturbacion6_Callback(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit27 as text
-%        str2double(get(hObject,'String')) returns contents of edit27 as a double
+% Hints: get(hObject,'String') returns contents of InicioPerturbacion6 as text
+%        str2double(get(hObject,'String')) returns contents of InicioPerturbacion6 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit27_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit27 (see GCBO)
+function InicioPerturbacion6_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -925,18 +928,18 @@ end
 
 
 
-function edit28_Callback(hObject, eventdata, handles)
-% hObject    handle to edit28 (see GCBO)
+function DuracionPerturbacion6_Callback(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit28 as text
-%        str2double(get(hObject,'String')) returns contents of edit28 as a double
+% Hints: get(hObject,'String') returns contents of DuracionPerturbacion6 as text
+%        str2double(get(hObject,'String')) returns contents of DuracionPerturbacion6 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit28_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit28 (see GCBO)
+function DuracionPerturbacion6_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -948,18 +951,18 @@ end
 
 
 
-function edit29_Callback(hObject, eventdata, handles)
-% hObject    handle to edit29 (see GCBO)
+function PendienteInicioPerturbacion6_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit29 as text
-%        str2double(get(hObject,'String')) returns contents of edit29 as a double
+% Hints: get(hObject,'String') returns contents of PendienteInicioPerturbacion6 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteInicioPerturbacion6 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit29_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit29 (see GCBO)
+function PendienteInicioPerturbacion6_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -971,18 +974,18 @@ end
 
 
 
-function edit30_Callback(hObject, eventdata, handles)
-% hObject    handle to edit30 (see GCBO)
+function PendienteFinalPerturbacion6_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit30 as text
-%        str2double(get(hObject,'String')) returns contents of edit30 as a double
+% Hints: get(hObject,'String') returns contents of PendienteFinalPerturbacion6 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteFinalPerturbacion6 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit30_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit30 (see GCBO)
+function PendienteFinalPerturbacion6_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -994,18 +997,18 @@ end
 
 
 
-function edit31_Callback(hObject, eventdata, handles)
-% hObject    handle to edit31 (see GCBO)
+function AmplitudPerturbacion7_Callback(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion7 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit31 as text
-%        str2double(get(hObject,'String')) returns contents of edit31 as a double
+% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion7 as text
+%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion7 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit31_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit31 (see GCBO)
+function AmplitudPerturbacion7_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion7 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1017,18 +1020,18 @@ end
 
 
 
-function edit32_Callback(hObject, eventdata, handles)
-% hObject    handle to edit32 (see GCBO)
+function InicioPerturbacion7_Callback(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion7 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit32 as text
-%        str2double(get(hObject,'String')) returns contents of edit32 as a double
+% Hints: get(hObject,'String') returns contents of InicioPerturbacion7 as text
+%        str2double(get(hObject,'String')) returns contents of InicioPerturbacion7 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit32_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit32 (see GCBO)
+function InicioPerturbacion7_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion7 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1040,18 +1043,18 @@ end
 
 
 
-function edit33_Callback(hObject, eventdata, handles)
-% hObject    handle to edit33 (see GCBO)
+function DuracionPerturbacion7_Callback(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion7 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit33 as text
-%        str2double(get(hObject,'String')) returns contents of edit33 as a double
+% Hints: get(hObject,'String') returns contents of DuracionPerturbacion7 as text
+%        str2double(get(hObject,'String')) returns contents of DuracionPerturbacion7 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit33_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit33 (see GCBO)
+function DuracionPerturbacion7_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion7 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1063,18 +1066,18 @@ end
 
 
 
-function edit34_Callback(hObject, eventdata, handles)
-% hObject    handle to edit34 (see GCBO)
+function PendienteInicioPerturbacion7_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion7 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit34 as text
-%        str2double(get(hObject,'String')) returns contents of edit34 as a double
+% Hints: get(hObject,'String') returns contents of PendienteInicioPerturbacion7 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteInicioPerturbacion7 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit34_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit34 (see GCBO)
+function PendienteInicioPerturbacion7_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion7 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1086,18 +1089,18 @@ end
 
 
 
-function edit35_Callback(hObject, eventdata, handles)
-% hObject    handle to edit35 (see GCBO)
+function PendienteFinalPerturbacion7_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion7 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit35 as text
-%        str2double(get(hObject,'String')) returns contents of edit35 as a double
+% Hints: get(hObject,'String') returns contents of PendienteFinalPerturbacion7 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteFinalPerturbacion7 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit35_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit35 (see GCBO)
+function PendienteFinalPerturbacion7_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion7 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1109,18 +1112,18 @@ end
 
 
 
-function edit36_Callback(hObject, eventdata, handles)
-% hObject    handle to edit36 (see GCBO)
+function AmplitudPerturbacion8_Callback(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion8 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit36 as text
-%        str2double(get(hObject,'String')) returns contents of edit36 as a double
+% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion8 as text
+%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion8 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit36_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit36 (see GCBO)
+function AmplitudPerturbacion8_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion8 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1132,18 +1135,18 @@ end
 
 
 
-function edit37_Callback(hObject, eventdata, handles)
-% hObject    handle to edit37 (see GCBO)
+function InicioPerturbacion8_Callback(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion8 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit37 as text
-%        str2double(get(hObject,'String')) returns contents of edit37 as a double
+% Hints: get(hObject,'String') returns contents of InicioPerturbacion8 as text
+%        str2double(get(hObject,'String')) returns contents of InicioPerturbacion8 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit37_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit37 (see GCBO)
+function InicioPerturbacion8_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion8 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1155,18 +1158,18 @@ end
 
 
 
-function edit38_Callback(hObject, eventdata, handles)
-% hObject    handle to edit38 (see GCBO)
+function DuracionPerturbacion8_Callback(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion8 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit38 as text
-%        str2double(get(hObject,'String')) returns contents of edit38 as a double
+% Hints: get(hObject,'String') returns contents of DuracionPerturbacion8 as text
+%        str2double(get(hObject,'String')) returns contents of DuracionPerturbacion8 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit38_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit38 (see GCBO)
+function DuracionPerturbacion8_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion8 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1178,18 +1181,18 @@ end
 
 
 
-function edit39_Callback(hObject, eventdata, handles)
-% hObject    handle to edit39 (see GCBO)
+function PendienteInicioPerturbacion8_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion8 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit39 as text
-%        str2double(get(hObject,'String')) returns contents of edit39 as a double
+% Hints: get(hObject,'String') returns contents of PendienteInicioPerturbacion8 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteInicioPerturbacion8 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit39_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit39 (see GCBO)
+function PendienteInicioPerturbacion8_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion8 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1201,18 +1204,18 @@ end
 
 
 
-function edit40_Callback(hObject, eventdata, handles)
-% hObject    handle to edit40 (see GCBO)
+function PendienteFinalPerturbacion8_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion8 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit40 as text
-%        str2double(get(hObject,'String')) returns contents of edit40 as a double
+% Hints: get(hObject,'String') returns contents of PendienteFinalPerturbacion8 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteFinalPerturbacion8 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit40_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit40 (see GCBO)
+function PendienteFinalPerturbacion8_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion8 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1224,18 +1227,18 @@ end
 
 
 
-function edit41_Callback(hObject, eventdata, handles)
-% hObject    handle to edit41 (see GCBO)
+function AmplitudPerturbacion9_Callback(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion9 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit41 as text
-%        str2double(get(hObject,'String')) returns contents of edit41 as a double
+% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion9 as text
+%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion9 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit41_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit41 (see GCBO)
+function AmplitudPerturbacion9_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion9 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1247,18 +1250,18 @@ end
 
 
 
-function edit42_Callback(hObject, eventdata, handles)
-% hObject    handle to edit42 (see GCBO)
+function InicioPerturbacion9_Callback(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion9 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit42 as text
-%        str2double(get(hObject,'String')) returns contents of edit42 as a double
+% Hints: get(hObject,'String') returns contents of InicioPerturbacion9 as text
+%        str2double(get(hObject,'String')) returns contents of InicioPerturbacion9 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit42_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit42 (see GCBO)
+function InicioPerturbacion9_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion9 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1270,18 +1273,18 @@ end
 
 
 
-function edit43_Callback(hObject, eventdata, handles)
-% hObject    handle to edit43 (see GCBO)
+function DuracionPerturbacion9_Callback(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion9 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit43 as text
-%        str2double(get(hObject,'String')) returns contents of edit43 as a double
+% Hints: get(hObject,'String') returns contents of DuracionPerturbacion9 as text
+%        str2double(get(hObject,'String')) returns contents of DuracionPerturbacion9 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit43_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit43 (see GCBO)
+function DuracionPerturbacion9_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion9 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1293,18 +1296,18 @@ end
 
 
 
-function edit44_Callback(hObject, eventdata, handles)
-% hObject    handle to edit44 (see GCBO)
+function PendienteInicioPerturbacion9_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion9 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit44 as text
-%        str2double(get(hObject,'String')) returns contents of edit44 as a double
+% Hints: get(hObject,'String') returns contents of PendienteInicioPerturbacion9 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteInicioPerturbacion9 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit44_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit44 (see GCBO)
+function PendienteInicioPerturbacion9_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion9 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1316,18 +1319,18 @@ end
 
 
 
-function edit45_Callback(hObject, eventdata, handles)
-% hObject    handle to edit45 (see GCBO)
+function PendienteFinalPerturbacion9_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion9 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit45 as text
-%        str2double(get(hObject,'String')) returns contents of edit45 as a double
+% Hints: get(hObject,'String') returns contents of PendienteFinalPerturbacion9 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteFinalPerturbacion9 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit45_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit45 (see GCBO)
+function PendienteFinalPerturbacion9_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion9 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1339,18 +1342,18 @@ end
 
 
 
-function edit46_Callback(hObject, eventdata, handles)
-% hObject    handle to edit46 (see GCBO)
+function AmplitudPerturbacion10_Callback(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion10 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit46 as text
-%        str2double(get(hObject,'String')) returns contents of edit46 as a double
+% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion10 as text
+%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion10 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit46_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit46 (see GCBO)
+function AmplitudPerturbacion10_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to AmplitudPerturbacion10 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1362,18 +1365,18 @@ end
 
 
 
-function edit47_Callback(hObject, eventdata, handles)
-% hObject    handle to edit47 (see GCBO)
+function InicioPerturbacion10_Callback(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion10 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit47 as text
-%        str2double(get(hObject,'String')) returns contents of edit47 as a double
+% Hints: get(hObject,'String') returns contents of InicioPerturbacion10 as text
+%        str2double(get(hObject,'String')) returns contents of InicioPerturbacion10 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit47_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit47 (see GCBO)
+function InicioPerturbacion10_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to InicioPerturbacion10 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1385,18 +1388,18 @@ end
 
 
 
-function edit48_Callback(hObject, eventdata, handles)
-% hObject    handle to edit48 (see GCBO)
+function DuracionPerturbacion10_Callback(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion10 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit48 as text
-%        str2double(get(hObject,'String')) returns contents of edit48 as a double
+% Hints: get(hObject,'String') returns contents of DuracionPerturbacion10 as text
+%        str2double(get(hObject,'String')) returns contents of DuracionPerturbacion10 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit48_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit48 (see GCBO)
+function DuracionPerturbacion10_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to DuracionPerturbacion10 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1408,18 +1411,18 @@ end
 
 
 
-function edit49_Callback(hObject, eventdata, handles)
-% hObject    handle to edit49 (see GCBO)
+function PendienteInicioPerturbacion10_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion10 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit49 as text
-%        str2double(get(hObject,'String')) returns contents of edit49 as a double
+% Hints: get(hObject,'String') returns contents of PendienteInicioPerturbacion10 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteInicioPerturbacion10 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit49_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit49 (see GCBO)
+function PendienteInicioPerturbacion10_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteInicioPerturbacion10 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1431,18 +1434,18 @@ end
 
 
 
-function edit50_Callback(hObject, eventdata, handles)
-% hObject    handle to edit50 (see GCBO)
+function PendienteFinalPerturbacion10_Callback(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion10 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit50 as text
-%        str2double(get(hObject,'String')) returns contents of edit50 as a double
+% Hints: get(hObject,'String') returns contents of PendienteFinalPerturbacion10 as text
+%        str2double(get(hObject,'String')) returns contents of PendienteFinalPerturbacion10 as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function edit50_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit50 (see GCBO)
+function PendienteFinalPerturbacion10_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to PendienteFinalPerturbacion10 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -1453,13 +1456,13 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-% --- Executes on button press in pushbutton1.
-function pushbutton1_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton1 (see GCBO)
+% --- Executes on button press in AceptarHuecoSobretension.
+function AceptarHuecoSobretension_Callback(hObject, eventdata, handles)
+% hObject    handle to AceptarHuecoSobretension (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
 
-% --- Executes on button press in pushbutton2.
-function pushbutton2_Callback(hObject, eventdata, handles)
+% --- Executes on button press in CancelarHuecoSobretension.
+function CancelarHuecoSobretension_Callback(hObject, eventdata, handles)
 close InterfazHueSob;

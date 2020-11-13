@@ -49,6 +49,15 @@ InterfazDesFre;
 
 function HuecosSobretension_Callback(hObject, eventdata, handles)
 InterfazHueSob;
+uiwait;
+global inicioFlicker duracionFlicker amplitudFlicker frecuenciaFlicker
+global faseFlicker duracion muestras aceptarFlicker
+global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3 
+global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
+global f Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10
+global Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10 y
+duracion=str2double(get(handles.editDuracion,'string'));
+muestras=str2double(get(handles.editMuestras,'string'));
 
 function Flicker_Callback(hObject, eventdata, handles)
 Flicker;
