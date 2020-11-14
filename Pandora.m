@@ -51,7 +51,7 @@ function HuecosSobretension_Callback(hObject, eventdata, handles)
 InterfazHueSob;
 uiwait;
 global inicioFlicker duracionFlicker amplitudFlicker frecuenciaFlicker
-global faseFlicker duracion muestras aceptarPerturbacion
+global faseFlicker duracion muestras aceptarHuecoSobretension
 global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3 
 global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
 global f Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10
@@ -64,7 +64,7 @@ global duracionPerturbacion1 duracionPerturbacion2 duracionPerturbacion3 duracio
 global duracionPerturbacion6 duracionPerturbacion7 duracionPerturbacion8 duracionPerturbacion9 duracionPerturbacion10
 duracion=str2double(get(handles.editDuracion,'string'));
 muestras=str2double(get(handles.editMuestras,'string'));
-if aceptarPerturbacion==1
+if aceptarHuecoSobretension==1
     Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
     Afp=[Afp1 Afp2 Afp3 Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10];
     Aa=[Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10];
@@ -85,7 +85,7 @@ if aceptarPerturbacion==1
 %         z=z+((Aa(i)*sqrt(2))*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*sin(2*pi*f*x+Af(i));
         p=p+amplitudPerturbacion(i)*(u(x-inicioPerturbacion(i))-u(x-(inicioPerturbacion(i)+duracionPerturbacion(i))))*sin(2*pi*i*f*t);
     end
-    plot(x,p)
+    plot(x,p);
 end
 xlabel('Tiempo');
 ylabel('Amplitud');
