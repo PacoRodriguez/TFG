@@ -264,7 +264,7 @@ end
 
 
 function AmplitudPerturbacion1_Callback(hObject, eventdata, handles)
-global amplitudPerturbacion1 hueco
+global amplitudPerturbacion1
 if hueco==1
     amplitudPerturbacion1=(str2double(get(hObject,'string')))/100;
 else
@@ -1415,7 +1415,6 @@ end
 function AceptarHuecoSobretension_Callback(hObject, eventdata, handles)
 global aceptarHuecoSobretension
 aceptarHuecoSobretension=1;
-close InterfazHueSob;
 
 
 % --- Executes on button press in CancelarHuecoSobretension.

@@ -85,7 +85,11 @@ if aceptarPerturbacion==1
 %         z=z+((Aa(i)*sqrt(2))*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*sin(2*pi*f*x+Af(i));
         p=p+amplitudPerturbacion(i)*(u(x-inicioPerturbacion(i))-u(x-(inicioPerturbacion(i)+duracionPerturbacion(i))))*sin(2*pi*i*f*t);
     end
+    plot(x,p)
 end
+xlabel('Tiempo');
+ylabel('Amplitud');
+grid on;
 
 function Flicker_Callback(hObject, eventdata, handles)
 Flicker;
