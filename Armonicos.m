@@ -434,7 +434,7 @@ if isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColo
     set(hObject,'BackgroundColor',[.9 .9 .9]);
 end
 
-function aceptarArmonico_Callback(hObject, eventdata, handles)
+function AceptarArmonico_Callback(hObject, eventdata, handles)
 global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3 
 global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10 aceptarArmonico
 Aap1=str2double(get(handles.edit4,'string'));
@@ -461,7 +461,7 @@ Afp10=str2double(get(handles.edit23,'string'));
 aceptarArmonico=1;
 close Armonicos;
 
-function cancelarArmonico_Callback(hObject, eventdata, handles)
+function CancelarArmonico_Callback(hObject, eventdata, handles)
 global canc1;
 canc1=1;
 close Armonicos;
@@ -469,12 +469,12 @@ close Armonicos;
 function figure1_CloseRequestFcn(hObject, eventdata, handles)
 delete(hObject);
 
-function aceptarArmonico_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to aceptarArmonico (see GCBO)
+function AceptarArmonico_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to AceptarArmonico (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-function limpiarArmonico_Callback(hObject, eventdata, handles)
+function LimpiarArmonico_Callback(hObject, eventdata, handles)
 Aap1=0;Aap2=0;Aap3=0;Aap4=0;Aap5=0;Aap6=0;Aap7=0;Aap8=0;Aap9=0;Aap10=0;
 Afp1=0;Afp2=0;Afp3=0;Afp4=0;Afp5=0;Afp6=0;Afp7=0;Afp8=0;Afp9=0;Afp10=0;
 set(handles.edit4,'string',num2str(Aap1));
