@@ -51,13 +51,41 @@ function HuecosSobretension_Callback(hObject, eventdata, handles)
 InterfazHueSob;
 uiwait;
 global inicioFlicker duracionFlicker amplitudFlicker frecuenciaFlicker
-global faseFlicker duracion muestras aceptarFlicker
+global faseFlicker duracion muestras aceptarPerturbacion
 global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3 
 global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
 global f Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10
 global Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10 y
+global amplitudPerturbacion1 amplitudPerturbacion2 amplitudPerturbacion3 amplitudPerturbacion4 amplitudPerturbacion5 
+global amplitudPerturbacion6 amplitudPerturbacion7 amplitudPerturbacion8 amplitudPerturbacion9 amplitudPerturbacion10
+global inicioPerturbacion1 inicioPerturbacion2 inicioPerturbacion3 inicioPerturbacion4 inicioPerturbacion5
+global inicioPerturbacion6 inicioPerturbacion7 inicioPerturbacion8 inicioPerturbacion9 inicioPerturbacion10
+global duracionPerturbacion1 duracionPerturbacion2 duracionPerturbacion3 duracionPerturbacion4 duracionPerturbacion5
+global duracionPerturbacion6 duracionPerturbacion7 duracionPerturbacion8 duracionPerturbacion9 duracionPerturbacion10
 duracion=str2double(get(handles.editDuracion,'string'));
 muestras=str2double(get(handles.editMuestras,'string'));
+if aceptarPerturbacion==1
+    Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
+    Afp=[Afp1 Afp2 Afp3 Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10];
+    Aa=[Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10];
+    Af=[Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10];
+    Aa=Aap;
+    Af=Afp;
+    amplitudPerturbacion=[amplitudPerturbacion1 amplitudPerturbacion2 amplitudPerturbacion3 amplitudPerturbacion4 amplitudPerturbacion5 
+        amplitudPerturbacion6 amplitudPerturbacion7 amplitudPerturbacion8 amplitudPerturbacion9 amplitudPerturbacion10];
+    inicioPerturbacion=[inicioPerturbacion1 inicioPerturbacion2 inicioPerturbacion3 inicioPerturbacion4 inicioPerturbacion5
+        inicioPerturbacion6 inicioPerturbacion7 inicioPerturbacion8 inicioPerturbacion9 inicioPerturbacion10];
+    duracionPerturbacion=[duracionPerturbacion1 duracionPerturbacion2 duracionPerturbacion3 duracionPerturbacion4 duracionPerturbacion5
+        duracionPerturbacion6 duracionPerturbacion7 duracionPerturbacion8 duracionPerturbacion9 duracionPerturbacion10];
+    y=0;
+    p=0;
+    for i=1:10
+        x=linspace(0,duracion/1000,muestras);
+        y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*x+Af(i));
+%         z=z+((Aa(i)*sqrt(2))*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*sin(2*pi*f*x+Af(i));
+        p=p+amplitudPerturbacion(i)*(u(x-inicioPerturbacion(i))-u(x-(inicioPerturbacion(i)+duracionPerturbacion(i))))*sin(2*pi*i*f*t);
+    end
+end
 
 function Flicker_Callback(hObject, eventdata, handles)
 Flicker;

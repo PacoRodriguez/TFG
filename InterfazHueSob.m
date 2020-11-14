@@ -1,30 +1,4 @@
 function varargout = InterfazHueSob(varargin)
-% INTERFAZHUESOB MATLAB code for InterfazHueSob.fig
-%      INTERFAZHUESOB, by itself, creates a new INTERFAZHUESOB or raises the existing
-%      singleton*.
-%
-%      H = INTERFAZHUESOB returns the handle to a new INTERFAZHUESOB or the handle to
-%      the existing singleton*.
-%
-%      INTERFAZHUESOB('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in INTERFAZHUESOB.M with the given input arguments.
-%
-%      INTERFAZHUESOB('Property','Value',...) creates a new INTERFAZHUESOB or raises the
-%      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before InterfazHueSob_OpeningFcn gets called.  An
-%      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to InterfazHueSob_OpeningFcn via varargin.
-%
-%      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
-%      instance to run (singleton)".
-%
-% See also: GUIDE, GUIDATA, GUIHANDLES
-
-% Edit the above text to modify the response to help InterfazHueSob
-
-% Last Modified by GUIDE v2.5 13-Nov-2020 21:07:54
-
-% Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
@@ -41,16 +15,9 @@ if nargout
 else
     gui_mainfcn(gui_State, varargin{:});
 end
-% End initialization code - DO NOT EDIT
 
-
-% --- Executes just before InterfazHueSob is made visible.
 function InterfazHueSob_OpeningFcn(hObject, eventdata, handles, varargin)
-% This function has no output args, see OutputFcn.
-% hObject    handle to figure
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-% varargin   command line arguments to InterfazHueSob (see VARARGIN)
+
 global y
 
 % Choose default command line output for InterfazHueSob
@@ -59,30 +26,19 @@ handles.output = hObject;
 % Update handles structure
 guidata(hObject, handles);
 
-% UIWAIT makes InterfazHueSob wait for user response (see UIRESUME)
-% uiwait(handles.figure1);
-
-
-% --- Outputs from this function are returned to the command line.
 function varargout = InterfazHueSob_OutputFcn(hObject, eventdata, handles) 
-% varargout  cell array for returning output args (see VARARGOUT);
-% hObject    handle to figure
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Get default command line output from handles structure
 varargout{1} = handles.output;
 
 
 % --- Executes on selection change in popupmenu1.
 function popupmenu1_Callback(hObject, eventdata, handles)
-global y
-seleccion=get(handles.popupmenu1,'Value');
-switch seleccion
+global hueco sobretension
+perturbacion1=get(handles.popupmenu1,'Value');
+switch perturbacion1
     case 2
-        hueco1=y;
+        hueco=1;
     case 3
-        
+        sobretension=1;
 end
 
 
@@ -308,13 +264,12 @@ end
 
 
 function AmplitudPerturbacion1_Callback(hObject, eventdata, handles)
-% hObject    handle to AmplitudPerturbacion1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion1 as text
-%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion1 as a double
-
+global amplitudPerturbacion1
+if ruido==1
+    amplitudPerturbacion1=(str2double(get(hObject,'string')))/100;
+else
+    amplitudPerturbacion1=1+(str2double(get(hObject,'string')))/100;
+end
 
 % --- Executes during object creation, after setting all properties.
 function AmplitudPerturbacion1_CreateFcn(hObject, eventdata, handles)
@@ -337,7 +292,7 @@ function InicioPerturbacion1_Callback(hObject, eventdata, handles)
 
 % Hints: get(hObject,'String') returns contents of InicioPerturbacion1 as text
 %        str2double(get(hObject,'String')) returns contents of InicioPerturbacion1 as a double
-
+inicioPerturbacion1=str2double(get(hObject,'string'));
 
 % --- Executes during object creation, after setting all properties.
 function InicioPerturbacion1_CreateFcn(hObject, eventdata, handles)
@@ -360,7 +315,7 @@ function DuracionPerturbacion1_Callback(hObject, eventdata, handles)
 
 % Hints: get(hObject,'String') returns contents of DuracionPerturbacion1 as text
 %        str2double(get(hObject,'String')) returns contents of DuracionPerturbacion1 as a double
-
+duracionPerturbacion1=str2double(get(hObject,'string'));
 
 % --- Executes during object creation, after setting all properties.
 function DuracionPerturbacion1_CreateFcn(hObject, eventdata, handles)
@@ -383,7 +338,7 @@ function PendienteInicioPerturbacion1_Callback(hObject, eventdata, handles)
 
 % Hints: get(hObject,'String') returns contents of PendienteInicioPerturbacion1 as text
 %        str2double(get(hObject,'String')) returns contents of PendienteInicioPerturbacion1 as a double
-
+pendienteInicioPerturbacion1=str2double(get(hObject,'string'));
 
 % --- Executes during object creation, after setting all properties.
 function PendienteInicioPerturbacion1_CreateFcn(hObject, eventdata, handles)
@@ -406,7 +361,7 @@ function PendienteFinalPerturbacion1_Callback(hObject, eventdata, handles)
 
 % Hints: get(hObject,'String') returns contents of PendienteFinalPerturbacion1 as text
 %        str2double(get(hObject,'String')) returns contents of PendienteFinalPerturbacion1 as a double
-
+pendienteFinalPerturbacion1=str2double(get(hObject,'string'));
 
 % --- Executes during object creation, after setting all properties.
 function PendienteFinalPerturbacion1_CreateFcn(hObject, eventdata, handles)
@@ -423,12 +378,12 @@ end
 
 
 function AmplitudPerturbacion2_Callback(hObject, eventdata, handles)
-% hObject    handle to AmplitudPerturbacion2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion2 as text
-%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion2 as a double
+global amplitudPerturbacion2
+if ruido==1
+    amplitudPerturbacion2=(str2double(get(hObject,'string')))/100;
+else
+    amplitudPerturbacion2=1+(str2double(get(hObject,'string')))/100;
+end
 
 
 % --- Executes during object creation, after setting all properties.
@@ -538,12 +493,12 @@ end
 
 
 function AmplitudPerturbacion3_Callback(hObject, eventdata, handles)
-% hObject    handle to AmplitudPerturbacion3 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion3 as text
-%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion3 as a double
+global amplitudPerturbacion3
+if ruido==1
+    amplitudPerturbacion3=(str2double(get(hObject,'string')))/100;
+else
+    amplitudPerturbacion3=1+(str2double(get(hObject,'string')))/100;
+end
 
 
 % --- Executes during object creation, after setting all properties.
@@ -653,12 +608,12 @@ end
 
 
 function AmplitudPerturbacion4_Callback(hObject, eventdata, handles)
-% hObject    handle to AmplitudPerturbacion4 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion4 as text
-%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion4 as a double
+global amplitudPerturbacion4
+if ruido==1
+    amplitudPerturbacion4=(str2double(get(hObject,'string')))/100;
+else
+    amplitudPerturbacion4=1+(str2double(get(hObject,'string')))/100;
+end
 
 
 % --- Executes during object creation, after setting all properties.
@@ -768,12 +723,12 @@ end
 
 
 function AmplitudPerturbacion5_Callback(hObject, eventdata, handles)
-% hObject    handle to AmplitudPerturbacion5 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion5 as text
-%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion5 as a double
+global amplitudPerturbacion5
+if ruido==1
+    amplitudPerturbacion5=(str2double(get(hObject,'string')))/100;
+else
+    amplitudPerturbacion5=1+(str2double(get(hObject,'string')))/100;
+end
 
 
 % --- Executes during object creation, after setting all properties.
@@ -883,12 +838,12 @@ end
 
 
 function AmplitudPerturbacion6_Callback(hObject, eventdata, handles)
-% hObject    handle to AmplitudPerturbacion6 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion6 as text
-%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion6 as a double
+global amplitudPerturbacion6
+if ruido==1
+    amplitudPerturbacion6=(str2double(get(hObject,'string')))/100;
+else
+    amplitudPerturbacion6=1+(str2double(get(hObject,'string')))/100;
+end
 
 
 % --- Executes during object creation, after setting all properties.
@@ -998,12 +953,12 @@ end
 
 
 function AmplitudPerturbacion7_Callback(hObject, eventdata, handles)
-% hObject    handle to AmplitudPerturbacion7 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion7 as text
-%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion7 as a double
+global amplitudPerturbacion7
+if ruido==1
+    amplitudPerturbacion7=(str2double(get(hObject,'string')))/100;
+else
+    amplitudPerturbacion7=1+(str2double(get(hObject,'string')))/100;
+end
 
 
 % --- Executes during object creation, after setting all properties.
@@ -1113,12 +1068,12 @@ end
 
 
 function AmplitudPerturbacion8_Callback(hObject, eventdata, handles)
-% hObject    handle to AmplitudPerturbacion8 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion8 as text
-%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion8 as a double
+global amplitudPerturbacion8
+if ruido==1
+    amplitudPerturbacion8=(str2double(get(hObject,'string')))/100;
+else
+    amplitudPerturbacion8=1+(str2double(get(hObject,'string')))/100;
+end
 
 
 % --- Executes during object creation, after setting all properties.
@@ -1228,12 +1183,12 @@ end
 
 
 function AmplitudPerturbacion9_Callback(hObject, eventdata, handles)
-% hObject    handle to AmplitudPerturbacion9 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion9 as text
-%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion9 as a double
+global amplitudPerturbacion9
+if ruido==1
+    amplitudPerturbacion9=(str2double(get(hObject,'string')))/100;
+else
+    amplitudPerturbacion9=1+(str2double(get(hObject,'string')))/100;
+end
 
 
 % --- Executes during object creation, after setting all properties.
@@ -1343,12 +1298,12 @@ end
 
 
 function AmplitudPerturbacion10_Callback(hObject, eventdata, handles)
-% hObject    handle to AmplitudPerturbacion10 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of AmplitudPerturbacion10 as text
-%        str2double(get(hObject,'String')) returns contents of AmplitudPerturbacion10 as a double
+global amplitudPerturbacion10
+if ruido==1
+    amplitudPerturbacion10=(str2double(get(hObject,'string')))/100;
+else
+    amplitudPerturbacion10=1+(str2double(get(hObject,'string')))/100;
+end
 
 
 % --- Executes during object creation, after setting all properties.
@@ -1458,9 +1413,8 @@ end
 
 % --- Executes on button press in AceptarHuecoSobretension.
 function AceptarHuecoSobretension_Callback(hObject, eventdata, handles)
-% hObject    handle to AceptarHuecoSobretension (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
+global aceptarHuecoSobretension
+aceptarHuecoSobretension=1;
 
 
 % --- Executes on button press in CancelarHuecoSobretension.
