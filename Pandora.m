@@ -17,19 +17,19 @@ else
 end
 
 function Pandora_OpeningFcn(hObject, eventdata, handles, varargin)
-global duracion muestras f Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10 Af1 Af2 
-global  Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10
-global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3 Afp4 Afp5 
-global Afp6 Afp7 Afp8 Afp9 Afp10 inicioFlicker duracionFlicker amplitudFlicker
+global duracion muestras frecuencia amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10 faseArmonico1 faseArmonico2 
+global faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10
+global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 
+global faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10 inicioFlicker duracionFlicker amplitudFlicker
 global frecuenciaFlicker faseFlicker
-Aap1=0; Aap2=0; Aap3=0; Aap4=0; Aap5=0; Aap6=0; Aap7=0; Aap8=0; Aap9=0; Aap10=0;
-Afp1=0; Afp2=0; Afp3=0; Afp4=0; Afp5=0; Afp6=0; Afp7=0; Afp8=0; Afp9=0; Afp10=0;
-Aa1=0; Aa2=0; Aa3=0; Aa4=0; Aa5=0; Aa6=0; Aa7=0; Aa8=0; Aa9=0; Aa10=0;
-Af1=0; Af2=0; Af3=0; Af4=0; Af5=0; Af6=0; Af7=0; Af8=0; Af9=0; Af10=0;
+amplitudArmonicoPrevio1=0; amplitudArmonicoPrevio2=0; amplitudArmonicoPrevio3=0; amplitudArmonicoPrevio4=0; amplitudArmonicoPrevio5=0; amplitudArmonicoPrevio6=0; amplitudArmonicoPrevio7=0; amplitudArmonicoPrevio8=0; amplitudArmonicoPrevio9=0; amplitudArmonicoPrevio10=0;
+faseArmonicoPrevio1=0; faseArmonicoPrevio2=0; faseArmonicoPrevio3=0; faseArmonicoPrevio4=0; faseArmonicoPrevio5=0; faseArmonicoPrevio6=0; faseArmonicoPrevio7=0; faseArmonicoPrevio8=0; faseArmonicoPrevio9=0; faseArmonicoPrevio10=0;
+amplitudArmonico1=0; amplitudArmonico2=0; amplitudArmonico3=0; amplitudArmonico4=0; amplitudArmonico5=0; amplitudArmonico6=0; amplitudArmonico7=0; amplitudArmonico8=0; amplitudArmonico9=0; amplitudArmonico10=0;
+faseArmonico1=0; faseArmonico2=0; faseArmonico3=0; faseArmonico4=0; faseArmonico5=0; faseArmonico6=0; faseArmonico7=0; faseArmonico8=0; faseArmonico9=0; faseArmonico10=0;
 inicioFlicker=0; duracionFlicker=0;amplitudFlicker=0;frecuenciaFlicker=0;
 faseFlicker=0;
 duracion=str2double(get(handles.editDuracion,'string'));
-f=str2double(get(handles.editFrecuencia,'string'));
+frecuencia=str2double(get(handles.editFrecuencia,'string'));
 muestras=str2double(get(handles.editMuestras,'string'));
 
 % Choose default command line output for Pandora
@@ -52,10 +52,10 @@ InterfazHueSob;
 uiwait;
 global inicioFlicker duracionFlicker amplitudFlicker frecuenciaFlicker
 global faseFlicker duracion muestras aceptarHuecoSobretension
-global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3 
-global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
-global f Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10
-global Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10 y
+global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 
+global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
+global frecuencia amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10
+global faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10 y
 global amplitudPerturbacion1 amplitudPerturbacion2 amplitudPerturbacion3 amplitudPerturbacion4 amplitudPerturbacion5 
 global amplitudPerturbacion6 amplitudPerturbacion7 amplitudPerturbacion8 amplitudPerturbacion9 amplitudPerturbacion10
 global inicioPerturbacion1 inicioPerturbacion2 inicioPerturbacion3 inicioPerturbacion4 inicioPerturbacion5
@@ -65,12 +65,12 @@ global duracionPerturbacion6 duracionPerturbacion7 duracionPerturbacion8 duracio
 duracion=str2double(get(handles.editDuracion,'string'));
 muestras=str2double(get(handles.editMuestras,'string'));
 if aceptarHuecoSobretension==1
-    Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
-    Afp=[Afp1 Afp2 Afp3 Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10];
-    Aa=[Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10];
-    Af=[Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10];
-    Aa=Aap;
-    Af=Afp;
+    amplitudArmonicoPrevio=[amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10];
+    faseArmonicoPrevio=[faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10];
+    amplitudArmonico=[amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10];
+    faseArmonico=[faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10];
+    amplitudArmonico=amplitudArmonicoPrevio;
+    faseArmonico=faseArmonicoPrevio;
     amplitudPerturbacion=[amplitudPerturbacion1 amplitudPerturbacion2 amplitudPerturbacion3 amplitudPerturbacion4 amplitudPerturbacion5 
         amplitudPerturbacion6 amplitudPerturbacion7 amplitudPerturbacion8 amplitudPerturbacion9 amplitudPerturbacion10];
     inicioPerturbacion=[inicioPerturbacion1 inicioPerturbacion2 inicioPerturbacion3 inicioPerturbacion4 inicioPerturbacion5
@@ -81,9 +81,9 @@ if aceptarHuecoSobretension==1
     p=0;
     for i=1:10
         x=linspace(0,duracion/1000,muestras);
-        y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*x+Af(i));
-%         z=z+((Aa(i)*sqrt(2))*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*sin(2*pi*f*x+Af(i));
-        p=p+amplitudPerturbacion(i)*(u(x-inicioPerturbacion(i))-u(x-(inicioPerturbacion(i)+duracionPerturbacion(i))))*sin(2*pi*i*f*t);
+        y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
+%         z=z+((amplitudArmonico(i)*sqrt(2))*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*sin(2*pi*frecuencia*x+faseArmonico(i));
+        p=p+amplitudPerturbacion(i)*(u(x-inicioPerturbacion(i))-u(x-(inicioPerturbacion(i)+duracionPerturbacion(i))))*sin(2*pi*i*frecuencia*t);
     end
     plot(x,p);
 end
@@ -96,25 +96,25 @@ Flicker;
 uiwait;
 global inicioFlicker duracionFlicker amplitudFlicker frecuenciaFlicker
 global faseFlicker duracion muestras aceptarFlicker
-global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3 
-global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
-global f Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10
-global Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10 y
+global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 
+global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
+global frecuencia amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10
+global faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10 y
 duracion=str2double(get(handles.editDuracion,'string'));
 muestras=str2double(get(handles.editMuestras,'string'));
 if aceptarFlicker==1
-    Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
-    Afp=[Afp1 Afp2 Afp3 Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10];
-    Aa=[Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10];
-    Af=[Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10];
-    Aa=Aap;
-    Af=Afp;
+    amplitudArmonicoPrevio=[amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10];
+    faseArmonicoPrevio=[faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10];
+    amplitudArmonico=[amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10];
+    faseArmonico=[faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10];
+    amplitudArmonico=amplitudArmonicoPrevio;
+    faseArmonico=faseArmonicoPrevio;
     y=0;
     z=0;
     for i=1:10
         x=linspace(0,duracion/1000,muestras);
-        y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*x+Af(i));
-        z=z+((Aa(i)*sqrt(2)*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*((sin(2*pi*i*f*x+Af(i)))));
+        y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
+        z=z+((amplitudArmonico(i)*sqrt(2)*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*((sin(2*pi*i*frecuencia*x+faseArmonico(i)))));
     end
     y=(x<inicioFlicker/1000).*(y)+((inicioFlicker/1000<=x)&(x<(inicioFlicker+duracionFlicker)/1000)).*(z)+((inicioFlicker+duracionFlicker)/1000<x).*(y);
     plot(x,y);
@@ -128,10 +128,10 @@ Transitorios;
 uiwait;
 global inicioFlicker duracionFlicker amplitudFlicker frecuenciaFlicker
 global faseFlicker duracion muestras aceptarHuecoSobretension
-global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3 
-global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
-global f Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10
-global Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10 y
+global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 
+global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
+global frecuencia amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10
+global faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10 y
 global amplitudPerturbacion1 amplitudPerturbacion2 amplitudPerturbacion3 amplitudPerturbacion4 amplitudPerturbacion5 
 global amplitudPerturbacion6 amplitudPerturbacion7 amplitudPerturbacion8 amplitudPerturbacion9 amplitudPerturbacion10
 global inicioPerturbacion1 inicioPerturbacion2 inicioPerturbacion3 inicioPerturbacion4 inicioPerturbacion5
@@ -147,12 +147,12 @@ global duracionTransitorio6 duracionTransitorio7 duracionTransitorio8 duracionTr
 duracion=str2double(get(handles.editDuracion,'string'));
 muestras=str2double(get(handles.editMuestras,'string'));
 if aceptarHuecoSobretension==1
-    Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
-    Afp=[Afp1 Afp2 Afp3 Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10];
-    Aa=[Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10];
-    Af=[Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10];
-    Aa=Aap;
-    Af=Afp;
+    amplitudArmonicoPrevio=[amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10];
+    faseArmonicoPrevio=[faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10];
+    amplitudArmonico=[amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10];
+    faseArmonico=[faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10];
+    amplitudArmonico=amplitudArmonicoPrevio;
+    faseArmonico=faseArmonicoPrevio;
     amplitudPerturbacion=[amplitudPerturbacion1 amplitudPerturbacion2 amplitudPerturbacion3 amplitudPerturbacion4 amplitudPerturbacion5 
         amplitudPerturbacion6 amplitudPerturbacion7 amplitudPerturbacion8 amplitudPerturbacion9 amplitudPerturbacion10];
     inicioPerturbacion=[inicioPerturbacion1 inicioPerturbacion2 inicioPerturbacion3 inicioPerturbacion4 inicioPerturbacion5
@@ -169,9 +169,9 @@ if aceptarHuecoSobretension==1
     p=0;
     for i=1:10
         x=linspace(0,duracion/1000,muestras);
-        y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*x+Af(i));
-%         z=z+((Aa(i)*sqrt(2))*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*sin(2*pi*f*x+Af(i));
-%         p=p+amplitudPerturbacion(i)*(u(x-inicioPerturbacion(i))-u(x-(inicioPerturbacion(i)+duracionPerturbacion(i))))*sin(2*pi*i*f*t);
+        y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
+%         z=z+((amplitudArmonico(i)*sqrt(2))*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*sin(2*pi*frecuencia*x+faseArmonico(i));
+%         p=p+amplitudPerturbacion(i)*(u(x-inicioPerturbacion(i))-u(x-(inicioPerturbacion(i)+duracionPerturbacion(i))))*sin(2*pi*i*frecuencia*t);
 %         t=
     end
     plot(x,p);
@@ -183,24 +183,23 @@ grid on;
 function Ruido_Callback(hObject, eventdata, handles)
 Ruido;
 uiwait;
-global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3 
-global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
-global f aceptarRuido duracion canc6 Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10
-global Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10 muestras db y
+global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 
+global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
+global frecuencia aceptarRuido duracion canc6 amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10
+global faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10 muestras db y
 duracion=str2double(get(handles.editDuracion,'string'));
 muestras=str2double(get(handles.editMuestras,'string'));
 if aceptarRuido==1
-    Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
-    Afp=[Afp1 Afp2 Afp3 Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10];
-    Aa=[Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10];
-    Af=[Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10];
-    Aa=Aap;
-    Af=Afp;
+    amplitudArmonicoPrevio=[amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10];
+    faseArmonicoPrevio=[faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10];
+    amplitudArmonico=[amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10];
+    faseArmonico=[faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10];
+    amplitudArmonico=amplitudArmonicoPrevio;
+    faseArmonico=faseArmonicoPrevio;
     y=0;
     for i=1:10
         x=linspace(0,duracion/1000,muestras);
-        y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*x+Af(i));
-        plot(t,y);
+        y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
     end
     x=linspace(0,duracion/1000,muestras);
     y=awgn(y,db,'measured');
@@ -228,22 +227,22 @@ else
 end
 
 function sliderDuracion_Callback(hObject, eventdata, handles)
-global Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10 Af1 Af2 Af3 Af4 Af5 Af6 Af7
-global Af8 Af9 Af10 f duracion muestras y
-global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3
-global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
+global amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10 faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7
+global faseArmonico8 faseArmonico9 faseArmonico10 frecuencia duracion muestras y
+global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3
+global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
 duracion=get(hObject,'value');
 set(handles.editDuracion,'string',duracion);
-Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
-Afp=[Afp1 Afp2 Afp3 Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10];
-Aa=[Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10];
-Af=[Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10];
-Aa=Aap;
-Af=Afp;
+amplitudArmonicoPrevio=[amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10];
+faseArmonicoPrevio=[faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10];
+amplitudArmonico=[amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10];
+faseArmonico=[faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10];
+amplitudArmonico=amplitudArmonicoPrevio;
+faseArmonico=faseArmonicoPrevio;
 y=0;
 for i=1:10
     x=linspace(0,duracion/1000,muestras);
-    y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*t+Af(i));
+    y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*t+faseArmonico(i));
     plot(x,y);
 end
 plot(x,y);
@@ -259,29 +258,29 @@ if isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColo
 end
 
 function sliderFrecuencia_Callback(hObject, eventdata, handles)
-global Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10 Af1 Af2 Af3 Af4 Af5 Af6 Af7
-global Af8 Af9 Af10 f duracion muestras y
-global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3
-global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
-f=get(hObject,'value');
-set(handles.editFrecuencia,'string',f);
-Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
-Afp=[Afp1 Afp2 Afp3 Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10];
-Aa=[Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10];
-Af=[Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10];
-Aa=Aap;
-Af=Afp;
+global amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10 faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7
+global faseArmonico8 faseArmonico9 faseArmonico10 frecuencia duracion muestras y
+global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3
+global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
+frecuencia=get(hObject,'value');
+set(handles.editFrecuencia,'string',frecuencia);
+amplitudArmonicoPrevio=[amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10];
+faseArmonicoPrevio=[faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10];
+amplitudArmonico=[amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10];
+faseArmonico=[faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10];
+amplitudArmonico=amplitudArmonicoPrevio;
+faseArmonico=faseArmonicoPrevio;
 y=0;
 for i=1:10
     x=linspace(0,duracion/1000,muestras);
-    y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*x+Af(i));
+    y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
 end
 plot(x,y);
 grid on;
 xlabel('Tiempo');
 ylabel('Amplitud');
-f=get(hObject,'value');
-set(handles.sliderFrecuencia,'string',num2str(f));
+frecuencia=get(hObject,'value');
+set(handles.sliderFrecuencia,'string',num2str(frecuencia));
 
 function sliderFrecuencia_CreateFcn(hObject, eventdata, handles)
 if isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -289,22 +288,22 @@ if isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColo
 end
 
 function sliderMuestras_Callback(hObject, eventdata, handles)
-global Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10 Af1 Af2 Af3 Af4 Af5 Af6 Af7
-global Af8 Af9 Af10 duracion f muestras y
-global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3
-global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
+global amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10 faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7
+global faseArmonico8 faseArmonico9 faseArmonico10 duracion frecuencia muestras y
+global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3
+global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
 muestras=get(hObject,'value');
 set(handles.editMuestras,'string',muestras);
-Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
-Afp=[Afp1 Afp2 Afp3 Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10];
-Aa=[Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10];
-Af=[Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10];
-Aa=Aap;
-Af=Afp;
+amplitudArmonicoPrevio=[amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10];
+faseArmonicoPrevio=[faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10];
+amplitudArmonico=[amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10];
+faseArmonico=[faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10];
+amplitudArmonico=amplitudArmonicoPrevio;
+faseArmonico=faseArmonicoPrevio;
 y=0;
 for i=1:10
     x=linspace(0,duracion/1000,muestras);
-    y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*x+Af(i));
+    y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
 end
 plot(x,y);
 grid on;
@@ -319,22 +318,22 @@ if isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColo
 end
 
 function editDuracion_Callback(hObject, eventdata, handles)
-global duracion y Aa1 f muestras Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10 Af1 Af2
-global Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10
-global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3
-global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
+global duracion y amplitudArmonico1 frecuencia muestras amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10 faseArmonico1 faseArmonico2
+global faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10
+global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3
+global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
 duracion=str2double(get(hObject,'string'));
 set(handles.sliderDuracion,'value',duracion);
-Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
-Afp=[Afp1 Afp2 Afp3 Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10];
-Aa=[Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10];
-Af=[Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10];
-Aa=Aap;
-Af=Afp;
+amplitudArmonicoPrevio=[amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10];
+faseArmonicoPrevio=[faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10];
+amplitudArmonico=[amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10];
+faseArmonico=[faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10];
+amplitudArmonico=amplitudArmonicoPrevio;
+faseArmonico=faseArmonicoPrevio;
 y=0;
 for i=1:10
     x=linspace(0,duracion/1000,muestras);
-    y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*x+Af(i));
+    y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
 end
 plot(x,y);
 grid on;
@@ -347,22 +346,22 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function editFrecuencia_Callback(hObject, eventdata, handles)
-global Aa1 y f muestras duracion Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10 Af1 Af2
-global Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10
-global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3
-global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
-f=str2double(get(hObject,'string'));
-set(handles.sliderFrecuencia,'value',f);
-Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
-Afp=[Afp1 Afp2 Afp3 Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10];
-Aa=[Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10];
-Af=[Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10];
-Aa=Aap;
-Af=Afp;
+global amplitudArmonico1 y frecuencia muestras duracion amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10 faseArmonico1 faseArmonico2
+global faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10
+global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3
+global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
+frecuencia=str2double(get(hObject,'string'));
+set(handles.sliderFrecuencia,'value',frecuencia);
+amplitudArmonicoPrevio=[amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10];
+faseArmonicoPrevio=[faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10];
+amplitudArmonico=[amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10];
+faseArmonico=[faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10];
+amplitudArmonico=amplitudArmonicoPrevio;
+faseArmonico=faseArmonicoPrevio;
 y=0;
 for i=1:10
     x=linspace(0,duracion/1000,muestras);
-    y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*x+Af(i));
+    y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
 end
 plot(t,y);
 grid on;
@@ -375,22 +374,22 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function editMuestras_Callback(hObject, eventdata, handles)
-global Aa1 y f muestras duracion Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10 Af1 Af2
-global Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10
-global Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3
-global Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10
+global amplitudArmonico1 y frecuencia muestras duracion amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10 faseArmonico1 faseArmonico2
+global faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10
+global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3
+global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
 muestras=str2double(get(hObject,'string'));
 set(handles.sliderMuestras,'value',muestras);
-Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
-Afp=[Afp1 Afp2 Afp3 Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10];
-Aa=[Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10];
-Af=[Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10];
-Aa=Aap;
-Af=Afp;
+amplitudArmonicoPrevio=[amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10];
+faseArmonicoPrevio=[faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10];
+amplitudArmonico=[amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10];
+faseArmonico=[faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10];
+amplitudArmonico=amplitudArmonicoPrevio;
+faseArmonico=faseArmonicoPrevio;
 y=0;
 for i=1:10
     x=linspace(0,duracion/1000,muestras);
-    y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*x+Af(i));
+    y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
 end  
 plot(x,y);    
 grid on;
@@ -403,24 +402,24 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function Armonicos_Callback(hObject, eventdata, handles)
-global y Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10 Af1 Af2 Af3 Af4 Af5 
-global Af6 Af7 Af8 Af9 Af10 aceptarArmonico canc1 f duracion muestras Aap1 Aap2 Aap3
-global Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10 Afp1 Afp2 Afp3 Afp4 Afp5 Afp6
-global Afp7 Afp8 Afp9 Afp10
+global y amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10 faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 
+global faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10 aceptarArmonico frecuencia duracion muestras amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3
+global amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6
+global faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
 Armonicos;
 uiwait;
 duracion=str2double(get(handles.editDuracion,'string'));
 if aceptarArmonico==1
-    Aap=[Aap1 Aap2 Aap3 Aap4 Aap5 Aap6 Aap7 Aap8 Aap9 Aap10];
-    Afp=[Afp1 Afp2 Afp3 Afp4 Afp5 Afp6 Afp7 Afp8 Afp9 Afp10];
-    Aa=[Aa1 Aa2 Aa3 Aa4 Aa5 Aa6 Aa7 Aa8 Aa9 Aa10];
-    Af=[Af1 Af2 Af3 Af4 Af5 Af6 Af7 Af8 Af9 Af10];
-    Aa=Aap;
-    Af=Afp;
+    amplitudArmonicoPrevio=[amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10];
+    faseArmonicoPrevio=[faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10];
+    amplitudArmonico=[amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10];
+    faseArmonico=[faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10];
+    amplitudArmonico=amplitudArmonicoPrevio;
+    faseArmonico=faseArmonicoPrevio;
     y=0;
     for i=1:10
         x=linspace(0,duracion/1000,muestras);
-        y=y+Aa(i)*sqrt(2)*sin(2*pi*i*f*x+Af(i));
+        y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
     end
     plot(x,y);
 end
