@@ -17,6 +17,9 @@ else
 end
 
 function Ruido_OpeningFcn(hObject, eventdata, handles, varargin)
+global decibelios
+set(handles.Decibelios,'string',num2str(decibelios));
+
 % Choose default command line output for Ruido
 handles.output = hObject;
 
