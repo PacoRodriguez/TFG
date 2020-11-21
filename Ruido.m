@@ -30,8 +30,7 @@ function varargout = Ruido_OutputFcn(hObject, eventdata, handles)
 varargout{1} = handles.output;
 
 function Decibelios_Callback(hObject, eventdata, handles)
-global decibelios
-decibelios=str2double(get(hObject,'string'));
+
 
 function Decibelios_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -39,8 +38,9 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function AceptarRuido_Callback(hObject, eventdata, handles)
-global aceptarRuido
+global aceptarRuido decibelios
 aceptarRuido=1;
+decibelios=str2double(get(handles.Decibelios,'string'));
 close Ruido;
 
 function CancelarRuido_Callback(hObject, eventdata, handles)

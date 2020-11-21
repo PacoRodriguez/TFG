@@ -22,12 +22,32 @@ global faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 fas
 global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 
 global faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10 inicioFlicker duracionFlicker amplitudFlicker
 global frecuenciaFlicker faseFlicker decibelios
+global perturbacion1 perturbacion2 perturbacion3 perturbacion4 perturbacion5 perturbacion6
+global perturbacion7 perturbacion8 perturbacion9 perturbacion10
+global amplitudPerturbacion1 amplitudPerturbacion2 amplitudPerturbacion3 amplitudPerturbacion4 amplitudPerturbacion5
+global amplitudPerturbacion6 amplitudPerturbacion7 amplitudPerturbacion8 amplitudPerturbacion9 amplitudPerturbacion10
+global inicioPerturbacion1 inicioPerturbacion2 inicioPerturbacion3 inicioPerturbacion4 inicioPerturbacion5 inicioPerturbacion6
+global inicioPerturbacion7 inicioPerturbacion8 inicioPerturbacion9 inicioPerturbacion10
+global duracionPerturbacion1 duracionPerturbacion2 duracionPerturbacion3 duracionPerturbacion4 duracionPerturbacion5 
+global duracionPerturbacion6 duracionPerturbacion7 duracionPerturbacion8 duracionPerturbacion9 duracionPerturbacion10
+global hueco1 hueco2 hueco3 hueco4 hueco5 hueco6 hueco7 hueco8 hueco9 hueco10
+global sobretension1 sobretension2 sobretension3 sobretension4 sobretension5 sobretension6 sobretension7 sobretension8 sobretension9 sobretension10
 amplitudArmonicoPrevio1=0; amplitudArmonicoPrevio2=0; amplitudArmonicoPrevio3=0; amplitudArmonicoPrevio4=0; amplitudArmonicoPrevio5=0; amplitudArmonicoPrevio6=0; amplitudArmonicoPrevio7=0; amplitudArmonicoPrevio8=0; amplitudArmonicoPrevio9=0; amplitudArmonicoPrevio10=0;
 faseArmonicoPrevio1=0; faseArmonicoPrevio2=0; faseArmonicoPrevio3=0; faseArmonicoPrevio4=0; faseArmonicoPrevio5=0; faseArmonicoPrevio6=0; faseArmonicoPrevio7=0; faseArmonicoPrevio8=0; faseArmonicoPrevio9=0; faseArmonicoPrevio10=0;
 amplitudArmonico1=0; amplitudArmonico2=0; amplitudArmonico3=0; amplitudArmonico4=0; amplitudArmonico5=0; amplitudArmonico6=0; amplitudArmonico7=0; amplitudArmonico8=0; amplitudArmonico9=0; amplitudArmonico10=0;
 faseArmonico1=0; faseArmonico2=0; faseArmonico3=0; faseArmonico4=0; faseArmonico5=0; faseArmonico6=0; faseArmonico7=0; faseArmonico8=0; faseArmonico9=0; faseArmonico10=0;
 inicioFlicker=0; duracionFlicker=0;amplitudFlicker=0;frecuenciaFlicker=0;
 faseFlicker=0; decibelios=0;
+perturbacion1=1; perturbacion2=1; perturbacion3=1; perturbacion4=1; perturbacion5=1; perturbacion6=1;
+perturbacion7=1; perturbacion8=1; perturbacion9=1; perturbacion10=1;
+hueco1=0; hueco2=0; hueco3=0; hueco4=0; hueco5=0; hueco6=0; hueco7=0; hueco8=0; hueco9=0; hueco10=0;
+sobretension1=0; sobretension2=0; sobretension3=0; sobretension4=0; sobretension5=0; sobretension6=0; sobretension7=0; sobretension8=0; sobretension9=0; sobretension10=0;
+amplitudPerturbacion1=0; amplitudPerturbacion2=0; amplitudPerturbacion3=0; amplitudPerturbacion4=0; amplitudPerturbacion5=0;
+amplitudPerturbacion6=0; amplitudPerturbacion7=0; amplitudPerturbacion8=0; amplitudPerturbacion9=0; amplitudPerturbacion10=0;
+inicioPerturbacion1=0; inicioPerturbacion2=0; inicioPerturbacion3=0; inicioPerturbacion4=0; inicioPerturbacion5=0; inicioPerturbacion6=0;
+inicioPerturbacion7=0; inicioPerturbacion8=0; inicioPerturbacion9=0; inicioPerturbacion10=0;
+duracionPerturbacion1=0; duracionPerturbacion2=0; duracionPerturbacion3=0; duracionPerturbacion4=0; duracionPerturbacion5=0;
+duracionPerturbacion6=0; duracionPerturbacion7=0; duracionPerturbacion8=0; duracionPerturbacion9=0; duracionPerturbacion10=0;
 duracion=str2double(get(handles.EditDuracion,'string'));
 frecuencia=str2double(get(handles.EditFrecuencia,'string'));
 muestras=str2double(get(handles.EditMuestras,'string'));

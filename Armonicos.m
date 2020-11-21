@@ -435,8 +435,8 @@ if isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColo
 end
 
 function AceptarArmonico_Callback(hObject, eventdata, handles)
-global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio1 faseArmonicoPrevio1 
-global faseArmonicoPrevio1 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10 aceptarArmonico
+global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 
+global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10 aceptarArmonico
 amplitudArmonicoPrevio1=str2double(get(handles.EditAmplitudArmonico1,'string'));
 amplitudArmonicoPrevio2=str2double(get(handles.EditAmplitudArmonico2,'string'));
 amplitudArmonicoPrevio3=str2double(get(handles.EditAmplitudArmonico3,'string'));
@@ -448,9 +448,9 @@ amplitudArmonicoPrevio8=str2double(get(handles.EditAmplitudArmonico8,'string'));
 amplitudArmonicoPrevio9=str2double(get(handles.EditAmplitudArmonico9,'string'));
 amplitudArmonicoPrevio10=str2double(get(handles.EditAmplitudArmonico10,'string'));
 faseArmonicoPrevio1=str2double(get(handles.EditFaseArmonico1,'string'));
-faseArmonicoPrevio1=str2double(get(handles.EditFaseArmonico2,'string'));
-faseArmonicoPrevio1=str2double(get(handles.EditFaseArmonico3,'string'));
-faseArmonicoPrevio1=str2double(get(handles.EditFaseArmonico4,'string'));
+faseArmonicoPrevio2=str2double(get(handles.EditFaseArmonico2,'string'));
+faseArmonicoPrevio3=str2double(get(handles.EditFaseArmonico3,'string'));
+faseArmonicoPrevio4=str2double(get(handles.EditFaseArmonico4,'string'));
 faseArmonicoPrevio5=str2double(get(handles.EditFaseArmonico5,'string'));
 faseArmonicoPrevio6=str2double(get(handles.EditFaseArmonico6,'string'));
 faseArmonicoPrevio7=str2double(get(handles.EditFaseArmonico7,'string'));
