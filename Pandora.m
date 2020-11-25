@@ -119,7 +119,7 @@ global faseFlicker duracion muestras aceptarFlicker
 global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 
 global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
 global frecuencia amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10
-global faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10 y
+global faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10 y z
 duracion=str2double(get(handles.EditDuracion,'string'));
 muestras=str2double(get(handles.EditMuestras,'string'));
 if aceptarFlicker==1
@@ -246,8 +246,9 @@ else
 end
 
 function SliderDuracion_Callback(hObject, eventdata, handles)
+global inicioFlicker duracionFlicker amplitudFlicker frecuenciaFlicker faseFlicker
 global amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10 faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7
-global faseArmonico8 faseArmonico9 faseArmonico10 frecuencia duracion muestras y
+global faseArmonico8 faseArmonico9 faseArmonico10 frecuencia duracion muestras y z
 global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3
 global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
 duracion=get(hObject,'value');
@@ -259,11 +260,14 @@ faseArmonico=[faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmoni
 amplitudArmonico=amplitudArmonicoPrevio;
 faseArmonico=faseArmonicoPrevio;
 y=0;
+z=0;
 for i=1:10
     x=linspace(0,duracion/1000,muestras);
     y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
-    plot(x,y);
+    z=z+((amplitudArmonico(i)*sqrt(2)*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*((sin(2*pi*i*frecuencia*x+faseArmonico(i)))));
+%     plot(x,y);
 end
+y=(x<inicioFlicker/1000).*(y)+((inicioFlicker/1000<=x)&(x<(inicioFlicker+duracionFlicker)/1000)).*(z)+((inicioFlicker+duracionFlicker)/1000<x).*(y);
 plot(x,y);
 grid on;
 xlabel('Tiempo');
@@ -341,6 +345,8 @@ global duracion y amplitudArmonico1 frecuencia muestras amplitudArmonico2 amplit
 global faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10
 global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3
 global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
+global inicioFlicker duracionFlicker amplitudFlicker frecuenciaFlicker faseFlicker
+
 duracion=str2double(get(hObject,'string'));
 set(handles.SliderDuracion,'value',duracion);
 amplitudArmonicoPrevio=[amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10];
@@ -350,10 +356,13 @@ faseArmonico=[faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmoni
 amplitudArmonico=amplitudArmonicoPrevio;
 faseArmonico=faseArmonicoPrevio;
 y=0;
+z=0;
 for i=1:10
     x=linspace(0,duracion/1000,muestras);
     y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
+    z=z+((amplitudArmonico(i)*sqrt(2)*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*((sin(2*pi*i*frecuencia*x+faseArmonico(i)))));
 end
+y=(x<inicioFlicker/1000).*(y)+((inicioFlicker/1000<=x)&(x<(inicioFlicker+duracionFlicker)/1000)).*(z)+((inicioFlicker+duracionFlicker)/1000<x).*(y);
 plot(x,y);
 grid on;
 xlabel('Tiempo');

@@ -239,8 +239,8 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion1_Callback(hObject, eventdata, handles)
-global inicioPerturbacion1
-inicioPerturbacion1=str2double(get(hObject,'string'));
+% global inicioPerturbacion1
+% inicioPerturbacion1=str2double(get(hObject,'string'));
 
 function InicioPerturbacion1_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -312,8 +312,8 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion2_Callback(hObject, eventdata, handles)
-global inicioPerturbacion2
-inicioPerturbacion2=str2double(get(hObject,'string'));
+% global inicioPerturbacion2
+% inicioPerturbacion2=str2double(get(hObject,'string'));
 
 function InicioPerturbacion2_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -383,8 +383,8 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion3_Callback(hObject, eventdata, handles)
-global inicioPerturbacion3
-inicioPerturbacion3=str2double(get(hObject,'string'));
+% global inicioPerturbacion3
+% inicioPerturbacion3=str2double(get(hObject,'string'));
 
 function InicioPerturbacion3_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -454,8 +454,8 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion4_Callback(hObject, eventdata, handles)
-global inicioPerturbacion4
-inicioPerturbacion4=str2double(get(hObject,'string'));
+% global inicioPerturbacion4
+% inicioPerturbacion4=str2double(get(hObject,'string'));
 
 function InicioPerturbacion4_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -525,8 +525,8 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion5_Callback(hObject, eventdata, handles)
-global inicioPerturbacion5
-inicioPerturbacion5=str2double(get(hObject,'string'));
+% global inicioPerturbacion5
+% inicioPerturbacion5=str2double(get(hObject,'string'));
 
 function InicioPerturbacion5_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -596,8 +596,8 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion6_Callback(hObject, eventdata, handles)
-global inicioPerturbacion6
-inicioPerturbacion6=str2double(get(hObject,'string'));
+% global inicioPerturbacion6
+% inicioPerturbacion6=str2double(get(hObject,'string'));
 
 function InicioPerturbacion6_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -667,8 +667,8 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion7_Callback(hObject, eventdata, handles)
-global inicioPerturbacion7
-inicioPerturbacion7=str2double(get(hObject,'string'));
+% global inicioPerturbacion7
+% inicioPerturbacion7=str2double(get(hObject,'string'));
 
 function InicioPerturbacion7_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -738,8 +738,8 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion8_Callback(hObject, eventdata, handles)
-global inicioPerturbacion8
-inicioPerturbacion8=str2double(get(hObject,'string'));
+% global inicioPerturbacion8
+% inicioPerturbacion8=str2double(get(hObject,'string'));
 
 function InicioPerturbacion8_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -809,8 +809,8 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion9_Callback(hObject, eventdata, handles)
-global inicioPerturbacion9
-inicioPerturbacion9=str2double(get(hObject,'string'));
+% global inicioPerturbacion9
+% inicioPerturbacion9=str2double(get(hObject,'string'));
 
 function InicioPerturbacion9_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -880,8 +880,8 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion10_Callback(hObject, eventdata, handles)
-global inicioPerturbacion10
-inicioPerturbacion10=str2double(get(hObject,'string'));
+% global inicioPerturbacion10
+% inicioPerturbacion10=str2double(get(hObject,'string'));
 
 function InicioPerturbacion10_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -946,6 +946,10 @@ global sobretension1 sobretension2 sobretension3 sobretension4 sobretension5
 global sobretension6 sobretension7 sobretension8 sobretension9 sobretension10
 global amplitudPerturbacion1 amplitudPerturbacion2 amplitudPerturbacion3 amplitudPerturbacion4 amplitudPerturbacion5 amplitudPerturbacion6
 global amplitudPerturbacion7 amplitudPerturbacion8 amplitudPerturbacion9 amplitudPerturbacion10
+global inicioPerturbacion1 inicioPerturbacion2 inicioPerturbacion3 inicioPerturbacion4 inicioPerturbacion5
+global inicioPerturbacion6 inicioPerturbacion7 inicioPerturbacion8 inicioPerturbacion9 inicioPerturbacion10
+global duracionPerturbacion1 duracionPerturbacion2 duracionPerturbacion3 duracionPerturbacion4 duracionPerturbacion5 
+global duracionPerturbacion6 duracionPerturbacion7 duracionPerturbacion8 duracionPerturbacion9 duracionPerturbacion10
 % perturbacion=[perturbacion1 perturbacion2 perturbacion3 perturbacion4 perturbacion5 perturbacion6 perturbacion7 perturbacion8 perturbacion9 perturbacion10];
 % hueco=[hueco1 hueco2 hueco3 hueco4 hueco5 hueco6 hueco7 hueco8 hueco9 hueco10];
 % sobretension=[sobretension1 sobretension2 sobretension3 sobretension4 sobretension5 sobretension6 sobretension7 sobretension8 sobretension9 sobretension10];
@@ -1094,6 +1098,27 @@ elseif sobretension10==1
     amplitudPerturbacion10=1+(str2double(get(handles.AmplitudPerturbacion10,'string')))/100;
 end
 
+inicioPerturbacion1=str2double(get(handles.InicioPerturbacion1,'string'));
+inicioPerturbacion2=str2double(get(handles.InicioPerturbacion2,'string'));
+inicioPerturbacion3=str2double(get(handles.InicioPerturbacion3,'string'));
+inicioPerturbacion4=str2double(get(handles.InicioPerturbacion4,'string'));
+inicioPerturbacion5=str2double(get(handles.InicioPerturbacion5,'string'));
+inicioPerturbacion6=str2double(get(handles.InicioPerturbacion6,'string'));
+inicioPerturbacion7=str2double(get(handles.InicioPerturbacion7,'string'));
+inicioPerturbacion8=str2double(get(handles.InicioPerturbacion8,'string'));
+inicioPerturbacion9=str2double(get(handles.InicioPerturbacion9,'string'));
+inicioPerturbacion10=str2double(get(handles.InicioPerturbacion10,'string'));
+
+duracionPerturbacion1=str2double(get(handles.DuracionPerturbacion1,'string'));
+duracionPerturbacion2=str2double(get(handles.DuracionPerturbacion2,'string'));
+duracionPerturbacion3=str2double(get(handles.DuracionPerturbacion3,'string'));
+duracionPerturbacion4=str2double(get(handles.DuracionPerturbacion4,'string'));
+duracionPerturbacion5=str2double(get(handles.DuracionPerturbacion5,'string'));
+duracionPerturbacion6=str2double(get(handles.DuracionPerturbacion6,'string'));
+duracionPerturbacion7=str2double(get(handles.DuracionPerturbacion7,'string'));
+duracionPerturbacion8=str2double(get(handles.DuracionPerturbacion8,'string'));
+duracionPerturbacion9=str2double(get(handles.DuracionPerturbacion9,'string'));
+duracionPerturbacion10=str2double(get(handles.DuracionPerturbacion10,'string'));
 
 aceptarHuecoSobretension=1;
 close InterfazHueSob;
