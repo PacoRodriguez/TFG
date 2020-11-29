@@ -32,6 +32,18 @@ global duracionPerturbacion1 duracionPerturbacion2 duracionPerturbacion3 duracio
 global duracionPerturbacion6 duracionPerturbacion7 duracionPerturbacion8 duracionPerturbacion9 duracionPerturbacion10
 global hueco1 hueco2 hueco3 hueco4 hueco5 hueco6 hueco7 hueco8 hueco9 hueco10
 global sobretension1 sobretension2 sobretension3 sobretension4 sobretension5 sobretension6 sobretension7 sobretension8 sobretension9 sobretension10
+global inicioTransitorio1 inicioTransitorio2 inicioTransitorio3 inicioTransitorio4 inicioTransitorio5
+global inicioTransitorio6 inicioTransitorio7 inicioTransitorio8 inicioTransitorio9 inicioTransitorio10
+global duracionTransitorio1 duracionTransitorio2 duracionTransitorio3 duracionTransitorio4 duracionTransitorio5
+global duracionTransitorio6 duracionTransitorio7 duracionTransitorio8 duracionTransitorio9 duracionTransitorio10
+global amplitudSenoTransitorio1 amplitudSenoTransitorio2 amplitudSenoTransitorio3 amplitudSenoTransitorio4 amplitudSenoTransitorio5
+global amplitudSenoTransitorio6 amplitudSenoTransitorio7 amplitudSenoTransitorio8 amplitudSenoTransitorio9 amplitudSenoTransitorio10
+global frecuenciaSenoTransitorio1 frecuenciaSenoTransitorio2 frecuenciaSenoTransitorio3 frecuenciaSenoTransitorio4 frecuenciaSenoTransitorio5
+global frecuenciaSenoTransitorio6 frecuenciaSenoTransitorio7 frecuenciaSenoTransitorio8 frecuenciaSenoTransitorio9 frecuenciaSenoTransitorio10
+global faseSenoTransitorio1 faseSenoTransitorio2 faseSenoTransitorio3 faseSenoTransitorio4 faseSenoTransitorio5
+global faseSenoTransitorio6 faseSenoTransitorio7 faseSenoTransitorio8 faseSenoTransitorio9 faseSenoTransitorio10
+global exponenteTransitorio1 exponenteTransitorio2 exponenteTransitorio3 exponenteTransitorio4 exponenteTransitorio5
+global exponenteTransitorio6 exponenteTransitorio7 exponenteTransitorio8 exponenteTransitorio9 exponenteTransitorio10
 amplitudArmonicoPrevio1=0; amplitudArmonicoPrevio2=0; amplitudArmonicoPrevio3=0; amplitudArmonicoPrevio4=0; amplitudArmonicoPrevio5=0; amplitudArmonicoPrevio6=0; amplitudArmonicoPrevio7=0; amplitudArmonicoPrevio8=0; amplitudArmonicoPrevio9=0; amplitudArmonicoPrevio10=0;
 faseArmonicoPrevio1=0; faseArmonicoPrevio2=0; faseArmonicoPrevio3=0; faseArmonicoPrevio4=0; faseArmonicoPrevio5=0; faseArmonicoPrevio6=0; faseArmonicoPrevio7=0; faseArmonicoPrevio8=0; faseArmonicoPrevio9=0; faseArmonicoPrevio10=0;
 amplitudArmonico1=0; amplitudArmonico2=0; amplitudArmonico3=0; amplitudArmonico4=0; amplitudArmonico5=0; amplitudArmonico6=0; amplitudArmonico7=0; amplitudArmonico8=0; amplitudArmonico9=0; amplitudArmonico10=0;
@@ -48,6 +60,18 @@ inicioPerturbacion1=0; inicioPerturbacion2=0; inicioPerturbacion3=0; inicioPertu
 inicioPerturbacion7=0; inicioPerturbacion8=0; inicioPerturbacion9=0; inicioPerturbacion10=0;
 duracionPerturbacion1=0; duracionPerturbacion2=0; duracionPerturbacion3=0; duracionPerturbacion4=0; duracionPerturbacion5=0;
 duracionPerturbacion6=0; duracionPerturbacion7=0; duracionPerturbacion8=0; duracionPerturbacion9=0; duracionPerturbacion10=0;
+inicioTransitorio1=0; inicioTransitorio2=0; inicioTransitorio3=0; inicioTransitorio4=0; inicioTransitorio5=0;
+inicioTransitorio6=0; inicioTransitorio7=0; inicioTransitorio8=0; inicioTransitorio9=0; inicioTransitorio10=0;
+duracionTransitorio1=0; duracionTransitorio2=0; duracionTransitorio3=0; duracionTransitorio4=0; duracionTransitorio5=0;
+duracionTransitorio6=0; duracionTransitorio7=0; duracionTransitorio8=0; duracionTransitorio9=0; duracionTransitorio10=0;
+amplitudSenoTransitorio1=0; amplitudSenoTransitorio2=0; amplitudSenoTransitorio3=0; amplitudSenoTransitorio4=0; amplitudSenoTransitorio5=0;
+amplitudSenoTransitorio6=0; amplitudSenoTransitorio7=0; amplitudSenoTransitorio8=0; amplitudSenoTransitorio9=0; amplitudSenoTransitorio10=0;
+frecuenciaSenoTransitorio1=0; frecuenciaSenoTransitorio2=0; frecuenciaSenoTransitorio3=0; frecuenciaSenoTransitorio4=0; frecuenciaSenoTransitorio5=0;
+frecuenciaSenoTransitorio6=0; frecuenciaSenoTransitorio7=0; frecuenciaSenoTransitorio8=0; frecuenciaSenoTransitorio9=0; frecuenciaSenoTransitorio10=0;
+faseSenoTransitorio1=0; faseSenoTransitorio2=0; faseSenoTransitorio3=0; faseSenoTransitorio4=0; faseSenoTransitorio5=0;
+faseSenoTransitorio6=0; faseSenoTransitorio7=0; faseSenoTransitorio8=0; faseSenoTransitorio9=0; faseSenoTransitorio10=0;
+exponenteTransitorio1=0; exponenteTransitorio2=0; exponenteTransitorio3=0; exponenteTransitorio4=0; exponenteTransitorio5=0;
+exponenteTransitorio6=0; exponenteTransitorio7=0; exponenteTransitorio8=0; exponenteTransitorio9=0; exponenteTransitorio10=0;
 duracion=str2double(get(handles.EditDuracion,'string'));
 frecuencia=str2double(get(handles.EditFrecuencia,'string'));
 muestras=str2double(get(handles.EditMuestras,'string'));

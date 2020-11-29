@@ -17,6 +17,79 @@ else
 end
 
 function Transitorios_OpeningFcn(hObject, eventdata, handles, varargin)
+global inicioTransitorio1 inicioTransitorio2 inicioTransitorio3 inicioTransitorio4 inicioTransitorio5
+global inicioTransitorio6 inicioTransitorio7 inicioTransitorio8 inicioTransitorio9 inicioTransitorio10
+global duracionTransitorio1 duracionTransitorio2 duracionTransitorio3 duracionTransitorio4 duracionTransitorio5
+global duracionTransitorio6 duracionTransitorio7 duracionTransitorio8 duracionTransitorio9 duracionTransitorio10
+global amplitudSenoTransitorio1 amplitudSenoTransitorio2 amplitudSenoTransitorio3 amplitudSenoTransitorio4 amplitudSenoTransitorio5
+global amplitudSenoTransitorio6 amplitudSenoTransitorio7 amplitudSenoTransitorio8 amplitudSenoTransitorio9 amplitudSenoTransitorio10
+global frecuenciaSenoTransitorio1 frecuenciaSenoTransitorio2 frecuenciaSenoTransitorio3 frecuenciaSenoTransitorio4 frecuenciaSenoTransitorio5
+global frecuenciaSenoTransitorio6 frecuenciaSenoTransitorio7 frecuenciaSenoTransitorio8 frecuenciaSenoTransitorio9 frecuenciaSenoTransitorio10
+global faseSenoTransitorio1 faseSenoTransitorio2 faseSenoTransitorio3 faseSenoTransitorio4 faseSenoTransitorio5
+global faseSenoTransitorio6 faseSenoTransitorio7 faseSenoTransitorio8 faseSenoTransitorio9 faseSenoTransitorio10
+global exponenteTransitorio1 exponenteTransitorio2 exponenteTransitorio3 exponenteTransitorio4 exponenteTransitorio5
+global exponenteTransitorio6 exponenteTransitorio7 exponenteTransitorio8 exponenteTransitorio9 exponenteTransitorio10
+set(handles.InicioTransitorio1,'string',num2str(inicioTransitorio1));
+set(handles.InicioTransitorio2,'string',num2str(inicioTransitorio2));
+set(handles.InicioTransitorio3,'string',num2str(inicioTransitorio3));
+set(handles.InicioTransitorio4,'string',num2str(inicioTransitorio4));
+set(handles.InicioTransitorio5,'string',num2str(inicioTransitorio5));
+set(handles.InicioTransitorio6,'string',num2str(inicioTransitorio6));
+set(handles.InicioTransitorio7,'string',num2str(inicioTransitorio7));
+set(handles.InicioTransitorio8,'string',num2str(inicioTransitorio8));
+set(handles.InicioTransitorio9,'string',num2str(inicioTransitorio9));
+set(handles.InicioTransitorio10,'string',num2str(inicioTransitorio10));
+set(handles.DuracionTransitorio1,'string',num2str(duracionTransitorio1));
+set(handles.DuracionTransitorio2,'string',num2str(duracionTransitorio2));
+set(handles.DuracionTransitorio3,'string',num2str(duracionTransitorio3));
+set(handles.DuracionTransitorio4,'string',num2str(duracionTransitorio4));
+set(handles.DuracionTransitorio5,'string',num2str(duracionTransitorio5));
+set(handles.DuracionTransitorio6,'string',num2str(duracionTransitorio6));
+set(handles.DuracionTransitorio7,'string',num2str(duracionTransitorio7));
+set(handles.DuracionTransitorio8,'string',num2str(duracionTransitorio8));
+set(handles.DuracionTransitorio9,'string',num2str(duracionTransitorio9));
+set(handles.DuracionTransitorio10,'string',num2str(duracionTransitorio10));
+set(handles.AmplitudSenoTransitorio1,'string',num2str(amplitudSenoTransitorio1));
+set(handles.AmplitudSenoTransitorio2,'string',num2str(amplitudSenoTransitorio2));
+set(handles.AmplitudSenoTransitorio3,'string',num2str(amplitudSenoTransitorio3));
+set(handles.AmplitudSenoTransitorio4,'string',num2str(amplitudSenoTransitorio4));
+set(handles.AmplitudSenoTransitorio5,'string',num2str(amplitudSenoTransitorio5));
+set(handles.AmplitudSenoTransitorio6,'string',num2str(amplitudSenoTransitorio6));
+set(handles.AmplitudSenoTransitorio7,'string',num2str(amplitudSenoTransitorio7));
+set(handles.AmplitudSenoTransitorio8,'string',num2str(amplitudSenoTransitorio8));
+set(handles.AmplitudSenoTransitorio9,'string',num2str(amplitudSenoTransitorio9));
+set(handles.AmplitudSenoTransitorio10,'string',num2str(amplitudSenoTransitorio10));
+set(handles.FrecuenciaSenoTransitorio1,'string',num2str(frecuenciaSenoTransitorio1));
+set(handles.FrecuenciaSenoTransitorio2,'string',num2str(frecuenciaSenoTransitorio2));
+set(handles.FrecuenciaSenoTransitorio3,'string',num2str(frecuenciaSenoTransitorio3));
+set(handles.FrecuenciaSenoTransitorio4,'string',num2str(frecuenciaSenoTransitorio4));
+set(handles.FrecuenciaSenoTransitorio5,'string',num2str(frecuenciaSenoTransitorio5));
+set(handles.FrecuenciaSenoTransitorio6,'string',num2str(frecuenciaSenoTransitorio6));
+set(handles.FrecuenciaSenoTransitorio7,'string',num2str(frecuenciaSenoTransitorio7));
+set(handles.FrecuenciaSenoTransitorio8,'string',num2str(frecuenciaSenoTransitorio8));
+set(handles.FrecuenciaSenoTransitorio9,'string',num2str(frecuenciaSenoTransitorio9));
+set(handles.FrecuenciaSenoTransitorio10,'string',num2str(frecuenciaSenoTransitorio10));
+set(handles.FaseSenoTransitorio1,'string',num2str(faseSenoTransitorio1));
+set(handles.FaseSenoTransitorio2,'string',num2str(faseSenoTransitorio2));
+set(handles.FaseSenoTransitorio3,'string',num2str(faseSenoTransitorio3));
+set(handles.FaseSenoTransitorio4,'string',num2str(faseSenoTransitorio4));
+set(handles.FaseSenoTransitorio5,'string',num2str(faseSenoTransitorio5));
+set(handles.FaseSenoTransitorio6,'string',num2str(faseSenoTransitorio6));
+set(handles.FaseSenoTransitorio7,'string',num2str(faseSenoTransitorio7));
+set(handles.FaseSenoTransitorio8,'string',num2str(faseSenoTransitorio8));
+set(handles.FaseSenoTransitorio9,'string',num2str(faseSenoTransitorio9));
+set(handles.FaseSenoTransitorio10,'string',num2str(faseSenoTransitorio10));
+set(handles.ExponenteTransitorio1,'string',num2str(exponenteTransitorio1));
+set(handles.ExponenteTransitorio2,'string',num2str(exponenteTransitorio2));
+set(handles.ExponenteTransitorio3,'string',num2str(exponenteTransitorio3));
+set(handles.ExponenteTransitorio4,'string',num2str(exponenteTransitorio4));
+set(handles.ExponenteTransitorio5,'string',num2str(exponenteTransitorio5));
+set(handles.ExponenteTransitorio6,'string',num2str(exponenteTransitorio6));
+set(handles.ExponenteTransitorio7,'string',num2str(exponenteTransitorio7));
+set(handles.ExponenteTransitorio8,'string',num2str(exponenteTransitorio8));
+set(handles.ExponenteTransitorio9,'string',num2str(exponenteTransitorio9));
+set(handles.ExponenteTransitorio10,'string',num2str(exponenteTransitorio10));
+
 % Choose default command line output for Transitorios
 handles.output = hObject;
 
