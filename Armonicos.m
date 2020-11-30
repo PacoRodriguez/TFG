@@ -19,6 +19,7 @@ end
 function Armonicos_OpeningFcn(hObject, eventdata, handles, varargin)
 global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 
 global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
+global nivelContinua
 set(handles.EditAmplitudArmonico1,'string',num2str(amplitudArmonicoPrevio1));
 set(handles.SliderAmplitudArmonico1,'value',amplitudArmonicoPrevio1);
 set(handles.EditAmplitudArmonico2,'string',num2str(amplitudArmonicoPrevio2));
@@ -59,6 +60,8 @@ set(handles.EditFaseArmonico9,'string',num2str(faseArmonicoPrevio9));
 set(handles.SliderFaseArmonico9,'value',faseArmonicoPrevio9);
 set(handles.EditFaseArmonico10,'string',num2str(faseArmonicoPrevio10));
 set(handles.SliderFaseArmonico10,'value',faseArmonicoPrevio10);
+set(handles.EditNivelContinua,'string',num2str(nivelContinua));
+set(handles.SliderNivelContinua,'value',nivelContinua);
 
 % Choose default command line output for Armonicos
 handles.output = hObject;
@@ -434,9 +437,28 @@ if isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColo
     set(hObject,'BackgroundColor',[.9 .9 .9]);
 end
 
+function SliderNivelContinua_Callback(hObject, eventdata, handles)
+nivelContinua=get(hObject,'value');
+set(handles.EditNivelContinua,'string',num2str(nivelContinua));
+
+function SliderNivelContinua_CreateFcn(hObject, eventdata, handles)
+if isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor',[.9 .9 .9]);
+end
+
+function EditNivelContinua_Callback(hObject, eventdata, handles)
+nivelContinua=str2double(get(hObject,'string'));
+set(handles.SliderNivelContinua,'value',nivelContinua);
+
+function EditNivelContinua_CreateFcn(hObject, eventdata, handles)
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
 function AceptarArmonico_Callback(hObject, eventdata, handles)
 global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 
 global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10 aceptarArmonico
+global nivelContinua
 amplitudArmonicoPrevio1=str2double(get(handles.EditAmplitudArmonico1,'string'));
 amplitudArmonicoPrevio2=str2double(get(handles.EditAmplitudArmonico2,'string'));
 amplitudArmonicoPrevio3=str2double(get(handles.EditAmplitudArmonico3,'string'));
@@ -457,6 +479,7 @@ faseArmonicoPrevio7=str2double(get(handles.EditFaseArmonico7,'string'));
 faseArmonicoPrevio8=str2double(get(handles.EditFaseArmonico8,'string'));
 faseArmonicoPrevio9=str2double(get(handles.EditFaseArmonico9,'string'));
 faseArmonicoPrevio10=str2double(get(handles.EditFaseArmonico10,'string'));
+nivelContinua=str2double(get(handles.EditNivelContinua,'string'));
 
 aceptarArmonico=1;
 close Armonicos;
@@ -477,6 +500,7 @@ function AceptarArmonico_CreateFcn(hObject, eventdata, handles)
 function LimpiarArmonico_Callback(hObject, eventdata, handles)
 amplitudArmonicoPrevio1=0;amplitudArmonicoPrevio2=0;amplitudArmonicoPrevio3=0;amplitudArmonicoPrevio4=0;amplitudArmonicoPrevio5=0;amplitudArmonicoPrevio6=0;amplitudArmonicoPrevio7=0;amplitudArmonicoPrevio8=0;amplitudArmonicoPrevio9=0;amplitudArmonicoPrevio10=0;
 faseArmonicoPrevio1=0;faseArmonicoPrevio1=0;faseArmonicoPrevio1=0;faseArmonicoPrevio1=0;faseArmonicoPrevio5=0;faseArmonicoPrevio6=0;faseArmonicoPrevio7=0;faseArmonicoPrevio8=0;faseArmonicoPrevio9=0;faseArmonicoPrevio10=0;
+nivelContinua=0;
 set(handles.EditAmplitudArmonico1,'string',num2str(amplitudArmonicoPrevio1));
 set(handles.SliderAmplitudArmonico1,'value',amplitudArmonicoPrevio1);
 set(handles.EditAmplitudArmonico2,'string',num2str(amplitudArmonicoPrevio2));
@@ -517,3 +541,5 @@ set(handles.EditFaseArmonico9,'string',num2str(faseArmonicoPrevio9));
 set(handles.SliderFaseArmonico9,'value',faseArmonicoPrevio9);
 set(handles.EditFaseArmonico10,'string',num2str(faseArmonicoPrevio10));
 set(handles.SliderFaseArmonico10,'value',faseArmonicoPrevio10);
+set(handles.EditNivelContinua,'string',num2str(nivelContinua));
+set(handles.SliderNivelContinua,'value',nivelContinua);

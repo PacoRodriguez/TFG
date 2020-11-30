@@ -22,7 +22,7 @@ function varargout = InterfazDesFre(varargin)
 
 % Edit the above text to modify the response to help InterfazDesFre
 
-% Last Modified by GUIDE v2.5 29-Nov-2020 21:12:48
+% Last Modified by GUIDE v2.5 30-Nov-2020 20:57:53
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -52,6 +52,7 @@ global amplitudFrecuenciaArmonicoPrevio9 amplitudFrecuenciaArmonicoPrevio10
 global faseFrecuenciaArmonicoPrevio1 faseFrecuenciaArmonicoPrevio2 faseFrecuenciaArmonicoPrevio3 faseFrecuenciaArmonicoPrevio4 
 global faseFrecuenciaArmonicoPrevio5 faseFrecuenciaArmonicoPrevio6 faseFrecuenciaArmonicoPrevio7 faseFrecuenciaArmonicoPrevio8
 global faseFrecuenciaArmonicoPrevio9 faseFrecuenciaArmonicoPrevio10
+global nivelContinua armonicoFundamental
 set(handles.EditAmplitudFrecuenciaArmonico1,'string',num2str(amplitudFrecuenciaArmonicoPrevio1));
 set(handles.SliderAmplitudFrecuenciaArmonico1,'value',amplitudFrecuenciaArmonicoPrevio1);
 set(handles.EditAmplitudFrecuenciaArmonico2,'string',num2str(amplitudFrecuenciaArmonicoPrevio2));
@@ -92,6 +93,10 @@ set(handles.EditFaseFrecuenciaArmonico9,'string',num2str(faseFrecuenciaArmonicoP
 set(handles.SliderFaseFrecuenciaArmonico9,'value',faseFrecuenciaArmonicoPrevio9);
 set(handles.EditFaseFrecuenciaArmonico10,'string',num2str(faseFrecuenciaArmonicoPrevio10));
 set(handles.SliderFaseFrecuenciaArmonico10,'value',faseFrecuenciaArmonicoPrevio10);
+set(handles.EditNivelContinua,'string',num2str(nivelContinua));
+set(handles.SliderNivelContinua,'value',nivelContinua);
+set(handles.EditArmonicoFundamental,'string',num2str(armonicoFundamental));
+set(handles.SliderArmonicoFundamental,'value',armonicoFundamental);
 
 % Choose default command line output for InterfazDesFre
 handles.output = hObject;
@@ -116,12 +121,8 @@ varargout{1} = handles.output;
 
 
 function EditFaseFrecuenciaArmonico10_Callback(hObject, eventdata, handles)
-% hObject    handle to EditFaseFrecuenciaArmonico10 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditFaseFrecuenciaArmonico10 as text
-%        str2double(get(hObject,'String')) returns contents of EditFaseFrecuenciaArmonico10 as a double
+faseFrecuenciaArmonicoPrevio10=str2double(get(hObject,'string'));
+set(handles.SliderFaseFrecuenciaArmonico10,'value',faseFrecuenciaArmonicoPrevio10);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -157,12 +158,8 @@ end
 
 
 function EditFaseFrecuenciaArmonico9_Callback(hObject, eventdata, handles)
-% hObject    handle to EditFaseFrecuenciaArmonico9 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditFaseFrecuenciaArmonico9 as text
-%        str2double(get(hObject,'String')) returns contents of EditFaseFrecuenciaArmonico9 as a double
+faseFrecuenciaArmonicoPrevio9=str2double(get(hObject,'string'));
+set(handles.SliderFaseFrecuenciaArmonico9,'value',faseFrecuenciaArmonicoPrevio9);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -198,12 +195,8 @@ end
 
 
 function EditFaseFrecuenciaArmonico8_Callback(hObject, eventdata, handles)
-% hObject    handle to EditFaseFrecuenciaArmonico8 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditFaseFrecuenciaArmonico8 as text
-%        str2double(get(hObject,'String')) returns contents of EditFaseFrecuenciaArmonico8 as a double
+faseFrecuenciaArmonicoPrevio8=str2double(get(hObject,'string'));
+set(handles.SliderFaseFrecuenciaArmonico8,'value',faseFrecuenciaArmonicoPrevio8);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -239,12 +232,8 @@ end
 
 
 function EditFaseFrecuenciaArmonico7_Callback(hObject, eventdata, handles)
-% hObject    handle to EditFaseFrecuenciaArmonico7 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditFaseFrecuenciaArmonico7 as text
-%        str2double(get(hObject,'String')) returns contents of EditFaseFrecuenciaArmonico7 as a double
+faseFrecuenciaArmonicoPrevio7=str2double(get(hObject,'string'));
+set(handles.SliderFaseFrecuenciaArmonico7,'value',faseFrecuenciaArmonicoPrevio7);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -280,12 +269,8 @@ end
 
 
 function EditFaseFrecuenciaArmonico6_Callback(hObject, eventdata, handles)
-% hObject    handle to EditFaseFrecuenciaArmonico6 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditFaseFrecuenciaArmonico6 as text
-%        str2double(get(hObject,'String')) returns contents of EditFaseFrecuenciaArmonico6 as a double
+faseFrecuenciaArmonicoPrevio6=str2double(get(hObject,'string'));
+set(handles.SliderFaseFrecuenciaArmonico6,'value',faseFrecuenciaArmonicoPrevio6);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -321,12 +306,8 @@ end
 
 
 function EditFaseFrecuenciaArmonico5_Callback(hObject, eventdata, handles)
-% hObject    handle to EditFaseFrecuenciaArmonico5 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditFaseFrecuenciaArmonico5 as text
-%        str2double(get(hObject,'String')) returns contents of EditFaseFrecuenciaArmonico5 as a double
+faseFrecuenciaArmonicoPrevio5=str2double(get(hObject,'string'));
+set(handles.SliderFaseFrecuenciaArmonico5,'value',faseFrecuenciaArmonicoPrevio5);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -362,12 +343,8 @@ end
 
 
 function EditFaseFrecuenciaArmonico4_Callback(hObject, eventdata, handles)
-% hObject    handle to EditFaseFrecuenciaArmonico4 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditFaseFrecuenciaArmonico4 as text
-%        str2double(get(hObject,'String')) returns contents of EditFaseFrecuenciaArmonico4 as a double
+faseFrecuenciaArmonicoPrevio4=str2double(get(hObject,'string'));
+set(handles.SliderFaseFrecuenciaArmonico4,'value',faseFrecuenciaArmonicoPrevio4);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -403,12 +380,8 @@ end
 
 
 function EditFaseFrecuenciaArmonico3_Callback(hObject, eventdata, handles)
-% hObject    handle to EditFaseFrecuenciaArmonico3 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditFaseFrecuenciaArmonico3 as text
-%        str2double(get(hObject,'String')) returns contents of EditFaseFrecuenciaArmonico3 as a double
+faseFrecuenciaArmonicoPrevio3=str2double(get(hObject,'string'));
+set(handles.SliderFaseFrecuenciaArmonico3,'value',faseFrecuenciaArmonicoPrevio3);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -444,12 +417,8 @@ end
 
 
 function EditFaseFrecuenciaArmonico2_Callback(hObject, eventdata, handles)
-% hObject    handle to EditFaseFrecuenciaArmonico2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditFaseFrecuenciaArmonico2 as text
-%        str2double(get(hObject,'String')) returns contents of EditFaseFrecuenciaArmonico2 as a double
+faseFrecuenciaArmonicoPrevio2=str2double(get(hObject,'string'));
+set(handles.SliderFaseFrecuenciaArmonico2,'value',faseFrecuenciaArmonicoPrevio2);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -485,12 +454,8 @@ end
 
 
 function EditFaseFrecuenciaArmonico1_Callback(hObject, eventdata, handles)
-% hObject    handle to EditFaseFrecuenciaArmonico1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditFaseFrecuenciaArmonico1 as text
-%        str2double(get(hObject,'String')) returns contents of EditFaseFrecuenciaArmonico1 as a double
+faseFrecuenciaArmonicoPrevio1=str2double(get(hObject,'string'));
+set(handles.SliderFaseFrecuenciaArmonico1,'value',faseFrecuenciaArmonicoPrevio1);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -544,12 +509,8 @@ end
 
 
 function EditAmplitudFrecuenciaArmonico1_Callback(hObject, eventdata, handles)
-% hObject    handle to EditAmplitudFrecuenciaArmonico1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditAmplitudFrecuenciaArmonico1 as text
-%        str2double(get(hObject,'String')) returns contents of EditAmplitudFrecuenciaArmonico1 as a double
+amplitudFrecuenciaArmonicoPrevio1=str2double(get(hObject,'string'));
+set(handles.SliderAmplitudFrecuenciaArmonico1,'value',amplitudFrecuenciaArmonicoPrevio1);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -585,12 +546,8 @@ end
 
 
 function EditAmplitudFrecuenciaArmonico2_Callback(hObject, eventdata, handles)
-% hObject    handle to EditAmplitudFrecuenciaArmonico2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditAmplitudFrecuenciaArmonico2 as text
-%        str2double(get(hObject,'String')) returns contents of EditAmplitudFrecuenciaArmonico2 as a double
+amplitudFrecuenciaArmonicoPrevio2=str2double(get(hObject,'string'));
+set(handles.SliderAmplitudFrecuenciaArmonico2,'value',amplitudFrecuenciaArmonicoPrevio2);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -626,12 +583,8 @@ end
 
 
 function EditAmplitudFrecuenciaArmonico3_Callback(hObject, eventdata, handles)
-% hObject    handle to EditAmplitudFrecuenciaArmonico3 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditAmplitudFrecuenciaArmonico3 as text
-%        str2double(get(hObject,'String')) returns contents of EditAmplitudFrecuenciaArmonico3 as a double
+amplitudFrecuenciaArmonicoPrevio3=str2double(get(hObject,'string'));
+set(handles.SliderAmplitudFrecuenciaArmonico3,'value',amplitudFrecuenciaArmonicoPrevio3);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -667,12 +620,8 @@ end
 
 
 function EditAmplitudFrecuenciaArmonico4_Callback(hObject, eventdata, handles)
-% hObject    handle to EditAmplitudFrecuenciaArmonico4 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditAmplitudFrecuenciaArmonico4 as text
-%        str2double(get(hObject,'String')) returns contents of EditAmplitudFrecuenciaArmonico4 as a double
+amplitudFrecuenciaArmonicoPrevio4=str2double(get(hObject,'string'));
+set(handles.SliderAmplitudFrecuenciaArmonico4,'value',amplitudFrecuenciaArmonicoPrevio4);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -708,12 +657,8 @@ end
 
 
 function EditAmplitudFrecuenciaArmonico5_Callback(hObject, eventdata, handles)
-% hObject    handle to EditAmplitudFrecuenciaArmonico5 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditAmplitudFrecuenciaArmonico5 as text
-%        str2double(get(hObject,'String')) returns contents of EditAmplitudFrecuenciaArmonico5 as a double
+amplitudFrecuenciaArmonicoPrevio5=str2double(get(hObject,'string'));
+set(handles.SliderAmplitudFrecuenciaArmonico5,'value',amplitudFrecuenciaArmonicoPrevio5);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -749,12 +694,8 @@ end
 
 
 function EditAmplitudFrecuenciaArmonico6_Callback(hObject, eventdata, handles)
-% hObject    handle to EditAmplitudFrecuenciaArmonico6 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditAmplitudFrecuenciaArmonico6 as text
-%        str2double(get(hObject,'String')) returns contents of EditAmplitudFrecuenciaArmonico6 as a double
+amplitudFrecuenciaArmonicoPrevio6=str2double(get(hObject,'string'));
+set(handles.SliderAmplitudFrecuenciaArmonico6,'value',amplitudFrecuenciaArmonicoPrevio6);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -790,12 +731,8 @@ end
 
 
 function EditAmplitudFrecuenciaArmonico7_Callback(hObject, eventdata, handles)
-% hObject    handle to EditAmplitudFrecuenciaArmonico7 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditAmplitudFrecuenciaArmonico7 as text
-%        str2double(get(hObject,'String')) returns contents of EditAmplitudFrecuenciaArmonico7 as a double
+amplitudFrecuenciaArmonicoPrevio7=str2double(get(hObject,'string'));
+set(handles.SliderAmplitudFrecuenciaArmonico7,'value',amplitudFrecuenciaArmonicoPrevio7);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -831,12 +768,8 @@ end
 
 
 function EditAmplitudFrecuenciaArmonico8_Callback(hObject, eventdata, handles)
-% hObject    handle to EditAmplitudFrecuenciaArmonico8 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditAmplitudFrecuenciaArmonico8 as text
-%        str2double(get(hObject,'String')) returns contents of EditAmplitudFrecuenciaArmonico8 as a double
+amplitudFrecuenciaArmonicoPrevio8=str2double(get(hObject,'string'));
+set(handles.SliderAmplitudFrecuenciaArmonico8,'value',amplitudFrecuenciaArmonicoPrevio8);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -872,12 +805,8 @@ end
 
 
 function EditAmplitudFrecuenciaArmonico9_Callback(hObject, eventdata, handles)
-% hObject    handle to EditAmplitudFrecuenciaArmonico9 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditAmplitudFrecuenciaArmonico9 as text
-%        str2double(get(hObject,'String')) returns contents of EditAmplitudFrecuenciaArmonico9 as a double
+amplitudFrecuenciaArmonicoPrevio9=str2double(get(hObject,'string'));
+set(handles.SliderAmplitudFrecuenciaArmonico9,'value',amplitudFrecuenciaArmonicoPrevio9);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -913,17 +842,86 @@ end
 
 
 function EditAmplitudFrecuenciaArmonico10_Callback(hObject, eventdata, handles)
-% hObject    handle to EditAmplitudFrecuenciaArmonico10 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of EditAmplitudFrecuenciaArmonico10 as text
-%        str2double(get(hObject,'String')) returns contents of EditAmplitudFrecuenciaArmonico10 as a double
+amplitudFrecuenciaArmonicoPrevio10=str2double(get(hObject,'string'));
+set(handles.SliderAmplitudFrecuenciaArmonico10,'value',amplitudFrecuenciaArmonicoPrevio10);
 
 
 % --- Executes during object creation, after setting all properties.
 function EditAmplitudFrecuenciaArmonico10_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to EditAmplitudFrecuenciaArmonico10 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+% --- Executes on slider movement.
+function SliderNivelContinua_Callback(hObject, eventdata, handles)
+nivelContinua=get(hObject,'value');
+set(handles.EditNivelContinua,'string',num2str(nivelContinua));
+
+
+% --- Executes during object creation, after setting all properties.
+function SliderNivelContinua_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to SliderNivelContinua (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: slider controls usually have a light gray background.
+if isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor',[.9 .9 .9]);
+end
+
+
+
+function EditNivelContinua_Callback(hObject, eventdata, handles)
+nivelContinua=str2double(get(hObject,'string'));
+set(handles.SliderNivelContinua,'value',nivelContinua);
+
+
+% --- Executes during object creation, after setting all properties.
+function EditNivelContinua_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to EditNivelContinua (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on slider movement.
+function SliderArmonicoFundamental_Callback(hObject, eventdata, handles)
+armonicoFundamental=get(hObject,'value');
+set(handles.EditArmonicoFundamental,'string',num2str(armonicoFundamental));
+
+
+% --- Executes during object creation, after setting all properties.
+function SliderArmonicoFundamental_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to SliderArmonicoFundamental (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: slider controls usually have a light gray background.
+if isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor',[.9 .9 .9]);
+end
+
+
+
+function EditArmonicoFundamental_Callback(hObject, eventdata, handles)
+armonicoFundamental=str2double(get(hObject,'string'));
+set(handles.SliderArmonicoFundamental,'value',armonicoFundamental);
+
+
+% --- Executes during object creation, after setting all properties.
+function EditArmonicoFundamental_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to EditArmonicoFundamental (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -941,6 +939,7 @@ global amplitudFrecuenciaArmonicoPrevio9 amplitudFrecuenciaArmonicoPrevio10
 global faseFrecuenciaArmonicoPrevio1 faseFrecuenciaArmonicoPrevio2 faseFrecuenciaArmonicoPrevio3 faseFrecuenciaArmonicoPrevio4 
 global faseFrecuenciaArmonicoPrevio5 faseFrecuenciaArmonicoPrevio6 faseFrecuenciaArmonicoPrevio7 faseFrecuenciaArmonicoPrevio8
 global faseFrecuenciaArmonicoPrevio9 faseFrecuenciaArmonicoPrevio10 aceptarDesviacionFrecuencia
+global nivelContinua armonicoFundamental
 amplitudFrecuenciaArmonicoPrevio1=str2double(get(handles.EditAmplitudFrecuenciaArmonico1,'string'));
 amplitudFrecuenciaArmonicoPrevio2=str2double(get(handles.EditAmplitudFrecuenciaArmonico2,'string'));
 amplitudFrecuenciaArmonicoPrevio3=str2double(get(handles.EditAmplitudFrecuenciaArmonico3,'string'));
@@ -961,6 +960,8 @@ faseFrecuenciaArmonicoPrevio7=str2double(get(handles.EditFaseFrecuenciaArmonico7
 faseFrecuenciaArmonicoPrevio8=str2double(get(handles.EditFaseFrecuenciaArmonico8,'string'));
 faseFrecuenciaArmonicoPrevio9=str2double(get(handles.EditFaseFrecuenciaArmonico9,'string'));
 faseFrecuenciaArmonicoPrevio10=str2double(get(handles.EditFaseFrecuenciaArmonico10,'string'));
+nivelContinua=str2double(get(handles.EditNivelContinua,'string'));
+armonicoFundamental=str2double(get(handles.EditArmonicoFundamental,'string'));
 
 aceptarDesviacionFrecuencia=1;
 close InterfazDesFre;
@@ -979,6 +980,7 @@ amplitudFrecuenciaArmonicoPrevio9=0; amplitudFrecuenciaArmonicoPrevio10=0;
 faseFrecuenciaArmonicoPrevio1=0; faseFrecuenciaArmonicoPrevio2=0; faseFrecuenciaArmonicoPrevio3=0; faseFrecuenciaArmonicoPrevio4=0;
 faseFrecuenciaArmonicoPrevio5=0; faseFrecuenciaArmonicoPrevio6=0; faseFrecuenciaArmonicoPrevio7=0; faseFrecuenciaArmonicoPrevio8=0;
 faseFrecuenciaArmonicoPrevio9=0; faseFrecuenciaArmonicoPrevio10=0;
+nivelContinua=0; armonicoFundamental=0;
 set(handles.EditAmplitudFrecuenciaArmonico1,'string',num2str(amplitudFrecuenciaArmonicoPrevio1));
 set(handles.SliderAmplitudFrecuenciaArmonico1,'value',amplitudFrecuenciaArmonicoPrevio1);
 set(handles.EditAmplitudFrecuenciaArmonico2,'string',num2str(amplitudFrecuenciaArmonicoPrevio2));
@@ -1019,3 +1021,7 @@ set(handles.EditFaseFrecuenciaArmonico9,'string',num2str(faseFrecuenciaArmonicoP
 set(handles.SliderFaseFrecuenciaArmonico9,'value',faseFrecuenciaArmonicoPrevio9);
 set(handles.EditFaseFrecuenciaArmonico10,'string',num2str(faseFrecuenciaArmonicoPrevio10));
 set(handles.SliderFaseFrecuenciaArmonico10,'value',faseFrecuenciaArmonicoPrevio10);
+set(handles.EditNivelContinua,'string',num2str(nivelContinua));
+set(handles.SliderNivelContinua,'value',nivelContinua);
+set(handles.EditArmonicoFundamental,'string',num2str(armonicoFundamental));
+set(handles.SliderArmonicoFundamental,'value',armonicoFundamental);
