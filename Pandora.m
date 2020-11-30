@@ -44,6 +44,12 @@ global faseSenoTransitorio1 faseSenoTransitorio2 faseSenoTransitorio3 faseSenoTr
 global faseSenoTransitorio6 faseSenoTransitorio7 faseSenoTransitorio8 faseSenoTransitorio9 faseSenoTransitorio10
 global exponenteTransitorio1 exponenteTransitorio2 exponenteTransitorio3 exponenteTransitorio4 exponenteTransitorio5
 global exponenteTransitorio6 exponenteTransitorio7 exponenteTransitorio8 exponenteTransitorio9 exponenteTransitorio10
+global amplitudFrecuenciaArmonicoPrevio1 amplitudFrecuenciaArmonicoPrevio2 amplitudFrecuenciaArmonicoPrevio3 amplitudFrecuenciaArmonicoPrevio4 
+global amplitudFrecuenciaArmonicoPrevio5 amplitudFrecuenciaArmonicoPrevio6 amplitudFrecuenciaArmonicoPrevio7 amplitudFrecuenciaArmonicoPrevio8 
+global amplitudFrecuenciaArmonicoPrevio9 amplitudFrecuenciaArmonicoPrevio10
+global faseFrecuenciaArmonicoPrevio1 faseFrecuenciaArmonicoPrevio2 faseFrecuenciaArmonicoPrevio3 faseFrecuenciaArmonicoPrevio4 
+global faseFrecuenciaArmonicoPrevio5 faseFrecuenciaArmonicoPrevio6 faseFrecuenciaArmonicoPrevio7 faseFrecuenciaArmonicoPrevio8
+global faseFrecuenciaArmonicoPrevio9 faseFrecuenciaArmonicoPrevio10
 amplitudArmonicoPrevio1=0; amplitudArmonicoPrevio2=0; amplitudArmonicoPrevio3=0; amplitudArmonicoPrevio4=0; amplitudArmonicoPrevio5=0; amplitudArmonicoPrevio6=0; amplitudArmonicoPrevio7=0; amplitudArmonicoPrevio8=0; amplitudArmonicoPrevio9=0; amplitudArmonicoPrevio10=0;
 faseArmonicoPrevio1=0; faseArmonicoPrevio2=0; faseArmonicoPrevio3=0; faseArmonicoPrevio4=0; faseArmonicoPrevio5=0; faseArmonicoPrevio6=0; faseArmonicoPrevio7=0; faseArmonicoPrevio8=0; faseArmonicoPrevio9=0; faseArmonicoPrevio10=0;
 amplitudArmonico1=0; amplitudArmonico2=0; amplitudArmonico3=0; amplitudArmonico4=0; amplitudArmonico5=0; amplitudArmonico6=0; amplitudArmonico7=0; amplitudArmonico8=0; amplitudArmonico9=0; amplitudArmonico10=0;
@@ -72,6 +78,12 @@ faseSenoTransitorio1=0; faseSenoTransitorio2=0; faseSenoTransitorio3=0; faseSeno
 faseSenoTransitorio6=0; faseSenoTransitorio7=0; faseSenoTransitorio8=0; faseSenoTransitorio9=0; faseSenoTransitorio10=0;
 exponenteTransitorio1=0; exponenteTransitorio2=0; exponenteTransitorio3=0; exponenteTransitorio4=0; exponenteTransitorio5=0;
 exponenteTransitorio6=0; exponenteTransitorio7=0; exponenteTransitorio8=0; exponenteTransitorio9=0; exponenteTransitorio10=0;
+amplitudFrecuenciaArmonicoPrevio1=0; amplitudFrecuenciaArmonicoPrevio2=0; amplitudFrecuenciaArmonicoPrevio3=0; amplitudFrecuenciaArmonicoPrevio4=0;
+amplitudFrecuenciaArmonicoPrevio5=0; amplitudFrecuenciaArmonicoPrevio6=0; amplitudFrecuenciaArmonicoPrevio7=0; amplitudFrecuenciaArmonicoPrevio8=0;
+amplitudFrecuenciaArmonicoPrevio9=0; amplitudFrecuenciaArmonicoPrevio10=0;
+faseFrecuenciaArmonicoPrevio1=0; faseFrecuenciaArmonicoPrevio2=0; faseFrecuenciaArmonicoPrevio3=0; faseFrecuenciaArmonicoPrevio4=0;
+faseFrecuenciaArmonicoPrevio5=0; faseFrecuenciaArmonicoPrevio6=0; faseFrecuenciaArmonicoPrevio7=0; faseFrecuenciaArmonicoPrevio8=0;
+faseFrecuenciaArmonicoPrevio9=0; faseFrecuenciaArmonicoPrevio10=0;
 duracion=str2double(get(handles.EditDuracion,'string'));
 frecuencia=str2double(get(handles.EditFrecuencia,'string'));
 muestras=str2double(get(handles.EditMuestras,'string'));

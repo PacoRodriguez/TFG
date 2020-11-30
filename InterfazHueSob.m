@@ -1118,3 +1118,55 @@ close InterfazHueSob;
 
 function CancelarHuecoSobretension_Callback(hObject, eventdata, handles)
 close InterfazHueSob;
+
+
+% --- Executes on button press in LimpiarHuecoSobretension.
+function LimpiarHuecoSobretension_Callback(hObject, eventdata, handles)
+perturbacion1=1; perturbacion2=1; perturbacion3=1; perturbacion4=1; perturbacion5=1; perturbacion6=1;
+perturbacion7=1; perturbacion8=1; perturbacion9=1; perturbacion10=1;
+amplitudPerturbacion1=0; amplitudPerturbacion2=0; amplitudPerturbacion3=0; amplitudPerturbacion4=0; amplitudPerturbacion5=0;
+amplitudPerturbacion6=0; amplitudPerturbacion7=0; amplitudPerturbacion8=0; amplitudPerturbacion9=0; amplitudPerturbacion10=0;
+inicioPerturbacion1=0; inicioPerturbacion2=0; inicioPerturbacion3=0; inicioPerturbacion4=0; inicioPerturbacion5=0; inicioPerturbacion6=0;
+inicioPerturbacion7=0; inicioPerturbacion8=0; inicioPerturbacion9=0; inicioPerturbacion10=0;
+duracionPerturbacion1=0; duracionPerturbacion2=0; duracionPerturbacion3=0; duracionPerturbacion4=0; duracionPerturbacion5=0;
+duracionPerturbacion6=0; duracionPerturbacion7=0; duracionPerturbacion8=0; duracionPerturbacion9=0; duracionPerturbacion10=0;
+set(handles.popupmenu1,'value',perturbacion1);
+set(handles.popupmenu2,'value',perturbacion2);
+set(handles.popupmenu3,'value',perturbacion3);
+set(handles.popupmenu4,'value',perturbacion4);
+set(handles.popupmenu5,'value',perturbacion5);
+set(handles.popupmenu6,'value',perturbacion6);
+set(handles.popupmenu7,'value',perturbacion7);
+set(handles.popupmenu8,'value',perturbacion8);
+set(handles.popupmenu9,'value',perturbacion9);
+set(handles.popupmenu10,'value',perturbacion10);
+set(handles.AmplitudPerturbacion1,'string',num2str(amplitudPerturbacion1*100));
+set(handles.AmplitudPerturbacion2,'string',num2str(amplitudPerturbacion2*100));
+set(handles.AmplitudPerturbacion3,'string',num2str(amplitudPerturbacion3*100));
+set(handles.AmplitudPerturbacion4,'string',num2str(amplitudPerturbacion4*100));
+set(handles.AmplitudPerturbacion5,'string',num2str(amplitudPerturbacion5*100));
+set(handles.AmplitudPerturbacion6,'string',num2str(amplitudPerturbacion6*100));
+set(handles.AmplitudPerturbacion7,'string',num2str(amplitudPerturbacion7*100));
+set(handles.AmplitudPerturbacion8,'string',num2str(amplitudPerturbacion8*100));
+set(handles.AmplitudPerturbacion9,'string',num2str(amplitudPerturbacion9*100));
+set(handles.AmplitudPerturbacion10,'string',num2str(amplitudPerturbacion10*100));
+set(handles.InicioPerturbacion1,'string',num2str(inicioPerturbacion1));
+set(handles.InicioPerturbacion2,'string',num2str(inicioPerturbacion2));
+set(handles.InicioPerturbacion3,'string',num2str(inicioPerturbacion3));
+set(handles.InicioPerturbacion4,'string',num2str(inicioPerturbacion4));
+set(handles.InicioPerturbacion5,'string',num2str(inicioPerturbacion5));
+set(handles.InicioPerturbacion6,'string',num2str(inicioPerturbacion6));
+set(handles.InicioPerturbacion7,'string',num2str(inicioPerturbacion7));
+set(handles.InicioPerturbacion8,'string',num2str(inicioPerturbacion8));
+set(handles.InicioPerturbacion9,'string',num2str(inicioPerturbacion9));
+set(handles.InicioPerturbacion10,'string',num2str(inicioPerturbacion10));
+set(handles.DuracionPerturbacion1,'string',num2str(duracionPerturbacion1));
+set(handles.DuracionPerturbacion2,'string',num2str(duracionPerturbacion2));
+set(handles.DuracionPerturbacion3,'string',num2str(duracionPerturbacion3));
+set(handles.DuracionPerturbacion4,'string',num2str(duracionPerturbacion4));
+set(handles.DuracionPerturbacion5,'string',num2str(duracionPerturbacion5));
+set(handles.DuracionPerturbacion6,'string',num2str(duracionPerturbacion6));
+set(handles.DuracionPerturbacion7,'string',num2str(duracionPerturbacion7));
+set(handles.DuracionPerturbacion8,'string',num2str(duracionPerturbacion8));
+set(handles.DuracionPerturbacion9,'string',num2str(duracionPerturbacion9));
+set(handles.DuracionPerturbacion10,'string',num2str(duracionPerturbacion10));
