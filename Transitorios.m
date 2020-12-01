@@ -726,8 +726,6 @@ close Transitorios;
 function CancelarTransitorio_Callback(hObject, eventdata, handles)
 close Transitorios;
 
-
-% --- Executes on button press in LimpiarTransitorio.
 function LimpiarTransitorio_Callback(hObject, eventdata, handles)
 inicioTransitorio1=0; inicioTransitorio2=0; inicioTransitorio3=0; inicioTransitorio4=0; inicioTransitorio5=0;
 inicioTransitorio6=0; inicioTransitorio7=0; inicioTransitorio8=0; inicioTransitorio9=0; inicioTransitorio10=0;

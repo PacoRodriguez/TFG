@@ -35,7 +35,6 @@ function varargout = Flicker_OutputFcn(hObject, eventdata, handles)
 varargout{1} = handles.output;
 
 function InicioFlicker_Callback(hObject, eventdata, handles)
-% inicioFlicker=str2double(get(hObject,'string'));
 
 function InicioFlicker_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -43,7 +42,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function DuracionFlicker_Callback(hObject, eventdata, handles)
-% duracionFlicker=str2double(get(hObject,'string'));
 
 function DuracionFlicker_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -51,7 +49,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function AmplitudFlicker_Callback(hObject, eventdata, handles)
-% amplitudFlicker=str2double(get(hObject,'string'));
 
 function AmplitudFlicker_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -59,7 +56,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function FrecuenciaFlicker_Callback(hObject, eventdata, handles)
-% frecuenciaFlicker=str2double(get(hObject,'string'));
 
 function FrecuenciaFlicker_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -67,7 +63,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function FaseFlicker_Callback(hObject, eventdata, handles)
-% faseFlicker=str2double(get(hObject,'string'));
 
 function FaseFlicker_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))

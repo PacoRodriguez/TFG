@@ -494,9 +494,4 @@ xlabel('Tiempo');
 ylabel('Amplitud');
 grid on;
 
-
-% --- Executes on mouse press over axes background.
 function Grafica_ButtonDownFcn(hObject, eventdata, handles)
-% hObject    handle to Grafica (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)

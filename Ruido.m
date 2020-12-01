@@ -31,7 +31,6 @@ varargout{1} = handles.output;
 
 function Decibelios_Callback(hObject, eventdata, handles)
 
-
 function Decibelios_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
