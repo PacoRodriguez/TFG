@@ -102,12 +102,34 @@ grid on;
 function varargout = Pandora_OutputFcn(hObject, eventdata, handles) 
 varargout{1} = handles.output;
 
-function DesviacionFrecuencia_Callback(hObject, eventdata, handles)
-InterfazDesFre;
+function Armonicos_Callback(hObject, eventdata, handles)
+global y amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10 faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 
+global faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10 aceptarArmonico frecuencia duracion muestras amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3
+global amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6
+global faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10 nivelContinua
+Armonicos;
+uiwait;
+duracion=str2double(get(handles.EditDuracion,'string'));
+if aceptarArmonico==1
+    amplitudArmonicoPrevio=[amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10];
+    faseArmonicoPrevio=[faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10];
+    amplitudArmonico=[amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10];
+    faseArmonico=[faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10];
+    amplitudArmonico=amplitudArmonicoPrevio;
+    faseArmonico=faseArmonicoPrevio;
+    y=0;
+    for i=1:10
+        x=linspace(0,duracion/1000,muestras);
+        y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
+    end
+    y=y+nivelContinua;
+    plot(x,y);
+end
+xlabel('Tiempo');
+ylabel('Amplitud');
+grid on;
 
 function HuecosSobretension_Callback(hObject, eventdata, handles)
-InterfazHueSob;
-uiwait;
 global inicioFlicker duracionFlicker amplitudFlicker frecuenciaFlicker
 global faseFlicker duracion muestras aceptarHuecoSobretension
 global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 
@@ -120,6 +142,8 @@ global inicioPerturbacion1 inicioPerturbacion2 inicioPerturbacion3 inicioPerturb
 global inicioPerturbacion6 inicioPerturbacion7 inicioPerturbacion8 inicioPerturbacion9 inicioPerturbacion10
 global duracionPerturbacion1 duracionPerturbacion2 duracionPerturbacion3 duracionPerturbacion4 duracionPerturbacion5
 global duracionPerturbacion6 duracionPerturbacion7 duracionPerturbacion8 duracionPerturbacion9 duracionPerturbacion10
+InterfazHueSob;
+uiwait;
 duracion=str2double(get(handles.EditDuracion,'string'));
 muestras=str2double(get(handles.EditMuestras,'string'));
 if aceptarHuecoSobretension==1
@@ -149,15 +173,56 @@ xlabel('Tiempo');
 ylabel('Amplitud');
 grid on;
 
-function Flicker_Callback(hObject, eventdata, handles)
-Flicker;
+function DesviacionFrecuencia_Callback(hObject, eventdata, handles)
+global y d amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10 faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 
+global faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10 frecuencia duracion muestras amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3
+global amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6
+global faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
+global amplitudFrecuenciaArmonicoPrevio1 amplitudFrecuenciaArmonicoPrevio2 amplitudFrecuenciaArmonicoPrevio3 amplitudFrecuenciaArmonicoPrevio4
+global amplitudFrecuenciaArmonicoPrevio5 amplitudFrecuenciaArmonicoPrevio6 amplitudFrecuenciaArmonicoPrevio7 amplitudFrecuenciaArmonicoPrevio8
+global amplitudFrecuenciaArmonicoPrevio9 amplitudFrecuenciaArmonicoPrevio10 
+global faseFrecuenciaArmonicoPrevio1 faseFrecuenciaArmonicoPrevio2 faseFrecuenciaArmonicoPrevio3 faseFrecuenciaArmonicoPrevio4 
+global faseFrecuenciaArmonicoPrevio5 faseFrecuenciaArmonicoPrevio6 faseFrecuenciaArmonicoPrevio7 faseFrecuenciaArmonicoPrevio8
+global faseFrecuenciaArmonicoPrevio9 faseFrecuenciaArmonicoPrevio10 aceptarDesviacionFrecuencia
+global nivelContinuaArmonico nivelContinuaFrecuencia armonicoFundamental aceptarArmonico
+InterfazDesFre;
 uiwait;
+duracion=str2double(get(handles.EditDuracion,'string'));
+if aceptarDesviacionFrecuencia==1 && aceptarArmonico==1
+    amplitudArmonicoPrevio=[amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10];
+    faseArmonicoPrevio=[faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10];
+    amplitudArmonico=[amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10];
+    faseArmonico=[faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10];
+    amplitudArmonico=amplitudArmonicoPrevio;
+    faseArmonico=faseArmonicoPrevio;
+    amplitudFrecuenciaArmonicoPrevio=[amplitudFrecuenciaArmonicoPrevio1 amplitudFrecuenciaArmonicoPrevio2 amplitudFrecuenciaArmonicoPrevio3 amplitudFrecuenciaArmonicoPrevio4 amplitudFrecuenciaArmonicoPrevio5 amplitudFrecuenciaArmonicoPrevio6 amplitudFrecuenciaArmonicoPrevio7 amplitudFrecuenciaArmonicoPrevio8 amplitudFrecuenciaArmonicoPrevio9 amplitudFrecuenciaArmonicoPrevio10];
+    faseFrecuenciaArmonicoPrevio=[faseFrecuenciaArmonicoPrevio1 faseFrecuenciaArmonicoPrevio2 faseFrecuenciaArmonicoPrevio3 faseFrecuenciaArmonicoPrevio4 faseFrecuenciaArmonicoPrevio5 faseFrecuenciaArmonicoPrevio6 faseFrecuenciaArmonicoPrevio7 faseFrecuenciaArmonicoPrevio8 faseFrecuenciaArmonicoPrevio9 faseFrecuenciaArmonicoPrevio10];
+    amplitudFrecuenciaArmonico=amplitudFrecuenciaArmoicoPrevio;
+    faseFrecuenciaArmonico=faseFrecuenciaArmonicoPrevio;
+    y=0;
+    d=0;
+    for i=1:10
+        x=linspace(0,duracion/1000,muestras);
+        y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
+        d=d+amplitudFrecuenciaArmonico(i)*sqrt(2)*sin(2*pi*i*armonicoFundamental*x+faseFrecuenciaArmonic(i));
+    end
+    y=y+nivelContinuaArmonico;
+    d=d+nivelContinuaFrecuencia;
+    plot(x,y);
+end
+xlabel('Tiempo');
+ylabel('Amplitud');
+grid on;
+
+function Flicker_Callback(hObject, eventdata, handles)
 global inicioFlicker duracionFlicker amplitudFlicker frecuenciaFlicker
 global faseFlicker duracion muestras aceptarFlicker
 global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 
 global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
 global frecuencia amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10
 global faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10 y z
+Flicker;
+uiwait;
 duracion=str2double(get(handles.EditDuracion,'string'));
 muestras=str2double(get(handles.EditMuestras,'string'));
 if aceptarFlicker==1
@@ -182,8 +247,6 @@ ylabel('Amplitud');
 grid on;
 
 function Transitorios_Callback(hObject, eventdata, handles)
-Transitorios;
-uiwait;
 global inicioFlicker duracionFlicker amplitudFlicker frecuenciaFlicker
 global faseFlicker duracion muestras aceptarHuecoSobretension
 global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 
@@ -202,6 +265,8 @@ global inicioTransitorio1 inicioTransitorio2 inicioTransitorio3 inicioTransitori
 global inicioTransitorio6 inicioTransitorio7 inicioTransitorio8 inicioTransitorio9 inicioTransitorio10
 global duracionTransitorio1 duracionTransitorio2 duracionTransitorio3 duracionTransitorio4 duracionTransitorio5
 global duracionTransitorio6 duracionTransitorio7 duracionTransitorio8 duracionTransitorio9 duracionTransitorio10
+Transitorios;
+uiwait;
 duracion=str2double(get(handles.EditDuracion,'string'));
 muestras=str2double(get(handles.EditMuestras,'string'));
 if aceptarHuecoSobretension==1
@@ -239,12 +304,12 @@ ylabel('Amplitud');
 grid on;
 
 function Ruido_Callback(hObject, eventdata, handles)
-Ruido;
-uiwait;
 global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 
 global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
 global frecuencia aceptarRuido duracion amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10
 global faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10 muestras decibelios y
+Ruido;
+uiwait;
 duracion=str2double(get(handles.EditDuracion,'string'));
 muestras=str2double(get(handles.EditMuestras,'string'));
 if aceptarRuido==1
@@ -466,32 +531,5 @@ function EditMuestras_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
-function Armonicos_Callback(hObject, eventdata, handles)
-global y amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10 faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 
-global faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10 aceptarArmonico frecuencia duracion muestras amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3
-global amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6
-global faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10 nivelContinua
-Armonicos;
-uiwait;
-duracion=str2double(get(handles.EditDuracion,'string'));
-if aceptarArmonico==1
-    amplitudArmonicoPrevio=[amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10];
-    faseArmonicoPrevio=[faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10];
-    amplitudArmonico=[amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10];
-    faseArmonico=[faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10];
-    amplitudArmonico=amplitudArmonicoPrevio;
-    faseArmonico=faseArmonicoPrevio;
-    y=0;
-    for i=1:10
-        x=linspace(0,duracion/1000,muestras);
-        y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
-    end
-    y=y+nivelContinua;
-    plot(x,y);
-end
-xlabel('Tiempo');
-ylabel('Amplitud');
-grid on;
 
 function Grafica_ButtonDownFcn(hObject, eventdata, handles)
