@@ -23,7 +23,7 @@ global amplitudFrecuenciaArmonicoPrevio9 amplitudFrecuenciaArmonicoPrevio10
 global faseFrecuenciaArmonicoPrevio1 faseFrecuenciaArmonicoPrevio2 faseFrecuenciaArmonicoPrevio3 faseFrecuenciaArmonicoPrevio4 
 global faseFrecuenciaArmonicoPrevio5 faseFrecuenciaArmonicoPrevio6 faseFrecuenciaArmonicoPrevio7 faseFrecuenciaArmonicoPrevio8
 global faseFrecuenciaArmonicoPrevio9 faseFrecuenciaArmonicoPrevio10
-global nivelContinua armonicoFundamental
+global nivelContinuaArmonico armonicoFundamental
 set(handles.EditAmplitudFrecuenciaArmonico1,'string',num2str(amplitudFrecuenciaArmonicoPrevio1));
 set(handles.SliderAmplitudFrecuenciaArmonico1,'value',amplitudFrecuenciaArmonicoPrevio1);
 set(handles.EditAmplitudFrecuenciaArmonico2,'string',num2str(amplitudFrecuenciaArmonicoPrevio2));
@@ -64,8 +64,8 @@ set(handles.EditFaseFrecuenciaArmonico9,'string',num2str(faseFrecuenciaArmonicoP
 set(handles.SliderFaseFrecuenciaArmonico9,'value',faseFrecuenciaArmonicoPrevio9);
 set(handles.EditFaseFrecuenciaArmonico10,'string',num2str(faseFrecuenciaArmonicoPrevio10));
 set(handles.SliderFaseFrecuenciaArmonico10,'value',faseFrecuenciaArmonicoPrevio10);
-set(handles.EditNivelContinua,'string',num2str(nivelContinua));
-set(handles.SliderNivelContinua,'value',nivelContinua);
+set(handles.EditNivelContinuaFrecuencia,'string',num2str(nivelContinuaArmonico));
+set(handles.SliderNivelContinuaFrecuencia,'value',nivelContinuaArmonico);
 set(handles.EditArmonicoFundamental,'string',num2str(armonicoFundamental));
 set(handles.SliderArmonicoFundamental,'value',armonicoFundamental);
 
@@ -438,20 +438,20 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
     set(hObject,'BackgroundColor','white');
 end
 
-function SliderNivelContinua_Callback(hObject, eventdata, handles)
-nivelContinua=get(hObject,'value');
-set(handles.EditNivelContinua,'string',num2str(nivelContinua));
+function SliderNivelContinuaFrecuencia_Callback(hObject, eventdata, handles)
+nivelContinuaArmonico=get(hObject,'value');
+set(handles.EditNivelContinuaFrecuencia,'string',num2str(nivelContinuaArmonico));
 
-function SliderNivelContinua_CreateFcn(hObject, eventdata, handles)
+function SliderNivelContinuaFrecuencia_CreateFcn(hObject, eventdata, handles)
 if isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor',[.9 .9 .9]);
 end
 
-function EditNivelContinua_Callback(hObject, eventdata, handles)
-nivelContinua=str2double(get(hObject,'string'));
-set(handles.SliderNivelContinua,'value',nivelContinua);
+function EditNivelContinuaFrecuencia_Callback(hObject, eventdata, handles)
+nivelContinuaArmonico=str2double(get(hObject,'string'));
+set(handles.SliderNivelContinuaFrecuencia,'value',nivelContinuaArmonico);
 
-function EditNivelContinua_CreateFcn(hObject, eventdata, handles)
+function EditNivelContinuaFrecuencia_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
@@ -481,7 +481,7 @@ global amplitudFrecuenciaArmonicoPrevio9 amplitudFrecuenciaArmonicoPrevio10
 global faseFrecuenciaArmonicoPrevio1 faseFrecuenciaArmonicoPrevio2 faseFrecuenciaArmonicoPrevio3 faseFrecuenciaArmonicoPrevio4 
 global faseFrecuenciaArmonicoPrevio5 faseFrecuenciaArmonicoPrevio6 faseFrecuenciaArmonicoPrevio7 faseFrecuenciaArmonicoPrevio8
 global faseFrecuenciaArmonicoPrevio9 faseFrecuenciaArmonicoPrevio10 aceptarDesviacionFrecuencia
-global nivelContinua armonicoFundamental
+global nivelContinuaArmonico armonicoFundamental
 amplitudFrecuenciaArmonicoPrevio1=str2double(get(handles.EditAmplitudFrecuenciaArmonico1,'string'));
 amplitudFrecuenciaArmonicoPrevio2=str2double(get(handles.EditAmplitudFrecuenciaArmonico2,'string'));
 amplitudFrecuenciaArmonicoPrevio3=str2double(get(handles.EditAmplitudFrecuenciaArmonico3,'string'));
@@ -502,7 +502,7 @@ faseFrecuenciaArmonicoPrevio7=str2double(get(handles.EditFaseFrecuenciaArmonico7
 faseFrecuenciaArmonicoPrevio8=str2double(get(handles.EditFaseFrecuenciaArmonico8,'string'));
 faseFrecuenciaArmonicoPrevio9=str2double(get(handles.EditFaseFrecuenciaArmonico9,'string'));
 faseFrecuenciaArmonicoPrevio10=str2double(get(handles.EditFaseFrecuenciaArmonico10,'string'));
-nivelContinua=str2double(get(handles.EditNivelContinua,'string'));
+nivelContinuaArmonico=str2double(get(handles.EditNivelContinuaFrecuencia,'string'));
 armonicoFundamental=str2double(get(handles.EditArmonicoFundamental,'string'));
 
 aceptarDesviacionFrecuencia=1;
@@ -518,7 +518,7 @@ amplitudFrecuenciaArmonicoPrevio9=0; amplitudFrecuenciaArmonicoPrevio10=0;
 faseFrecuenciaArmonicoPrevio1=0; faseFrecuenciaArmonicoPrevio2=0; faseFrecuenciaArmonicoPrevio3=0; faseFrecuenciaArmonicoPrevio4=0;
 faseFrecuenciaArmonicoPrevio5=0; faseFrecuenciaArmonicoPrevio6=0; faseFrecuenciaArmonicoPrevio7=0; faseFrecuenciaArmonicoPrevio8=0;
 faseFrecuenciaArmonicoPrevio9=0; faseFrecuenciaArmonicoPrevio10=0;
-nivelContinua=0; armonicoFundamental=0;
+nivelContinuaArmonico=0; armonicoFundamental=0;
 set(handles.EditAmplitudFrecuenciaArmonico1,'string',num2str(amplitudFrecuenciaArmonicoPrevio1));
 set(handles.SliderAmplitudFrecuenciaArmonico1,'value',amplitudFrecuenciaArmonicoPrevio1);
 set(handles.EditAmplitudFrecuenciaArmonico2,'string',num2str(amplitudFrecuenciaArmonicoPrevio2));
@@ -559,7 +559,7 @@ set(handles.EditFaseFrecuenciaArmonico9,'string',num2str(faseFrecuenciaArmonicoP
 set(handles.SliderFaseFrecuenciaArmonico9,'value',faseFrecuenciaArmonicoPrevio9);
 set(handles.EditFaseFrecuenciaArmonico10,'string',num2str(faseFrecuenciaArmonicoPrevio10));
 set(handles.SliderFaseFrecuenciaArmonico10,'value',faseFrecuenciaArmonicoPrevio10);
-set(handles.EditNivelContinua,'string',num2str(nivelContinua));
-set(handles.SliderNivelContinua,'value',nivelContinua);
+set(handles.EditNivelContinuaFrecuencia,'string',num2str(nivelContinuaArmonico));
+set(handles.SliderNivelContinuaFrecuencia,'value',nivelContinuaArmonico);
 set(handles.EditArmonicoFundamental,'string',num2str(armonicoFundamental));
 set(handles.SliderArmonicoFundamental,'value',armonicoFundamental);
