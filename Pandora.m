@@ -106,7 +106,7 @@ function Armonicos_Callback(hObject, eventdata, handles)
 global y amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10 faseArmonico1 faseArmonico2 faseArmonico3 faseArmonico4 faseArmonico5 
 global faseArmonico6 faseArmonico7 faseArmonico8 faseArmonico9 faseArmonico10 aceptarArmonico frecuencia duracion muestras amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3
 global amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6
-global faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10 nivelContinua
+global faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10 nivelContinuaArmonico
 Armonicos;
 uiwait;
 duracion=str2double(get(handles.EditDuracion,'string'));
@@ -122,7 +122,7 @@ if aceptarArmonico==1
         x=linspace(0,duracion/1000,muestras);
         y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
     end
-    y=y+nivelContinua;
+    y=y+nivelContinuaArmonico;
     plot(x,y);
 end
 xlabel('Tiempo');
@@ -367,10 +367,10 @@ z=0;
 for i=1:10
     x=linspace(0,duracion/1000,muestras);
     y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
-    z=z+((amplitudArmonico(i)*sqrt(2)*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*((sin(2*pi*i*frecuencia*x+faseArmonico(i)))));
+%     z=z+((amplitudArmonico(i)*sqrt(2)*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*((sin(2*pi*i*frecuencia*x+faseArmonico(i)))));
 %     plot(x,y);
 end
-y=(x<inicioFlicker/1000).*(y)+((inicioFlicker/1000<=x)&(x<(inicioFlicker+duracionFlicker)/1000)).*(z)+((inicioFlicker+duracionFlicker)/1000<x).*(y);
+% y=(x<inicioFlicker/1000).*(y)+((inicioFlicker/1000<=x)&(x<(inicioFlicker+duracionFlicker)/1000)).*(z)+((inicioFlicker+duracionFlicker)/1000<x).*(y);
 plot(x,y);
 grid on;
 xlabel('Tiempo');
