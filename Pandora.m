@@ -25,6 +25,8 @@ global faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoP
 global frecuenciaFlicker faseFlicker decibelios
 global perturbacion1 perturbacion2 perturbacion3 perturbacion4 perturbacion5 perturbacion6
 global perturbacion7 perturbacion8 perturbacion9 perturbacion10
+global amplitudPerturbacionPrevia1 amplitudPerturbacionPrevia2 amplitudPerturbacionPrevia3 amplitudPerturbacionPrevia4 amplitudPerturbacionPrevia5
+global amplitudPerturbacionPrevia6 amplitudPerturbacionPrevia7 amplitudPerturbacionPrevia8 amplitudPerturbacionPrevia9 amplitudPerturbacionPrevia10
 global amplitudPerturbacion1 amplitudPerturbacion2 amplitudPerturbacion3 amplitudPerturbacion4 amplitudPerturbacion5
 global amplitudPerturbacion6 amplitudPerturbacion7 amplitudPerturbacion8 amplitudPerturbacion9 amplitudPerturbacion10
 global inicioPerturbacion1 inicioPerturbacion2 inicioPerturbacion3 inicioPerturbacion4 inicioPerturbacion5 inicioPerturbacion6
@@ -62,6 +64,8 @@ perturbacion1=1; perturbacion2=1; perturbacion3=1; perturbacion4=1; perturbacion
 perturbacion7=1; perturbacion8=1; perturbacion9=1; perturbacion10=1;
 hueco1=0; hueco2=0; hueco3=0; hueco4=0; hueco5=0; hueco6=0; hueco7=0; hueco8=0; hueco9=0; hueco10=0;
 sobretension1=0; sobretension2=0; sobretension3=0; sobretension4=0; sobretension5=0; sobretension6=0; sobretension7=0; sobretension8=0; sobretension9=0; sobretension10=0;
+amplitudPerturbacionPrevia1=0; amplitudPerturbacionPrevia2=0; amplitudPerturbacionPrevia3=0; amplitudPerturbacionPrevia4=0; amplitudPerturbacionPrevia5=0;
+amplitudPerturbacionPrevia6=0; amplitudPerturbacionPrevia7=0; amplitudPerturbacionPrevia8=0; amplitudPerturbacionPrevia9=0; amplitudPerturbacionPrevia10=0;
 amplitudPerturbacion1=0; amplitudPerturbacion2=0; amplitudPerturbacion3=0; amplitudPerturbacion4=0; amplitudPerturbacion5=0;
 amplitudPerturbacion6=0; amplitudPerturbacion7=0; amplitudPerturbacion8=0; amplitudPerturbacion9=0; amplitudPerturbacion10=0;
 inicioPerturbacion1=0; inicioPerturbacion2=0; inicioPerturbacion3=0; inicioPerturbacion4=0; inicioPerturbacion5=0; inicioPerturbacion6=0;

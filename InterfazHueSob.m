@@ -19,8 +19,8 @@ end
 function InterfazHueSob_OpeningFcn(hObject, eventdata, handles, varargin)
 global perturbacion1 perturbacion2 perturbacion3 perturbacion4 perturbacion5 perturbacion6
 global perturbacion7 perturbacion8 perturbacion9 perturbacion10
-global amplitudPerturbacion1 amplitudPerturbacion2 amplitudPerturbacion3 amplitudPerturbacion4 amplitudPerturbacion5
-global amplitudPerturbacion6 amplitudPerturbacion7 amplitudPerturbacion8 amplitudPerturbacion9 amplitudPerturbacion10
+global amplitudPerturbacionPrevia1 amplitudPerturbacionPrevia2 amplitudPerturbacionPrevia3 amplitudPerturbacionPrevia4 amplitudPerturbacionPrevia5
+global amplitudPerturbacionPrevia6 amplitudPerturbacionPrevia7 amplitudPerturbacionPrevia8 amplitudPerturbacionPrevia9 amplitudPerturbacionPrevia10
 global inicioPerturbacion1 inicioPerturbacion2 inicioPerturbacion3 inicioPerturbacion4 inicioPerturbacion5 inicioPerturbacion6
 global inicioPerturbacion7 inicioPerturbacion8 inicioPerturbacion9 inicioPerturbacion10
 global duracionPerturbacion1 duracionPerturbacion2 duracionPerturbacion3 duracionPerturbacion4 duracionPerturbacion5 
@@ -35,16 +35,16 @@ set(handles.popupmenu7,'value',perturbacion7);
 set(handles.popupmenu8,'value',perturbacion8);
 set(handles.popupmenu9,'value',perturbacion9);
 set(handles.popupmenu10,'value',perturbacion10);
-set(handles.AmplitudPerturbacion1,'string',num2str(amplitudPerturbacion1*100));
-set(handles.AmplitudPerturbacion2,'string',num2str(amplitudPerturbacion2*100));
-set(handles.AmplitudPerturbacion3,'string',num2str(amplitudPerturbacion3*100));
-set(handles.AmplitudPerturbacion4,'string',num2str(amplitudPerturbacion4*100));
-set(handles.AmplitudPerturbacion5,'string',num2str(amplitudPerturbacion5*100));
-set(handles.AmplitudPerturbacion6,'string',num2str(amplitudPerturbacion6*100));
-set(handles.AmplitudPerturbacion7,'string',num2str(amplitudPerturbacion7*100));
-set(handles.AmplitudPerturbacion8,'string',num2str(amplitudPerturbacion8*100));
-set(handles.AmplitudPerturbacion9,'string',num2str(amplitudPerturbacion9*100));
-set(handles.AmplitudPerturbacion10,'string',num2str(amplitudPerturbacion10*100));
+set(handles.AmplitudPerturbacion1,'string',num2str(amplitudPerturbacionPrevia1));
+set(handles.AmplitudPerturbacion2,'string',num2str(amplitudPerturbacionPrevia2));
+set(handles.AmplitudPerturbacion3,'string',num2str(amplitudPerturbacionPrevia3));
+set(handles.AmplitudPerturbacion4,'string',num2str(amplitudPerturbacionPrevia4));
+set(handles.AmplitudPerturbacion5,'string',num2str(amplitudPerturbacionPrevia5));
+set(handles.AmplitudPerturbacion6,'string',num2str(amplitudPerturbacionPrevia6));
+set(handles.AmplitudPerturbacion7,'string',num2str(amplitudPerturbacionPrevia7));
+set(handles.AmplitudPerturbacion8,'string',num2str(amplitudPerturbacionPrevia8));
+set(handles.AmplitudPerturbacion9,'string',num2str(amplitudPerturbacionPrevia9));
+set(handles.AmplitudPerturbacion10,'string',num2str(amplitudPerturbacionPrevia10));
 set(handles.InicioPerturbacion1,'string',num2str(inicioPerturbacion1));
 set(handles.InicioPerturbacion2,'string',num2str(inicioPerturbacion2));
 set(handles.InicioPerturbacion3,'string',num2str(inicioPerturbacion3));
@@ -944,6 +944,8 @@ global perturbacion6 perturbacion7 perturbacion8 perturbacion9 perturbacion10
 global hueco1 hueco2 hueco3 hueco4 hueco5 hueco6 hueco7 hueco8 hueco9 hueco10
 global sobretension1 sobretension2 sobretension3 sobretension4 sobretension5
 global sobretension6 sobretension7 sobretension8 sobretension9 sobretension10
+global amplitudPerturbacionPrevia1 amplitudPerturbacionPrevia2 amplitudPerturbacionPrevia3 amplitudPerturbacionPrevia4 amplitudPerturbacionPrevia5
+global amplitudPerturbacionPrevia6 amplitudPerturbacionPrevia7 amplitudPerturbacionPrevia8 amplitudPerturbacionPrevia9 amplitudPerturbacionPrevia10
 global amplitudPerturbacion1 amplitudPerturbacion2 amplitudPerturbacion3 amplitudPerturbacion4 amplitudPerturbacion5 amplitudPerturbacion6
 global amplitudPerturbacion7 amplitudPerturbacion8 amplitudPerturbacion9 amplitudPerturbacion10
 global inicioPerturbacion1 inicioPerturbacion2 inicioPerturbacion3 inicioPerturbacion4 inicioPerturbacion5
@@ -961,6 +963,17 @@ perturbacion7=get(handles.popupmenu7,'Value');
 perturbacion8=get(handles.popupmenu8,'Value');
 perturbacion9=get(handles.popupmenu9,'Value');
 perturbacion10=get(handles.popupmenu10,'Value');
+amplitudPerturbacionPrevia1=str2double(get(handles.AmplitudPerturbacion1,'string'));
+amplitudPerturbacionPrevia2=str2double(get(handles.AmplitudPerturbacion2,'string'));
+amplitudPerturbacionPrevia3=str2double(get(handles.AmplitudPerturbacion3,'string'));
+amplitudPerturbacionPrevia4=str2double(get(handles.AmplitudPerturbacion4,'string'));
+amplitudPerturbacionPrevia5=str2double(get(handles.AmplitudPerturbacion5,'string'));
+amplitudPerturbacionPrevia6=str2double(get(handles.AmplitudPerturbacion6,'string'));
+amplitudPerturbacionPrevia7=str2double(get(handles.AmplitudPerturbacion7,'string'));
+amplitudPerturbacionPrevia8=str2double(get(handles.AmplitudPerturbacion8,'string'));
+amplitudPerturbacionPrevia9=str2double(get(handles.AmplitudPerturbacion9,'string'));
+amplitudPerturbacionPrevia10=str2double(get(handles.AmplitudPerturbacion10,'string'));
+
 if perturbacion1==2
             hueco1=1;
             sobretension1=0;
