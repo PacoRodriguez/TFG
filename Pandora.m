@@ -167,9 +167,11 @@ if aceptarHuecoSobretension==1
     p=0;
     for i=1:10
         x=linspace(0,duracion/1000,muestras);
+        u1=(x>=inicioPerturbacion(i));
+        u2=(x>=(inicioPerturbacion(i)+duracionPerturbacion(i)));
         y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
-%         z=z+((amplitudArmonico(i)*sqrt(2))*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*sin(2*pi*frecuencia*x+faseArmonico(i));
-        p=p+amplitudPerturbacion(i)*(u(x-inicioPerturbacion(i))-u(x-(inicioPerturbacion(i)+duracionPerturbacion(i))))*sin(2*pi*i*frecuencia*t);
+%         z=z+((amplitudArmonico(i)*sqrt(2)*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*((sin(2*pi*i*frecuencia*x+faseArmonico(i)))));
+        p=p+(1-amplitudPerturbacion(i).*(u1-u2).*sin(2*pi*i*frecuencia*x));
     end
     plot(x,p);
 end
