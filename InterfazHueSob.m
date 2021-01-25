@@ -66,7 +66,6 @@ set(handles.DuracionPerturbacion8,'string',num2str(duracionPerturbacion8));
 set(handles.DuracionPerturbacion9,'string',num2str(duracionPerturbacion9));
 set(handles.DuracionPerturbacion10,'string',num2str(duracionPerturbacion10));
 
-
 % Choose default command line output for InterfazHueSob
 handles.output = hObject;
 
@@ -77,14 +76,6 @@ function varargout = InterfazHueSob_OutputFcn(hObject, eventdata, handles)
 varargout{1} = handles.output;
 
 function popupmenu1_Callback(hObject, eventdata, handles)
-% global hueco sobretension
-% perturbacion1=get(handles.popupmenu1,'Value');
-% switch perturbacion1
-%     case 2
-%         hueco=1;
-%     case 3
-%         sobretension=1;
-% end
 
 function popupmenu1_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -92,14 +83,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function popupmenu2_Callback(hObject, eventdata, handles)
-% global hueco sobretension perturbacion2
-% perturbacion2=get(handles.popupmenu2,'Value');
-% switch perturbacion2
-%     case 2
-%         hueco=1;
-%     case 3
-%         sobretension=1;
-% end
 
 function popupmenu2_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -107,14 +90,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function popupmenu3_Callback(hObject, eventdata, handles)
-% global hueco sobretension perturbacion3
-% perturbacion3=get(handles.popupmenu3,'Value');
-% switch perturbacion3
-%     case 2
-%         hueco=1;
-%     case 3
-%         sobretension=1;
-% end
 
 function popupmenu3_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -122,14 +97,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function popupmenu4_Callback(hObject, eventdata, handles)
-% global hueco sobretension perturbacion4
-% perturbacion4=get(handles.popupmenu4,'Value');
-% switch perturbacion4
-%     case 2
-%         hueco=1;
-%     case 3
-%         sobretension=1;
-% end
 
 function popupmenu4_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -137,14 +104,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function popupmenu5_Callback(hObject, eventdata, handles)
-% global hueco sobretension perturbacion5
-% perturbacion5=get(handles.popupmenu5,'Value');
-% switch perturbacion5
-%     case 2
-%         hueco=1;
-%     case 3
-%         sobretension=1;
-% end
 
 function popupmenu5_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -152,14 +111,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function popupmenu6_Callback(hObject, eventdata, handles)
-% global hueco sobretension perturbacion6
-% perturbacion6=get(handles.popupmenu6,'Value');
-% switch perturbacion6
-%     case 2
-%         hueco=1;
-%     case 3
-%         sobretension=1;
-% end
 
 function popupmenu6_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -167,14 +118,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function popupmenu7_Callback(hObject, eventdata, handles)
-% global hueco sobretension perturbacion7
-% perturbacion7=get(handles.popupmenu7,'Value');
-% switch perturbacion7
-%     case 2
-%         hueco=1;
-%     case 3
-%         sobretension=1;
-% end
 
 function popupmenu7_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -182,14 +125,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function popupmenu8_Callback(hObject, eventdata, handles)
-% global hueco sobretension perturbacion8
-% perturbacion8=get(handles.popupmenu8,'Value');
-% switch perturbacion8
-%     case 2
-%         hueco=1;
-%     case 3
-%         sobretension=1;
-% end
 
 function popupmenu8_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -197,14 +132,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function popupmenu9_Callback(hObject, eventdata, handles)
-% global hueco sobretension perturbacion9
-% perturbacion9=get(handles.popupmenu9,'Value');
-% switch perturbacion9
-%     case 2
-%         hueco=1;
-%     case 3
-%         sobretension=1;
-% end
 
 function popupmenu9_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -212,14 +139,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function popupmenu10_Callback(hObject, eventdata, handles)
-% global hueco sobretension perturbacion10
-% perturbacion10=get(handles.popupmenu10,'Value');
-% switch perturbacion10
-%     case 2
-%         hueco=1;
-%     case 3
-%         sobretension=1;
-% end
 
 function popupmenu10_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -227,11 +146,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function AmplitudPerturbacion1_Callback(hObject, eventdata, handles)
-% if hueco==1
-%     amplitudPerturbacion1=(str2double(get(hObject,'string')))/100;
-% elseif sobretension==1
-%     amplitudPerturbacion1=1+(str2double(get(hObject,'string')))/100;
-% end
 
 function AmplitudPerturbacion1_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -239,8 +153,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion1_Callback(hObject, eventdata, handles)
-% global inicioPerturbacion1
-% inicioPerturbacion1=str2double(get(hObject,'string'));
 
 function InicioPerturbacion1_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -248,8 +160,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function DuracionPerturbacion1_Callback(hObject, eventdata, handles)
-% global duracionPerturbacion1
-% duracionPerturbacion1=str2double(get(hObject,'string'));
 
 function DuracionPerturbacion1_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -299,12 +209,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function AmplitudPerturbacion2_Callback(hObject, eventdata, handles)
-% global amplitudPerturbacion2 hueco sobretension
-% if hueco==1
-%     amplitudPerturbacion2=(str2double(get(hObject,'string')))/100;
-% elseif sobretension==1
-%     amplitudPerturbacion2=1+(str2double(get(hObject,'string')))/100;
-% end
 
 function AmplitudPerturbacion2_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -312,8 +216,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion2_Callback(hObject, eventdata, handles)
-% global inicioPerturbacion2
-% inicioPerturbacion2=str2double(get(hObject,'string'));
 
 function InicioPerturbacion2_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -321,8 +223,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function DuracionPerturbacion2_Callback(hObject, eventdata, handles)
-% global duracionPerturbacion2
-% duracionPerturbacion2=str2double(get(hObject,'string'));
 
 function DuracionPerturbacion2_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -370,12 +270,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function AmplitudPerturbacion3_Callback(hObject, eventdata, handles)
-% global amplitudPerturbacion3 hueco
-% if hueco==1
-%     amplitudPerturbacion3=(str2double(get(hObject,'string')))/100;
-% else
-%     amplitudPerturbacion3=1+(str2double(get(hObject,'string')))/100;
-% end
 
 function AmplitudPerturbacion3_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -383,8 +277,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion3_Callback(hObject, eventdata, handles)
-% global inicioPerturbacion3
-% inicioPerturbacion3=str2double(get(hObject,'string'));
 
 function InicioPerturbacion3_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -392,8 +284,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function DuracionPerturbacion3_Callback(hObject, eventdata, handles)
-% global duracionPerturbacion3
-% duracionPerturbacion3=str2double(get(hObject,'string'));
 
 function DuracionPerturbacion3_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -441,12 +331,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function AmplitudPerturbacion4_Callback(hObject, eventdata, handles)
-% global amplitudPerturbacion4 hueco
-% if hueco==1
-%     amplitudPerturbacion4=(str2double(get(hObject,'string')))/100;
-% else
-%     amplitudPerturbacion4=1+(str2double(get(hObject,'string')))/100;
-% end
 
 function AmplitudPerturbacion4_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -454,8 +338,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion4_Callback(hObject, eventdata, handles)
-% global inicioPerturbacion4
-% inicioPerturbacion4=str2double(get(hObject,'string'));
 
 function InicioPerturbacion4_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -463,8 +345,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function DuracionPerturbacion4_Callback(hObject, eventdata, handles)
-% global duracionPerturbacion4
-% duracionPerturbacion4=str2double(get(hObject,'string'));
 
 function DuracionPerturbacion4_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -512,12 +392,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function AmplitudPerturbacion5_Callback(hObject, eventdata, handles)
-% global amplitudPerturbacion5 hueco
-% if hueco==1
-%     amplitudPerturbacion5=(str2double(get(hObject,'string')))/100;
-% else
-%     amplitudPerturbacion5=1+(str2double(get(hObject,'string')))/100;
-% end
 
 function AmplitudPerturbacion5_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -525,8 +399,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion5_Callback(hObject, eventdata, handles)
-% global inicioPerturbacion5
-% inicioPerturbacion5=str2double(get(hObject,'string'));
 
 function InicioPerturbacion5_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -534,8 +406,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function DuracionPerturbacion5_Callback(hObject, eventdata, handles)
-% global duracionPerturbacion5
-% duracionPerturbacion5=str2double(get(hObject,'string'));
 
 function DuracionPerturbacion5_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -583,12 +453,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function AmplitudPerturbacion6_Callback(hObject, eventdata, handles)
-% global amplitudPerturbacion6 hueco
-% if hueco==1
-%     amplitudPerturbacion6=(str2double(get(hObject,'string')))/100;
-% else
-%     amplitudPerturbacion6=1+(str2double(get(hObject,'string')))/100;
-% end
 
 function AmplitudPerturbacion6_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -596,8 +460,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion6_Callback(hObject, eventdata, handles)
-% global inicioPerturbacion6
-% inicioPerturbacion6=str2double(get(hObject,'string'));
 
 function InicioPerturbacion6_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -605,8 +467,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function DuracionPerturbacion6_Callback(hObject, eventdata, handles)
-% global duracionPerturbacion6
-% duracionPerturbacion6=str2double(get(hObject,'string'));
 
 function DuracionPerturbacion6_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -654,12 +514,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function AmplitudPerturbacion7_Callback(hObject, eventdata, handles)
-% global amplitudPerturbacion7 hueco
-% if hueco==1
-%     amplitudPerturbacion7=(str2double(get(hObject,'string')))/100;
-% else
-%     amplitudPerturbacion7=1+(str2double(get(hObject,'string')))/100;
-% end
 
 function AmplitudPerturbacion7_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -667,8 +521,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion7_Callback(hObject, eventdata, handles)
-% global inicioPerturbacion7
-% inicioPerturbacion7=str2double(get(hObject,'string'));
 
 function InicioPerturbacion7_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -676,8 +528,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function DuracionPerturbacion7_Callback(hObject, eventdata, handles)
-% global duracionPerturbacion7
-% duracionPerturbacion7=str2double(get(hObject,'string'));
 
 function DuracionPerturbacion7_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -725,12 +575,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function AmplitudPerturbacion8_Callback(hObject, eventdata, handles)
-% global amplitudPerturbacion8 hueco
-% if hueco==1
-%     amplitudPerturbacion8=(str2double(get(hObject,'string')))/100;
-% else
-%     amplitudPerturbacion8=1+(str2double(get(hObject,'string')))/100;
-% end
 
 function AmplitudPerturbacion8_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -738,8 +582,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion8_Callback(hObject, eventdata, handles)
-% global inicioPerturbacion8
-% inicioPerturbacion8=str2double(get(hObject,'string'));
 
 function InicioPerturbacion8_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -747,8 +589,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function DuracionPerturbacion8_Callback(hObject, eventdata, handles)
-% global duracionPerturbacion8
-% duracionPerturbacion8=str2double(get(hObject,'string'));
 
 function DuracionPerturbacion8_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -796,12 +636,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function AmplitudPerturbacion9_Callback(hObject, eventdata, handles)
-% global amplitudPerturbacion9 hueco
-% if hueco==1
-%     amplitudPerturbacion9=(str2double(get(hObject,'string')))/100;
-% else
-%     amplitudPerturbacion9=1+(str2double(get(hObject,'string')))/100;
-% end
 
 function AmplitudPerturbacion9_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -809,8 +643,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion9_Callback(hObject, eventdata, handles)
-% global inicioPerturbacion9
-% inicioPerturbacion9=str2double(get(hObject,'string'));
 
 function InicioPerturbacion9_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -818,8 +650,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function DuracionPerturbacion9_Callback(hObject, eventdata, handles)
-% global duracionPerturbacion9
-% duracionPerturbacion9=str2double(get(hObject,'string'));
 
 function DuracionPerturbacion9_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -867,12 +697,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function AmplitudPerturbacion10_Callback(hObject, eventdata, handles)
-% global amplitudPerturbacion10 hueco
-% if hueco==1
-%     amplitudPerturbacion10=(str2double(get(hObject,'string')))/100;
-% else
-%     amplitudPerturbacion10=1+(str2double(get(hObject,'string')))/100;
-% end
 
 function AmplitudPerturbacion10_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -880,8 +704,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function InicioPerturbacion10_Callback(hObject, eventdata, handles)
-% global inicioPerturbacion10
-% inicioPerturbacion10=str2double(get(hObject,'string'));
 
 function InicioPerturbacion10_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -889,8 +711,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 function DuracionPerturbacion10_Callback(hObject, eventdata, handles)
-% global duracionPerturbacion10
-% duracionPerturbacion10=str2double(get(hObject,'string'));
 
 function DuracionPerturbacion10_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -1132,8 +952,6 @@ close InterfazHueSob;
 function CancelarHuecoSobretension_Callback(hObject, eventdata, handles)
 close InterfazHueSob;
 
-
-% --- Executes on button press in LimpiarHuecoSobretension.
 function LimpiarHuecoSobretension_Callback(hObject, eventdata, handles)
 perturbacion1=1; perturbacion2=1; perturbacion3=1; perturbacion4=1; perturbacion5=1; perturbacion6=1;
 perturbacion7=1; perturbacion8=1; perturbacion9=1; perturbacion10=1;

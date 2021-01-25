@@ -163,16 +163,22 @@ if aceptarHuecoSobretension==1
         inicioPerturbacion6 inicioPerturbacion7 inicioPerturbacion8 inicioPerturbacion9 inicioPerturbacion10];
     duracionPerturbacion=[duracionPerturbacion1 duracionPerturbacion2 duracionPerturbacion3 duracionPerturbacion4 duracionPerturbacion5
         duracionPerturbacion6 duracionPerturbacion7 duracionPerturbacion8 duracionPerturbacion9 duracionPerturbacion10];
+    u1[];
+    u2[]
     y=0;
     p=0;
     for i=1:10
         x=linspace(0,duracion/1000,muestras);
-        u1=(x>=inicioPerturbacion(i));
-        u2=(x>=(inicioPerturbacion(i)+duracionPerturbacion(i)));
+        u1=(x>=inicioPerturbacion(i)/1000);
+        u2=(x>=(inicioPerturbacion(i)/1000+duracionPerturbacion(i)/1000));
         y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
-%         z=z+((amplitudArmonico(i)*sqrt(2)*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*((sin(2*pi*i*frecuencia*x+faseArmonico(i)))));
-        p=p+(1-amplitudPerturbacion(i).*(u1-u2).*sin(2*pi*i*frecuencia*x));
+%         p=p+(1-amplitudPerturbacion(i)*amplitudArmonico(i)*sqrt(2).*(u1-u2).*sin(2*pi*i*frecuencia*x));
+%         p=p+amplitudPerturbacion(i)*amplitudArmonico(i)*sqrt(2)*(u1-u2);
     end
+%     p=p+(1-amplitudPerturbacion(1)*(u1-u2));
+%     u1=x>=inicioPerturbacion(1);
+%     u2=x>=inicioPerturbacion(1)/1000+duracionPerturbacion(1)/1000;
+    p=(u1-u2).*sin(2*pi*50*x);
     plot(x,p);
 end
 xlabel('Tiempo');
