@@ -163,8 +163,6 @@ if aceptarHuecoSobretension==1
         inicioPerturbacion6 inicioPerturbacion7 inicioPerturbacion8 inicioPerturbacion9 inicioPerturbacion10];
     duracionPerturbacion=[duracionPerturbacion1 duracionPerturbacion2 duracionPerturbacion3 duracionPerturbacion4 duracionPerturbacion5
         duracionPerturbacion6 duracionPerturbacion7 duracionPerturbacion8 duracionPerturbacion9 duracionPerturbacion10];
-    u1[];
-    u2[]
     y=0;
     p=0;
     for i=1:10
@@ -200,7 +198,7 @@ global nivelContinuaArmonico nivelContinuaFrecuencia armonicoFundamental aceptar
 InterfazDesFre;
 uiwait;
 duracion=str2double(get(handles.EditDuracion,'string'));
-if aceptarDesviacionFrecuencia==1 && aceptarArmonico==1
+if aceptarDesviacionFrecuencia==1
     amplitudArmonicoPrevio=[amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10];
     faseArmonicoPrevio=[faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10];
     amplitudArmonico=[amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10];
@@ -215,12 +213,12 @@ if aceptarDesviacionFrecuencia==1 && aceptarArmonico==1
     d=0;
     for i=1:10
         x=linspace(0,duracion/1000,muestras);
-        y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
+%         y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
         d=d+amplitudFrecuenciaArmonico(i)*sqrt(2)*sin(2*pi*i*armonicoFundamental*x+faseFrecuenciaArmonico(i));
     end
-    y=y+nivelContinuaArmonico;
+%     y=y+nivelContinuaArmonico;
     d=d+nivelContinuaFrecuencia;
-    plot(x,y);
+    plot(x,d);
 end
 xlabel('Tiempo');
 ylabel('Amplitud');
