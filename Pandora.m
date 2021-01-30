@@ -258,7 +258,7 @@ grid on;
 
 function Transitorios_Callback(hObject, eventdata, handles)
 global inicioFlicker duracionFlicker amplitudFlicker frecuenciaFlicker
-global faseFlicker duracion muestras aceptarHuecoSobretension
+global faseFlicker duracion muestras aceptarTransitorios
 global amplitudArmonicoPrevio1 amplitudArmonicoPrevio2 amplitudArmonicoPrevio3 amplitudArmonicoPrevio4 amplitudArmonicoPrevio5 amplitudArmonicoPrevio6 amplitudArmonicoPrevio7 amplitudArmonicoPrevio8 amplitudArmonicoPrevio9 amplitudArmonicoPrevio10 faseArmonicoPrevio1 faseArmonicoPrevio2 faseArmonicoPrevio3 
 global faseArmonicoPrevio4 faseArmonicoPrevio5 faseArmonicoPrevio6 faseArmonicoPrevio7 faseArmonicoPrevio8 faseArmonicoPrevio9 faseArmonicoPrevio10
 global frecuencia amplitudArmonico1 amplitudArmonico2 amplitudArmonico3 amplitudArmonico4 amplitudArmonico5 amplitudArmonico6 amplitudArmonico7 amplitudArmonico8 amplitudArmonico9 amplitudArmonico10
@@ -305,9 +305,9 @@ if aceptarTransitorios==1
         y=y+amplitudArmonico(i)*sqrt(2)*sin(2*pi*i*frecuencia*x+faseArmonico(i));
 %         z=z+((amplitudArmonico(i)*sqrt(2))*(1+(amplitudFlicker/1000)*sin(frecuenciaFlicker*2*pi*x+faseFlicker))).*sin(2*pi*frecuencia*x+faseArmonico(i));
 %         p=p+amplitudPerturbacion(i)*(u(x-inicioPerturbacion(i))-u(x-(inicioPerturbacion(i)+duracionPerturbacion(i))))*sin(2*pi*i*frecuencia*t);
-%         t=t+amplitudSenoTransitorio(i)*sin(2*pi*i*frecuencia*x+faseArmonico(i))+amplitudSenoTransitorio*exponenteTransitorio(i)*"funciónEscalon"*sin(2*pi*frecuenciaSenoTransitorio)
+        t=t+amplitudSenoTransitorio(i)*sin(2*pi*i*frecuencia*x+faseArmonico(i))+amplitudSenoTransitorio*exponenteTransitorio(i)*sin(2*pi*frecuenciaSenoTransitorio)
     end
-    plot(x,p);
+    plot(x,t);
 end
 xlabel('Tiempo');
 ylabel('Amplitud');
