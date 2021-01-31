@@ -346,12 +346,12 @@ function pushbutton8_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-function pushbutton7_Callback(hObject, eventdata, handles)
+function GuardarGrafica_Callback(hObject, eventdata, handles)
 [filename,pathname]=uiputfile({'*.jpg;*.bmp;*.jpeg;*.fig'},'Guardar nombre de archivo');
-saveas(gcf,filename);
+saveas(fig,filename);
 msgbox('Imagen guardada','Mensaje');
 
-function pushbutton9_Callback(hObject, eventdata, handles)
+function Stop_Callback(hObject, eventdata, handles)
 if isempty(get(hObject,'value'))
     return
 else
