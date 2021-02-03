@@ -347,9 +347,16 @@ function pushbutton8_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 function GuardarGrafica_Callback(hObject, eventdata, handles)
-[filename,pathname]=uiputfile({'*.jpg;*.bmp;*.jpeg;*.fig'},'Guardar nombre de archivo');
-saveas(fig,filename);
-msgbox('Imagen guardada','Mensaje');
+% [filename,pathname]=uiputfile({'*.jpg;*.bmp;*.jpeg;*.fig'},'Guardar nombre de archivo');
+% saveas(fig,filename);
+prompt = 'Nombre de la gráfica:';
+dlgtitle = 'Guardar gráfica';
+dims = [1 50];
+answer = inputdlg(prompt,dlgtitle,dims);
+tituloGraficaString=string(answer(1));
+tituloGraficaChar=convertStringsToChars(tituloGraficaString);
+nombreArchivoConExtension=[tituloGraficaChar,'.png'];
+exportgraphics(gca,nombreArchivoConExtension);
 
 function Stop_Callback(hObject, eventdata, handles)
 if isempty(get(hObject,'value'))
