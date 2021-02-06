@@ -99,8 +99,9 @@ handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
-xlabel('Tiempo');
-ylabel('Amplitud');
+title('Pandora');
+xlabel('Tiempo (seg)');
+ylabel('Amplitud (V)');
 grid on;
 
 function varargout = Pandora_OutputFcn(hObject, eventdata, handles) 
@@ -129,8 +130,9 @@ if aceptarArmonico==1
     y=y+nivelContinuaArmonico;
     plot(x,y);
 end
-xlabel('Tiempo');
-ylabel('Amplitud');
+title('Pandora');
+xlabel('Tiempo (seg)');
+ylabel('Amplitud (V)');
 grid on;
 
 function HuecosSobretension_Callback(hObject, eventdata, handles)
@@ -179,8 +181,9 @@ if aceptarHuecoSobretension==1
     p=(u1-u2).*sin(2*pi*50*x);
     plot(x,p);
 end
-xlabel('Tiempo');
-ylabel('Amplitud');
+title('Pandora');
+xlabel('Tiempo (seg)');
+ylabel('Amplitud (V)');
 grid on;
 
 function DesviacionFrecuencia_Callback(hObject, eventdata, handles)
@@ -220,8 +223,9 @@ if aceptarDesviacionFrecuencia==1
     d=d+nivelContinuaFrecuencia;
     plot(x,d);
 end
-xlabel('Tiempo');
-ylabel('Amplitud');
+title('Pandora');
+xlabel('Tiempo (seg)');
+ylabel('Amplitud (V)');
 grid on;
 
 function Flicker_Callback(hObject, eventdata, handles)
@@ -252,8 +256,9 @@ if aceptarFlicker==1
     y=(x<inicioFlicker/1000).*(y)+((inicioFlicker/1000<=x)&(x<(inicioFlicker+duracionFlicker)/1000)).*(z)+((inicioFlicker+duracionFlicker)/1000<x).*(y);
     plot(x,y);
 end
-xlabel('Tiempo');
-ylabel('Amplitud');
+title('Pandora');
+xlabel('Tiempo (seg)');
+ylabel('Amplitud (V)');
 grid on;
 
 function Transitorios_Callback(hObject, eventdata, handles)
@@ -309,8 +314,9 @@ if aceptarTransitorios==1
     end
     plot(x,t);
 end
-xlabel('Tiempo');
-ylabel('Amplitud');
+title('Pandora');
+xlabel('Tiempo (seg)');
+ylabel('Amplitud (V)');
 grid on;
 
 function Ruido_Callback(hObject, eventdata, handles)
@@ -337,8 +343,9 @@ if aceptarRuido==1
     end
     plot(x,r);
 end
-xlabel('Tiempo');
-ylabel('Amplitud');
+title('Pandora');
+xlabel('Tiempo (seg)');
+ylabel('Amplitud (V)');
 grid on;
 
 function pushbutton8_Callback(hObject, eventdata, handles)
@@ -390,8 +397,9 @@ end
 % y=(x<inicioFlicker/1000).*(y)+((inicioFlicker/1000<=x)&(x<(inicioFlicker+duracionFlicker)/1000)).*(z)+((inicioFlicker+duracionFlicker)/1000<x).*(y);
 plot(x,y);
 grid on;
-xlabel('Tiempo');
-ylabel('Amplitud');
+title('Pandora');
+xlabel('Tiempo (seg)');
+ylabel('Amplitud (V)');
 duracion=get(hObject,'value');
 set(handles.SliderDuracion,'string',num2str(duracion));
 
@@ -420,8 +428,9 @@ for i=1:10
 end
 plot(x,y);
 grid on;
-xlabel('Tiempo');
-ylabel('Amplitud');
+title('Pandora');
+xlabel('Tiempo (seg)');
+ylabel('Amplitud (V)');
 frecuencia=get(hObject,'value');
 set(handles.SliderFrecuencia,'string',num2str(frecuencia));
 
@@ -450,8 +459,9 @@ for i=1:10
 end
 plot(x,y);
 grid on;
-xlabel('Tiempo');
-ylabel('Amplitud');
+title('Pandora');
+xlabel('Tiempo (seg)');
+ylabel('Amplitud (V)');
 muestras=get(hObject,'value');
 set(handles.SliderMuestras,'string',num2str(muestras));
 
@@ -485,8 +495,9 @@ end
 y=(x<inicioFlicker/1000).*(y)+((inicioFlicker/1000<=x)&(x<(inicioFlicker+duracionFlicker)/1000)).*(z)+((inicioFlicker+duracionFlicker)/1000<x).*(y);
 plot(x,y);
 grid on;
-xlabel('Tiempo');
-ylabel('Amplitud');
+title('Pandora');
+xlabel('Tiempo (seg)');
+ylabel('Amplitud (V)');
 
 function EditDuracion_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -513,8 +524,9 @@ for i=1:10
 end
 plot(t,y);
 grid on;
-xlabel('Tiempo');
-ylabel('Amplitud');
+title('Pandora');
+xlabel('Tiempo (seg)');
+ylabel('Amplitud (V)');
 
 function EditFrecuencia_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -541,8 +553,9 @@ for i=1:10
 end  
 plot(x,y);    
 grid on;
-xlabel('Tiempo');
-ylabel('Amplitud');
+title('Pandora');
+xlabel('Tiempo (seg)');
+ylabel('Amplitud (V)');
 
 function EditMuestras_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
