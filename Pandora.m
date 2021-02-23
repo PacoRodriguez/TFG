@@ -358,7 +358,7 @@ function GuardarGrafica_Callback(hObject, eventdata, handles)
 % saveas(fig,filename);
 prompt = 'Nombre de la gráfica:';
 dlgtitle = 'Guardar gráfica';
-dims = [1 50];
+dims = [1 60];
 answer = inputdlg(prompt,dlgtitle,dims);
 tituloGraficaString=string(answer(1));
 tituloGraficaChar=convertStringsToChars(tituloGraficaString);
